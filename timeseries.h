@@ -8,9 +8,9 @@ using namespace std;
 
 class TimeSeries{
 private:
-    float** table;
+    float** table{};
 public:
-	TimeSeries(const char* CSVfileName){
+	explicit TimeSeries(const char* CSVfileName){
 	}
     void addColumn(float* column, char* name);
     void addRow(float* values, float time);
