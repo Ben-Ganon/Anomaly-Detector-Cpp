@@ -4,7 +4,6 @@
 #define TIMESERIES_H_
 
 
-typedef basic_string<char> string;
 using namespace std;
 
 class TimeSeries{
@@ -13,8 +12,8 @@ private:
 public:
 	TimeSeries(const char* CSVfileName){
 	}
-    void addColumn(float[] column, String name);
-    void addRow(float[] values, float time);
+    void addColumn(float* column, char* name);
+    void addRow(float* values, float time);
     float* getColumn(int column);
     float* getRow(int row);
     float getCell(int row, int cloumn);
