@@ -6,6 +6,7 @@ int main() {
     vector<float> b = a->getRow(13);
     for(float f : b) {
         cout<<f<<endl;
+        cout<<"hi";
     }
     delete a;
     return 0;
