@@ -2,16 +2,16 @@
 
 #ifndef TIMESERIES_H_
 #define TIMESERIES_H_
-
+#include <vector>
 
 using namespace std;
 
 class TimeSeries{
 private:
-    float** table{};
+    TimeSeries(const char *CSVfileName);
+
+    vector<vector<float>> table;
 public:
-	explicit TimeSeries(const char* CSVfileName){
-	}
     void addColumn(float* column, char* name);
     void addRow(float* values, float time);
     float* getColumn(int column);

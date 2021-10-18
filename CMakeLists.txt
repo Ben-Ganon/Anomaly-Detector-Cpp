@@ -3,4 +3,4 @@ project(Ex1Task2)
 
 set(CMAKE_CXX_STANDARD 11)
 
-add_executable(Ex1Task2 main.cpp MainTrain.cpp)
+add_executable(Ex1Task2 main.cpp MainTrain.cpp timeseries.cpp)
