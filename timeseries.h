@@ -3,15 +3,18 @@
 #ifndef TIMESERIES_H_
 #define TIMESERIES_H_
 #include <vector>
+#include <string>
+#include <iostream>
 
 using namespace std;
 
 class TimeSeries{
 private:
-    TimeSeries(const char *CSVfileName);
-
     vector<vector<float>> table;
+    vector<string> columnNames;
 public:
+    TimeSeries(const char *CSVfileName);
+    void printTable();
     void addColumn(float* column, char* name);
     void addRow(float* values, float time);
     float* getColumn(int column);

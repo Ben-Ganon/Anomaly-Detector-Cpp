@@ -1,6 +1,9 @@
 #include <iostream>
+#include "timeseries.cpp"
 
 int main() {
-    std::cout << "Hello, World!" << std::endl;
+    TimeSeries* a = new TimeSeries("/home/ben/Downloads/csvTest.csv");
+    a->printTable();
+    delete a;
     return 0;
 }
