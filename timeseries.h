@@ -17,10 +17,10 @@ public:
     void printTable();
     void addColumn(float* column, char* name);
     void addRow(float* values, float time);
-    float* getColumn(int column);
-    float* getRow(int row);
+    vector<float> getColumn(int column);
+    vector<float>  getRow(int row);
     float getCell(int row, int cloumn);
-    float setCell(int row, int column);
+    void setCell(int row, int column);
 
 };
 

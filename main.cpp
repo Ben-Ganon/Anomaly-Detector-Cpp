@@ -3,7 +3,10 @@
 
 int main() {
     TimeSeries* a = new TimeSeries("/home/ben/Downloads/csvTest.csv");
-    a->printTable();
+    vector<float> b = a->getRow(13);
+    for(float f : b) {
+        cout<<f<<endl;
+    }
     delete a;
     return 0;
 }

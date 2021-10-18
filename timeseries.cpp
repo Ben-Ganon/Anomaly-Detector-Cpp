@@ -52,12 +52,22 @@ void TimeSeries::addColumn(float* column, char* name){
 void TimeSeries::addRow(float* values, float time) {
 
 }
-float* TimeSeries::getColumn(int column) {
-    return 0;
+vector<float> TimeSeries::getColumn(int column) {
+    vector<float> floatCol;
+    for (vector<float> v : table) {
+        floatCol.push_back(v.at(column));
+    }
+    return floatCol;
 
 }
-float* getRow(int row){
-    return 0;
+vector<float>  TimeSeries::getRow(int row){
+    vector<float> f;
+    if(table.size() <= row) {
+        cout<<"not in range"<<endl;
+        return f;
+    }else {
+        return table.at(row);
+    }
 
 }
 float getCell(int row, int cloumn) {
