@@ -8,7 +8,7 @@ using namespace std;
 
 class TimeSeries{
 private:
-    float[][] table;
+    float** table;
 public:
 	TimeSeries(const char* CSVfileName){
 	}
