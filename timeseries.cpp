@@ -50,8 +50,15 @@ void TimeSeries::printTable() {
     }
 }
 
-void TimeSeries::addColumn(float *column, char *name) {
+void TimeSeries::addColumn(vector<float> column, char *name) {
+    vector<float> temp = TimeSeries::copyVector(column);
+    for(vector<float> v : table) {
+        v.push_back(column.front());
+        column.pop_back();
+    }
 
+
+    temp.clear();
 }
 
 void TimeSeries::addRow(float *values, float time) {
@@ -92,4 +99,12 @@ float getCell(int row, int cloumn) {
 
 float setCell(int row, int column) {
     return 0;
+}
+
+vector<float> copyVector(vector<float> v) {
+    vector<float> newV;
+    for(int i = 0; i < v.size(); i++) {
+        newV.push_back(v.at(i));
+    }
+    return newV;
 }

@@ -15,12 +15,13 @@ private:
 public:
     TimeSeries(const char *CSVfileName);
     void printTable();
-    void addColumn(float* column, char* name);
+    void TimeSeries::addColumn(vector<float> column, char *name);
     void addRow(float* values, float time);
     vector<float> getColumn(int column);
     vector<float>  getRow(int row);
     float getCell(int row, int cloumn);
     void setCell(int row, int column);
+    static vector<float> copyVector(vector<float> v);
 
 };
 
