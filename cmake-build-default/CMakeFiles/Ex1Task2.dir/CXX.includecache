@@ -1,0 +1,34 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/ben/CLionProjects/Ex1Task2/main.cpp
+iostream
+-
+timeseries.cpp
+/home/ben/CLionProjects/Ex1Task2/timeseries.cpp
+
+/home/ben/CLionProjects/Ex1Task2/timeseries.cpp
+timeseries.h
+/home/ben/CLionProjects/Ex1Task2/timeseries.h
+iostream
+-
+fstream
+-
+sstream
+-
+vector
+-
+
+/home/ben/CLionProjects/Ex1Task2/timeseries.h
+vector
+-
+string
+-
+iostream
+-
+
