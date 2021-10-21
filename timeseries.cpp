@@ -19,7 +19,6 @@ TimeSeries::TimeSeries(const char *CSVfileName) {
     stringstream stream(line);
     //the first raw , the categories
     vector<string> firstLine;
-
     //while loop goes through each word in the line and insert it into columnNames
     while (getline(stream, word, ',')) {
         columnNames.push_back(word);
@@ -31,7 +30,7 @@ TimeSeries::TimeSeries(const char *CSVfileName) {
         while (getline(floatStream, word, ',')) {
             values.push_back(stof(word));
         }
-        table.push_back(values);
+        this->table.push_back(values);
         values.clear();
     }
 
@@ -43,7 +42,7 @@ void TimeSeries::printTable() {
         cout << s;
     }
     cout << endl;
-    for (vector<float> v: table) {
+    for (vector<float> v: this->table) {
         for (float f: v) {
             cout << f << "   ";
         }
@@ -64,7 +63,8 @@ void TimeSeries::addColumn(vector<float> column, string name) {
     }
 }
 
-void TimeSeries::addRow(float *values, float time) {
+void TimeSeries::addRow(vector<float> values) {
+    this->table.push_back(values);
 
 }
 
@@ -75,7 +75,7 @@ vector<float> TimeSeries::getColumn(int column) {
     if (columnNames.size() <= column) {
         cout << "not in range" << endl;
     }
-    for (vector<float> v: table) {
+    for (vector<float> v: this->table) {
         floatCol.push_back(v.at(column));
     }
     return floatCol;
@@ -86,22 +86,22 @@ vector<float> TimeSeries::getColumn(int column) {
 vector<float> TimeSeries::getRow(int row) {
     vector<float> f;
     //edge case
-    if (table.size() <= row) {
+    if (this->table.size() <= row) {
         cout << "not in range" << endl;
         return f;
     } else {
-        return table.at(row);
+        return this->table.at(row);
     }
 
 }
 
-float getCell(int row, int cloumn) {
-    return 0;
+float TimeSeries::getCell(int row, int column) {
+    return this->table[row][column];
 
 }
 
-float setCell(int row, int column) {
-    return 0;
+void TimeSeries::setCell(int row, int column, float val) {
+    this->table[row][column] = val;
 }
 
 vector<float> TimeSeries::copyVector(vector<float> v) {
