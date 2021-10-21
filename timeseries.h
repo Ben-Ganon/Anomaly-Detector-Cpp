@@ -18,7 +18,7 @@ public:
 
     void printTable();
 
-    void addColumn(float *column, char *name);
+    void addColumn(vector<float> column, string name);
 
     void addRow(vector<float> values);
 
@@ -30,6 +30,7 @@ public:
 
     void setCell(int row, int column, float val);
 
+    vector<float> copyVector(vector<float> v);
 };
 
 
