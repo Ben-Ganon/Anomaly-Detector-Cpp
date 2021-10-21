@@ -1,0 +1,3 @@
+/home/ben/CLionProjects/Ex1Task2/cmake-build-default/CMakeFiles/rebuild_cache.dir
+/home/ben/CLionProjects/Ex1Task2/cmake-build-default/CMakeFiles/edit_cache.dir
+/home/ben/CLionProjects/Ex1Task2/cmake-build-default/CMakeFiles/Ex1Task2.dir
