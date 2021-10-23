@@ -37,6 +37,9 @@ TimeSeries::TimeSeries(const char *CSVfileName) {
     file.close();
 }
 
+/**
+ * prints the timeseries.
+ */
 void TimeSeries::printTable() {
     for (string s: columnNames) {
         cout << s;
@@ -63,12 +66,21 @@ void TimeSeries::addColumn(vector<float> column, string name) {
     }
 }
 
+/**
+ * adds a new row to the timeseries.
+ * @param values
+ */
 void TimeSeries::addRow(vector<float> values) {
     this->table.push_back(values);
 
 }
 
-vector<float> TimeSeries::getColumn(int column) {
+/**
+ * retreives a desired column from the timeseries
+ * @param column
+ * @return
+ */
+vector<float> TimeSeries::getColumn(int column) const {
     //array of the given column
     vector<float> floatCol;
     //edge case
@@ -82,7 +94,11 @@ vector<float> TimeSeries::getColumn(int column) {
 
 }
 
-
+/**
+ * retreives a desired row from the timeseries
+ * @param row
+ * @return
+ */
 vector<float> TimeSeries::getRow(int row) {
     vector<float> f;
     //edge case
@@ -95,19 +111,44 @@ vector<float> TimeSeries::getRow(int row) {
 
 }
 
+/**
+ * returns the desired cell's value
+ * @param row
+ * @param column
+ * @return
+ */
 float TimeSeries::getCell(int row, int column) {
     return this->table[row][column];
 
 }
 
+/**
+ * sets the desired cell's value to val
+ * @param row
+ * @param column
+ * @param val
+ */
 void TimeSeries::setCell(int row, int column, float val) {
     this->table[row][column] = val;
 }
 
+/**
+ * copies a given vector (deep copy) and returns it.
+ * @param v
+ * @return
+ */
 vector<float> TimeSeries::copyVector(vector<float> v) {
     vector<float> newV;
     for(int i = 0; i < v.size(); i++) {
         newV.push_back(v[i]);
     }
     return newV;
+}
+
+/**
+ * returns the number of columns in the timeseries.
+ * @return
+ */
+int TimeSeries::numColumns() const {
+    return this->columnNames.size();
 }
