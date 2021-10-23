@@ -22,7 +22,7 @@ public:
 
     void addRow(vector<float> values);
 
-    vector<float> getColumn(int column);
+    vector<float> getColumn(int column) const;
 
     vector<float> getRow(int row);
 
@@ -31,6 +31,8 @@ public:
     void setCell(int row, int column, float val);
 
     vector<float> copyVector(vector<float> v);
+
+    int numColumns() const;
 };
 
 

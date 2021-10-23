@@ -6,6 +6,8 @@
 #include <math.h>
 #include <cmath>
 #include "anomaly_detection_util.h"
+#include <vector>
+
 
 /**
  * avg - calculate the avg of the x array numbers
@@ -134,6 +136,20 @@ float dev(Point p, Line l) {
     float lineYValue = l.f(p.x);
     //return the absolute value of their distance difference
     return std::abs(p.y - lineYValue);
+}
+
+/**
+ * converts a vector (v) to a float array and returns a pointer to that array
+ * @param v - desired vector to convert
+ * @return - float*
+ */
+float* convertVector(std::vector<float> v) {
+    float *fArr = new float[v.size()];
+    for (int i =0; i < v.size(); i++) {
+        fArr[i] = v.at(i);
+    }
+    return fArr;
+
 }
 
 

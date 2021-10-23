@@ -24,6 +24,8 @@ class SimpleAnomalyDetector : public TimeSeriesAnomalyDetector {
 public:
     SimpleAnomalyDetector();
 
+    void addCf(correlatedFeatures cf);
+
     virtual ~SimpleAnomalyDetector();
 
     virtual void learnNormal(const TimeSeries &ts);
