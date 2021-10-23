@@ -6,7 +6,7 @@ bool wrong(float val, float expected) {
 int main() {
 
     //sagiv's path
-    TimeSeries *a = new TimeSeries("C:\\Users\\sagiv\\Desktop\\Ex1Task2\\csvTest.csv");
+    TimeSeries *a = new TimeSeries("../csvTest.csv");
     cout<<"-------------checks printTable-------------"<<endl;
     a->printTable();
 //    vector<float> b = a->getRow(2);
