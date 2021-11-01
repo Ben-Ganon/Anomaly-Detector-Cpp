@@ -19,8 +19,8 @@ struct correlatedFeatures {
 
 
 class SimpleAnomalyDetector : public TimeSeriesAnomalyDetector {
-    //vector is a dynamic array of correlated features.
-    vector<correlatedFeatures> cf;
+    //this vector is a dynamic array of correlated features.
+    vector<correlatedFeatures>* cf;
 public:
     SimpleAnomalyDetector();
 

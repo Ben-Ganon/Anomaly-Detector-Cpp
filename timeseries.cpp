@@ -4,8 +4,6 @@
 #include <sstream>
 #include <vector>
 
-using namespace std;
-
 TimeSeries::TimeSeries(const char *CSVfileName) {
     ifstream file;
     //openning the file given
@@ -19,19 +17,24 @@ TimeSeries::TimeSeries(const char *CSVfileName) {
     stringstream stream(line);
     //the first raw , the categories
     vector<string> firstLine;
+
+    columnNames = new vector<string>;
     //while loop goes through each word in the line and insert it into columnNames
     while (getline(stream, word, ',')) {
-        columnNames.push_back(word);
+        columnNames->push_back(word);
+    }
+    table = new vector<vector<float>*>;
+    for(int i = 0; i < columnNames->size(); i++) {
+        table->push_back(new vector<float>);
     }
     //insert the values
     while (getline(file, line)) {
-        vector<float> values;
         stringstream floatStream(line);
+        int place = 0;
         while (getline(floatStream, word, ',')) {
-            values.push_back(stof(word));
+           this->table->at(place)->push_back(stof(word));
+           place++;
         }
-        this->table.push_back(values);
-        values.clear();
     }
 
     file.close();
@@ -41,12 +44,12 @@ TimeSeries::TimeSeries(const char *CSVfileName) {
  * prints the timeseries.
  */
 void TimeSeries::printTable() {
-    for (string s: columnNames) {
+    for (string s: *columnNames) {
         cout << s;
     }
     cout << endl;
-    for (vector<float> v: this->table) {
-        for (float f: v) {
+    for (vector<float> *v: *this->table) {
+        for (float f: *v) {
             cout << f << "   ";
         }
         cout << endl;
@@ -57,13 +60,12 @@ void TimeSeries::printTable() {
  * @param column - the column vector given to add
  * @param name - name of the column to add to the columnNames vector
  */
-void TimeSeries::addColumn(vector<float> column, string name) {
+void TimeSeries::addColumn(vector<float>* column, string name) {
     //adding the name to the column vector
-    columnNames.push_back(name);
-    //iteration over the rows and adding an element to the back
-    for(int i = 0; i < table.size(); i++) {
-        table[i].push_back(column[i]);
-    }
+    columnNames->push_back(name);
+    vector<float>* inCol = copyVector(column);
+    this->table->push_back(inCol);
+
 }
 
 /**
@@ -71,8 +73,13 @@ void TimeSeries::addColumn(vector<float> column, string name) {
  * @param values
  */
 void TimeSeries::addRow(vector<float> values) {
-    this->table.push_back(values);
-
+    if (values.size() > this->table->size() || values.size() < this->table->size()) {
+        cout << "number of columns is mismatched!";
+        exit(1);
+    }
+    for (int i = 0; i < this->table->size(); i++) {
+        this->table->at(i)->push_back(values[i]);
+    }
 }
 
 /**
@@ -81,17 +88,7 @@ void TimeSeries::addRow(vector<float> values) {
  * @return
  */
 vector<float> TimeSeries::getColumn(int column) const {
-    //array of the given column
-    vector<float> floatCol;
-    //edge case
-    if (columnNames.size() <= column) {
-        cout << "not in range" << endl;
-    }
-    for (vector<float> v: this->table) {
-        floatCol.push_back(v.at(column));
-    }
-    return floatCol;
-
+    return *this->table->at(column);
 }
 
 /**
@@ -137,10 +134,10 @@ void TimeSeries::setCell(int row, int column, float val) {
  * @param v
  * @return
  */
-vector<float> TimeSeries::copyVector(vector<float> v) {
-    vector<float> newV;
-    for(int i = 0; i < v.size(); i++) {
-        newV.push_back(v[i]);
+vector<float>* TimeSeries::copyVector(vector<float>* v) {
+    auto* newV = new vector<float>;
+    for(int i = 0; i < v->size(); i++) {
+        newV->push_back(v->at(i));
     }
     return newV;
 }

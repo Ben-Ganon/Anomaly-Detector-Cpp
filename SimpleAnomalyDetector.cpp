@@ -4,12 +4,13 @@
 
 SimpleAnomalyDetector::SimpleAnomalyDetector() {
 	//TODO Auto-generated constructor stub
+    this->cf = new vector<correlatedFeatures>;
+
 }
 
 SimpleAnomalyDetector::~SimpleAnomalyDetector() {
 	//TODO Auto-generated destructor stub
     this->cf.clear();
-
 }
 
 
