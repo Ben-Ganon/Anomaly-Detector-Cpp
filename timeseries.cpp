@@ -3,6 +3,8 @@
 #include <fstream>
 #include <sstream>
 #include <vector>
+#include <string>
+#include <algorithm>
 
 TimeSeries::TimeSeries(const char *CSVfileName) {
     ifstream file;
@@ -50,7 +52,7 @@ void TimeSeries::printTable() {
     cout << endl;
     for (int i = 0; i < this->table->at(0)->size(); i++) {
         for (vector<float> *v: *this->table) {
-            cout << v->at(i) << "   ";
+            cout << v->at(i) << "    ";
         }
     cout << endl;
     }
