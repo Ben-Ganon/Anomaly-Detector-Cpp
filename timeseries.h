@@ -33,6 +33,8 @@ public:
     vector<float> *copyVector(vector<float> *v);
 
     int numColumns() const;
+
+    string getNameOfRaw(int i) const;
 };
 
 

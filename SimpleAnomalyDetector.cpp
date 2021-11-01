@@ -29,15 +29,15 @@ void SimpleAnomalyDetector::learnNormal(const TimeSeries &ts) {
             }
         }
         if (1 != index) {
-            correlatedFeatures correlatedFeature = (const correlatedFeatures &) new correlatedFeatures();
-            correlatedFeature.corrlation = m;
+            correlatedFeatures *correlatedFeature = new correlatedFeatures();
+            correlatedFeature->corrlation = m;
             //need to change the function operation in timeSeries - need to return vector with floats
-            correlatedFeature.feature1 = ts.getCell(0, i);
-            correlatedFeature.feature2 = ts.getCell(0, index);
+            correlatedFeature->feature1 = ts.getNameOfRaw(i);
+            correlatedFeature->feature2 = ts.getNameOfRaw(index);
             //need to add to those two:
-            correlatedFeature.lin_reg = linear_reg(correlatedFeature.feature1,correlatedFeature.feature2,correlatedFeature.feature1.size());
+            correlatedFeature->lin_reg = linear_reg(ts.getColumn(i),ts.getColumn(index),ts.getColumn(i).size());
 //            correlatedFeature.threshold = ;
-            cf->push_back(correlatedFeature)
+            cf->push_back(*correlatedFeature);
         }
 
 
