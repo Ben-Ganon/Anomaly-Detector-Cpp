@@ -111,6 +111,15 @@ Line linear_reg(Point **points, int size) {
     return Line(a, b);
 }
 
+Line linear_reg(std::vector<float> v1, std::vector<float> v2, int size){
+    float* feature1 = convertVector(v1);
+    float* feature2= convertVector(v2);
+    //𝑎=𝐶𝑂𝑉(𝑥,𝑦)/𝑉𝐴𝑅(𝑥)
+    float a = cov(feature1, feature2, size) / var(feature1, size);
+    //𝑏=𝑦̅−𝑎𝑥̅ (𝑥̅ and 𝑦̅ are the avg of x and y)
+    float b = avg(feature2, size) - a * avg(feature1, size);
+    return Line(a, b);
+}
 /**
  * dev - returns the deviation between point p and the line equation of the points
  * @param p - point to measure the distance to

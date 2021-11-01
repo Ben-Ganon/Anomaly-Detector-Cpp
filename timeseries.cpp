@@ -112,7 +112,7 @@ vector<float> TimeSeries::getRow(int row) {
  * @param column
  * @return
  */
-float TimeSeries::getCell(int row, int column) {
+float TimeSeries::getCell(int row, int column) const{
     return this->table->at(column)->at(row);
 }
 
@@ -145,4 +145,8 @@ vector<float>* TimeSeries::copyVector(vector<float>* v) {
  */
 int TimeSeries::numColumns() const {
     return this->columnNames->size();
+}
+
+string TimeSeries:: getNameOfRaw(int i) const{
+    return this->columnNames->at(i);
 }
