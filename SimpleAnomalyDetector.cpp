@@ -10,34 +10,34 @@ SimpleAnomalyDetector::SimpleAnomalyDetector() {
 
 SimpleAnomalyDetector::~SimpleAnomalyDetector() {
     //TODO Auto-generated destructor stub
-    this->cf.clear();
+    this->cf->clear();
 }
 
 
 void SimpleAnomalyDetector::learnNormal(const TimeSeries &ts) {
     //TODO Auto-generated destructor stub
     float m, p;
-    int c;
+    int index;
     for (int i = 0; i < ts.numColumns(); i++) {
         m = 0;
-        c = -1;
+        index = -1;
         for (int j = i + 1; j < ts.numColumns(); j++) {
             p = pearson(convertVector(ts.getColumn(i)), convertVector(ts.getColumn(j)), ts.getColumn(i).size());
             if (p > m) {
                 m = p;
-                c = j;
+                index = j;
             }
         }
-        if (1 != c) {
-            correlatedFeatures correlatedFeature = new correlatedFeatures();
+        if (1 != index) {
+            correlatedFeatures correlatedFeature = (const correlatedFeatures &) new correlatedFeatures();
             correlatedFeature.corrlation = m;
-            //need to change the function operation in timeSeries
+            //need to change the function operation in timeSeries - need to return vector with floats
             correlatedFeature.feature1 = ts.getCell(0, i);
-            correlatedFeature.feature2 = ts.getCell(0, c);
+            correlatedFeature.feature2 = ts.getCell(0, index);
             //need to add to those two:
-//            correlatedFeature.lin_reg = ;
+            correlatedFeature.lin_reg = linear_reg(correlatedFeature.feature1,correlatedFeature.feature2,correlatedFeature.feature1.size());
 //            correlatedFeature.threshold = ;
-            cf->push_back()
+            cf->push_back(correlatedFeature)
         }
 
 
@@ -53,6 +53,6 @@ vector<AnomalyReport> SimpleAnomalyDetector::detect(const TimeSeries &ts) {
  * @param features1
  */
 void SimpleAnomalyDetector::addCf(correlatedFeatures features1) {
-    this->cf.push_back(features1);
+    this->cf->push_back(features1);
 }
 

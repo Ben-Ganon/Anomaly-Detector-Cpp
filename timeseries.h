@@ -11,14 +11,14 @@ using namespace std;
 
 class TimeSeries {
 private:
-    vector<vector<float>*>* table;
-    vector<string>* columnNames;
+    vector<vector<float> *> *table;
+    vector<string> *columnNames;
 public:
     TimeSeries(const char *CSVfileName);
 
     void printTable();
 
-    void addColumn(vector<float>* column, string name);
+    void addColumn(vector<float> *column, string name);
 
     void addRow(vector<float> values);
 
@@ -26,11 +26,11 @@ public:
 
     vector<float> getRow(int row);
 
-    float getCell(int row, int column);
+    float getCell(int row, int column) const;
 
     void setCell(int row, int column, float val);
 
-    vector<float>* copyVector(vector<float>* v);
+    vector<float> *copyVector(vector<float> *v);
 
     int numColumns() const;
 };

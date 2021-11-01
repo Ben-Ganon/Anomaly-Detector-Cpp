@@ -110,7 +110,7 @@ vector<float> TimeSeries::getRow(int row) {
  * @param column
  * @return
  */
-float TimeSeries::getCell(int row, int column) {
+float TimeSeries::getCell(int row, int column) const{
     return this->table->at(column)->at(row);
 }
 
