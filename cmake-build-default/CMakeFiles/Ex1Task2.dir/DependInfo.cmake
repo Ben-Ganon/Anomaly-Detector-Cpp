@@ -8,7 +8,6 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/ben/CLionProjects/Ex1Task2/SimpleAnomalyDetector.cpp" "/home/ben/CLionProjects/Ex1Task2/cmake-build-default/CMakeFiles/Ex1Task2.dir/SimpleAnomalyDetector.cpp.o"
   "/home/ben/CLionProjects/Ex1Task2/anomaly_detection_util.cpp" "/home/ben/CLionProjects/Ex1Task2/cmake-build-default/CMakeFiles/Ex1Task2.dir/anomaly_detection_util.cpp.o"
   "/home/ben/CLionProjects/Ex1Task2/main.cpp" "/home/ben/CLionProjects/Ex1Task2/cmake-build-default/CMakeFiles/Ex1Task2.dir/main.cpp.o"
   )

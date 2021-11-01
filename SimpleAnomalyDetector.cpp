@@ -10,7 +10,7 @@ SimpleAnomalyDetector::SimpleAnomalyDetector() {
 
 SimpleAnomalyDetector::~SimpleAnomalyDetector() {
 	//TODO Auto-generated destructor stub
-    this->cf.clear();
+    //this->cf.clear();
 }
 
 

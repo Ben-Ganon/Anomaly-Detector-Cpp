@@ -1,5 +1,4 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/Ex1Task2.dir/SimpleAnomalyDetector.cpp.o"
   "CMakeFiles/Ex1Task2.dir/anomaly_detection_util.cpp.o"
   "CMakeFiles/Ex1Task2.dir/main.cpp.o"
   "Ex1Task2"

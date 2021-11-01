@@ -33,7 +33,7 @@ public:
     virtual vector<AnomalyReport> detect(const TimeSeries &ts);
 
     vector<correlatedFeatures> getNormalModel() {
-        return cf;
+        //return cf;
     }
 
 };

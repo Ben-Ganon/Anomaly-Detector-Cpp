@@ -48,11 +48,11 @@ void TimeSeries::printTable() {
         cout << s;
     }
     cout << endl;
-    for (vector<float> *v: *this->table) {
-        for (float f: *v) {
-            cout << f << "   ";
+    for (int i = 0; i < this->table->at(0)->size(); i++) {
+        for (vector<float> *v: *this->table) {
+            cout << v->at(i) << "   ";
         }
-        cout << endl;
+    cout << endl;
     }
 }
 /**
@@ -98,14 +98,10 @@ vector<float> TimeSeries::getColumn(int column) const {
  */
 vector<float> TimeSeries::getRow(int row) {
     vector<float> f;
-    //edge case
-    if (this->table.size() <= row) {
-        cout << "not in range" << endl;
-        return f;
-    } else {
-        return this->table.at(row);
+    for (vector<float>* v : *this->table) {
+        f.push_back(v->at(row));
     }
-
+    return f;
 }
 
 /**
@@ -115,8 +111,7 @@ vector<float> TimeSeries::getRow(int row) {
  * @return
  */
 float TimeSeries::getCell(int row, int column) {
-    return this->table[row][column];
-
+    return this->table->at(column)->at(row);
 }
 
 /**
@@ -126,7 +121,7 @@ float TimeSeries::getCell(int row, int column) {
  * @param val
  */
 void TimeSeries::setCell(int row, int column, float val) {
-    this->table[row][column] = val;
+    this->table->at(column)->at(row) = val;
 }
 
 /**
@@ -147,5 +142,5 @@ vector<float>* TimeSeries::copyVector(vector<float>* v) {
  * @return
  */
 int TimeSeries::numColumns() const {
-    return this->columnNames.size();
+    return this->columnNames->size();
 }
