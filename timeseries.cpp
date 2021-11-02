@@ -38,7 +38,6 @@ TimeSeries::TimeSeries(const char *CSVfileName) {
            place++;
         }
     }
-
     file.close();
 }
 
@@ -147,6 +146,9 @@ int TimeSeries::numColumns() const {
     return this->columnNames->size();
 }
 
-string TimeSeries:: getNameOfRaw(int i) const{
+string TimeSeries::getNameOfRaw(int i) const{
     return this->columnNames->at(i);
+}
+vector<string>* TimeSeries::getNames() const {
+    return this->columnNames;
 }

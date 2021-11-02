@@ -30,7 +30,7 @@ void SimpleAnomalyDetector::learnNormal(const TimeSeries &ts) {
         }
         if (1 != index) {
             correlatedFeatures *correlatedFeature = new correlatedFeatures();
-            correlatedFeature->corrlation = m;
+            correlatedFeature->correlation = m;
             //need to change the function operation in timeSeries - need to return vector with floats
             correlatedFeature->feature1 = ts.getNameOfRaw(i);
             correlatedFeature->feature2 = ts.getNameOfRaw(index);
@@ -46,6 +46,12 @@ void SimpleAnomalyDetector::learnNormal(const TimeSeries &ts) {
 
 vector<AnomalyReport> SimpleAnomalyDetector::detect(const TimeSeries &ts) {
     //TODO Auto-generated destructor stub
+    auto anomalies = new vector<AnomalyReport>;
+    for (correlatedFeatures currCf : *cf) {
+        int columnA = std::find(ts.getNames()->begin(), ts.getNames()->end(), currCf.feature1).;
+
+    }
+
 
 }
 

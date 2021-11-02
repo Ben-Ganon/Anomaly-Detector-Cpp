@@ -35,6 +35,8 @@ public:
     int numColumns() const;
 
     string getNameOfRaw(int i) const;
+
+    vector<string> * getNames() const;
 };
 
 
