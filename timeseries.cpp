@@ -41,6 +41,16 @@ TimeSeries::TimeSeries(const char *CSVfileName) {
     file.close();
 }
 
+TimeSeries::~TimeSeries(){
+    delete this->columnNames;
+    for(vector<float> * v : *this->table) {
+        v->clear();
+    }
+    this->table->clear();
+    delete this->table;
+    delete this;
+}
+
 /**
  * prints the timeseries.
  */

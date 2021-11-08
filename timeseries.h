@@ -16,6 +16,8 @@ private:
 public:
     TimeSeries(const char *CSVfileName);
 
+    ~TimeSeries();
+
     void printTable();
 
     void addColumn(vector<float> *column, string name);
