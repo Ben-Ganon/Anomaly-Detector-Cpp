@@ -44,25 +44,35 @@ void SimpleAnomalyDetector::learnNormal(const TimeSeries &ts) {
 
     }
 }
-
+/**
+ * detect iterates over the correlatedd features created in learnNormal,
+ * then measures each point's distance from the linear regression line of the two cf's,
+ * if a point is farther away than the threshold, detect adds an anomaly report to the vector,
+ * then returns the vector.
+ * @param ts - the desired timeseries to find anomalies in
+ * @return
+ */
 vector<AnomalyReport> SimpleAnomalyDetector::detect(const TimeSeries &ts) {
-    //TODO Auto-generated destructor stub
     auto anomalies = new vector<AnomalyReport>;
-
+    //iteration over cf's
     for (correlatedFeatures currCf : *cf) {
+        //the two columns from the timeseries
         vector<float> col1 = ts.getColumn(currCf.col1);
         vector<float> col2 = ts.getColumn(currCf.col2);
+        //iterating over each line in the columns
         for (int i = 0; i < col1.size(); i++) {
             Point *currP = new Point(col1.at(i), col2.at(i));
+            //checking if the point is too far away from lin_reg
             if (dev(*currP, currCf.lin_reg) > currCf.threshold) {
+                //creating a new anomaly report
                 string desc = currCf.feature1 + "-" + currCf.feature2;
                 AnomalyReport anom = AnomalyReport(desc, i);
                 anomalies->push_back(anom);
             }
             delete currP;
         }
-
     }
+    return *anomalies;
 }
 
 /**
