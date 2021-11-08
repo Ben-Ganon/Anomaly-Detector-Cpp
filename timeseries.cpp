@@ -41,7 +41,7 @@ TimeSeries::TimeSeries(const char *CSVfileName) {
     }
     file.close();
 }
-
+//test
 TimeSeries::~TimeSeries(){
     for(std::string s : *this->columnNames) {
         s.clear();
