@@ -33,9 +33,7 @@ public:
 
     virtual vector<AnomalyReport> detect(const TimeSeries &ts);
 
-    vector<correlatedFeatures> getNormalModel() {
-        //return cf;
-    }
+    vector<correlatedFeatures> getNormalModel();
 
     float maxDev(vector<float> vector1, vector<float> vector2, unsigned int size,Line l);
 };

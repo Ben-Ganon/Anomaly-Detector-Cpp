@@ -69,7 +69,7 @@ vector<AnomalyReport> SimpleAnomalyDetector::detect(const TimeSeries &ts) {
             if (dev(*currP, currCf.lin_reg) > currCf.threshold) {
                 //creating a new anomaly report
                 string desc = currCf.feature1 + "-" + currCf.feature2;
-                AnomalyReport anom = AnomalyReport(desc, i);
+                AnomalyReport anom = AnomalyReport(desc, i+1);
                 anomalies->push_back(anom);
             }
             delete currP;
