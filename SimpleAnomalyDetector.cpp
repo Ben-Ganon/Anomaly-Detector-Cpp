@@ -11,6 +11,7 @@ SimpleAnomalyDetector::SimpleAnomalyDetector() {
 SimpleAnomalyDetector::~SimpleAnomalyDetector() {
     //TODO Auto-generated destructor stub
     this->cf->clear();
+    delete cf;
 }
 
 
@@ -47,12 +48,21 @@ void SimpleAnomalyDetector::learnNormal(const TimeSeries &ts) {
 vector<AnomalyReport> SimpleAnomalyDetector::detect(const TimeSeries &ts) {
     //TODO Auto-generated destructor stub
     auto anomalies = new vector<AnomalyReport>;
+
     for (correlatedFeatures currCf : *cf) {
-        int columnA = std::find(ts.getNames()->begin(), ts.getNames()->end(), currCf.feature1).;
+        vector<float> col1 = ts.getColumn(currCf.col1);
+        vector<float> col2 = ts.getColumn(currCf.col2);
+        for (int i = 0; i < col1.size(); i++) {
+            Point *currP = new Point(col1.at(i), col2.at(i));
+            if (dev(*currP, currCf.lin_reg) > currCf.threshold) {
+                string desc = currCf.feature1 + "-" + currCf.feature2;
+                AnomalyReport anom = AnomalyReport(desc, i);
+                anomalies->push_back(anom);
+            }
+            delete currP;
+        }
 
     }
-
-
 }
 
 /**

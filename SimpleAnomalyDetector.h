@@ -11,7 +11,8 @@
 #include <math.h>
 
 struct correlatedFeatures {
-    string feature1, feature2;  // names of the correlated features
+    string feature1, feature2;// names of the correlated features
+    int col1, col2;
     float correlation;
     Line lin_reg;
     float threshold;
