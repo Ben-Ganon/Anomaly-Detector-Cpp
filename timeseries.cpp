@@ -7,31 +7,32 @@
 #include <algorithm>
 
 TimeSeries::TimeSeries(const char *CSVfileName) {
-    ifstream file;
+    std::ifstream file;
     //openning the file given
     file.open(CSVfileName);
     //a line string to hold the current line in the file as we iterate
-    string line;
+    std::string line;
     //word string to hold the current word
-    string word;
+    std::string word;
     //insert the fist line
     getline(file, line);
-    stringstream stream(line);
+    std::stringstream stream(line);
     //the first raw , the categories
-    vector<string> firstLine;
+    std::vector<std::string> firstLine;
 
-    columnNames = new vector<string>;
+    columnNames = new std::vector<std::string>;
     //while loop goes through each word in the line and insert it into columnNames
     while (getline(stream, word, ',')) {
         columnNames->push_back(word);
     }
-    table = new vector<vector<float>*>;
+    table = new std::vector<std::vector<float>*>;
     for(int i = 0; i < columnNames->size(); i++) {
-        table->push_back(new vector<float>);
+        auto *p = new std::vector<float>;
+        table->push_back(p);
     }
     //insert the values
     while (getline(file, line)) {
-        stringstream floatStream(line);
+        std::stringstream floatStream(line);
         int place = 0;
         while (getline(floatStream, word, ',')) {
            this->table->at(place)->push_back(stof(word));
@@ -42,28 +43,32 @@ TimeSeries::TimeSeries(const char *CSVfileName) {
 }
 
 TimeSeries::~TimeSeries(){
+    for(std::string s : *this->columnNames) {
+        s.clear();
+    }
+    this->columnNames->clear();
     delete this->columnNames;
-    for(vector<float> * v : *this->table) {
+    for(std::vector<float> * v : *this->table) {
         v->clear();
+        delete v;
     }
     this->table->clear();
     delete this->table;
-    delete this;
 }
 
 /**
  * prints the timeseries.
  */
 void TimeSeries::printTable() {
-    for (string s: *columnNames) {
-        cout << s;
+    for (std::string s: *columnNames) {
+        std::cout << s;
     }
-    cout << endl;
+    std::cout << std::endl;
     for (int i = 0; i < this->table->at(0)->size(); i++) {
-        for (vector<float> *v: *this->table) {
-            cout << v->at(i) << "    ";
+        for (std::vector<float> *v: *this->table) {
+            std::cout << v->at(i) << "    ";
         }
-    cout << endl;
+    std::cout << std::endl;
     }
 }
 /**
@@ -71,10 +76,10 @@ void TimeSeries::printTable() {
  * @param column - the column vector given to add
  * @param name - name of the column to add to the columnNames vector
  */
-void TimeSeries::addColumn(vector<float>* column, string name) {
+void TimeSeries::addColumn(std::vector<float>* column, std::string name) {
     //adding the name to the column vector
     columnNames->push_back(name);
-    vector<float>* inCol = copyVector(column);
+    std::vector<float>* inCol = copyVector(column);
     this->table->push_back(inCol);
 
 }
@@ -83,9 +88,9 @@ void TimeSeries::addColumn(vector<float>* column, string name) {
  * adds a new row to the timeseries.
  * @param values
  */
-void TimeSeries::addRow(vector<float> values) {
+void TimeSeries::addRow(std::vector<float> values) {
     if (values.size() > this->table->size() || values.size() < this->table->size()) {
-        cout << "number of columns is mismatched!";
+        std::cout << "number of columns is mismatched!";
         exit(1);
     }
     for (int i = 0; i < this->table->size(); i++) {
@@ -98,7 +103,7 @@ void TimeSeries::addRow(vector<float> values) {
  * @param column
  * @return
  */
-vector<float> TimeSeries::getColumn(int column) const {
+std::vector<float> TimeSeries::getColumn(int column) const {
     return *this->table->at(column);
 }
 
@@ -107,9 +112,9 @@ vector<float> TimeSeries::getColumn(int column) const {
  * @param row
  * @return
  */
-vector<float> TimeSeries::getRow(int row) {
-    vector<float> f;
-    for (vector<float>* v : *this->table) {
+std::vector<float> TimeSeries::getRow(int row) {
+    std::vector<float> f;
+    for (std::vector<float>* v : *this->table) {
         f.push_back(v->at(row));
     }
     return f;
@@ -140,8 +145,8 @@ void TimeSeries::setCell(int row, int column, float val) {
  * @param v
  * @return
  */
-vector<float>* TimeSeries::copyVector(vector<float>* v) {
-    auto* newV = new vector<float>;
+std::vector<float>* TimeSeries::copyVector(std::vector<float>* v) {
+    auto* newV = new std::vector<float>;
     for(int i = 0; i < v->size(); i++) {
         newV->push_back(v->at(i));
     }
@@ -156,9 +161,9 @@ int TimeSeries::numColumns() const {
     return this->columnNames->size();
 }
 
-string TimeSeries::getNameOfRaw(int i) const{
+std::string TimeSeries::getNameOfRaw(int i) const{
     return this->columnNames->at(i);
 }
-vector<string>* TimeSeries::getNames() const {
+std::vector<std::string>* TimeSeries::getNames() const {
     return this->columnNames;
 }
