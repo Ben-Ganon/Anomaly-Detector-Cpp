@@ -6,12 +6,6 @@
 
 #IncludeRegexTransform: 
 
-/home/ben/CLionProjects/Ex1Task2/main.cpp
-iostream
--
-timeseries.cpp
-/home/ben/CLionProjects/Ex1Task2/timeseries.cpp
-
 /home/ben/CLionProjects/Ex1Task2/timeseries.cpp
 timeseries.h
 /home/ben/CLionProjects/Ex1Task2/timeseries.h

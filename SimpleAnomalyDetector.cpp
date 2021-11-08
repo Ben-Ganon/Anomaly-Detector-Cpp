@@ -86,6 +86,10 @@ void SimpleAnomalyDetector::addCf(correlatedFeatures features1) {
     this->cf->push_back(features1);
 }
 
+vector<correlatedFeatures> SimpleAnomalyDetector::getNormalModel() {
+    return *this->cf;
+}
+
 float SimpleAnomalyDetector::maxDev(vector<float> vector1, vector<float> vector2, unsigned int size, Line l) {
     float tempMax;
     float maxNum = 0;
