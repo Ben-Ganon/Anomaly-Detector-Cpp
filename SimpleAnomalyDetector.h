@@ -13,7 +13,7 @@
 struct correlatedFeatures {
     string feature1, feature2;// names of the correlated features
     int col1, col2;
-    float correlation;
+    float correltion;
     Line lin_reg;
     float threshold;
 };
@@ -37,6 +37,7 @@ public:
         //return cf;
     }
 
+    float maxDev(vector<float> vector1, vector<float> vector2, unsigned int size,Line l);
 };
 
 
