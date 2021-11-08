@@ -13,7 +13,7 @@
 struct correlatedFeatures {
     string feature1, feature2;// names of the correlated features
     int col1, col2;
-    float correlation;
+    float corrlation;
     Line lin_reg;
     float threshold;
 };
@@ -21,7 +21,7 @@ struct correlatedFeatures {
 
 class SimpleAnomalyDetector : public TimeSeriesAnomalyDetector {
     //this vector is a dynamic array of correlated features.
-    vector<correlatedFeatures>* cf;
+    vector<correlatedFeatures> *cf;
 public:
     SimpleAnomalyDetector();
 
@@ -33,8 +33,8 @@ public:
 
     virtual vector<AnomalyReport> detect(const TimeSeries &ts);
 
-    vector<correlatedFeatures> getNormalModel() {
-        //return cf;
+    vector<correlatedFeatures> getNormalModel(){
+        return *cf;
     }
 
     float maxDev(vector<float> vector1, vector<float> vector2, unsigned int size,Line l);

@@ -32,7 +32,7 @@ void SimpleAnomalyDetector::learnNormal(const TimeSeries &ts) {
         if (-1 != index) {
             //remember delete this
             correlatedFeatures *correlatedFeature = new correlatedFeatures();
-            correlatedFeature->correlation = m;
+            correlatedFeature->corrlation = m;
             //need to change the function operation in timeSeries - need to return vector with floats
             correlatedFeature->feature1 = ts.getNameOfRaw(i);
             correlatedFeature->feature2 = ts.getNameOfRaw(index);
@@ -90,15 +90,11 @@ float SimpleAnomalyDetector::maxDev(vector<float> vector1, vector<float> vector2
     float tempMax;
     float maxNum = 0;
     for (int i = 0; i < size; ++i) {
-        //point from the two values of the specific columns
-        Point *pTemp = new Point(vector1.at(i), vector2.at(i));
         //the maximum distance from the line
-        tempMax = dev(*pTemp, l);
+        tempMax = dev(Point(vector1.at(i), vector2.at(i)), l);
         if (maxNum < tempMax) {
             maxNum = tempMax;
         }
     }
     return maxNum;
 }
-
-
