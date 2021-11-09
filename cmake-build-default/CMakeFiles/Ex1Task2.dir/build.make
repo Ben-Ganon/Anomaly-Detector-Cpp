@@ -79,22 +79,9 @@ CMakeFiles/Ex1Task2.dir/MainTrain.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Ex1Task2.dir/MainTrain.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ben/CLionProjects/Ex1Task2/MainTrain.cpp -o CMakeFiles/Ex1Task2.dir/MainTrain.cpp.s
 
-CMakeFiles/Ex1Task2.dir/timeseries.cpp.o: CMakeFiles/Ex1Task2.dir/flags.make
-CMakeFiles/Ex1Task2.dir/timeseries.cpp.o: ../timeseries.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ben/CLionProjects/Ex1Task2/cmake-build-default/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Ex1Task2.dir/timeseries.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Ex1Task2.dir/timeseries.cpp.o -c /home/ben/CLionProjects/Ex1Task2/timeseries.cpp
-
-CMakeFiles/Ex1Task2.dir/timeseries.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Ex1Task2.dir/timeseries.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ben/CLionProjects/Ex1Task2/timeseries.cpp > CMakeFiles/Ex1Task2.dir/timeseries.cpp.i
-
-CMakeFiles/Ex1Task2.dir/timeseries.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Ex1Task2.dir/timeseries.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ben/CLionProjects/Ex1Task2/timeseries.cpp -o CMakeFiles/Ex1Task2.dir/timeseries.cpp.s
-
 CMakeFiles/Ex1Task2.dir/anomaly_detection_util.cpp.o: CMakeFiles/Ex1Task2.dir/flags.make
 CMakeFiles/Ex1Task2.dir/anomaly_detection_util.cpp.o: ../anomaly_detection_util.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ben/CLionProjects/Ex1Task2/cmake-build-default/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Ex1Task2.dir/anomaly_detection_util.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ben/CLionProjects/Ex1Task2/cmake-build-default/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Ex1Task2.dir/anomaly_detection_util.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Ex1Task2.dir/anomaly_detection_util.cpp.o -c /home/ben/CLionProjects/Ex1Task2/anomaly_detection_util.cpp
 
 CMakeFiles/Ex1Task2.dir/anomaly_detection_util.cpp.i: cmake_force
@@ -107,7 +94,7 @@ CMakeFiles/Ex1Task2.dir/anomaly_detection_util.cpp.s: cmake_force
 
 CMakeFiles/Ex1Task2.dir/SimpleAnomalyDetector.cpp.o: CMakeFiles/Ex1Task2.dir/flags.make
 CMakeFiles/Ex1Task2.dir/SimpleAnomalyDetector.cpp.o: ../SimpleAnomalyDetector.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ben/CLionProjects/Ex1Task2/cmake-build-default/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Ex1Task2.dir/SimpleAnomalyDetector.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ben/CLionProjects/Ex1Task2/cmake-build-default/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Ex1Task2.dir/SimpleAnomalyDetector.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Ex1Task2.dir/SimpleAnomalyDetector.cpp.o -c /home/ben/CLionProjects/Ex1Task2/SimpleAnomalyDetector.cpp
 
 CMakeFiles/Ex1Task2.dir/SimpleAnomalyDetector.cpp.i: cmake_force
@@ -118,20 +105,33 @@ CMakeFiles/Ex1Task2.dir/SimpleAnomalyDetector.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Ex1Task2.dir/SimpleAnomalyDetector.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ben/CLionProjects/Ex1Task2/SimpleAnomalyDetector.cpp -o CMakeFiles/Ex1Task2.dir/SimpleAnomalyDetector.cpp.s
 
+CMakeFiles/Ex1Task2.dir/timeseries.cpp.o: CMakeFiles/Ex1Task2.dir/flags.make
+CMakeFiles/Ex1Task2.dir/timeseries.cpp.o: ../timeseries.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ben/CLionProjects/Ex1Task2/cmake-build-default/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Ex1Task2.dir/timeseries.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Ex1Task2.dir/timeseries.cpp.o -c /home/ben/CLionProjects/Ex1Task2/timeseries.cpp
+
+CMakeFiles/Ex1Task2.dir/timeseries.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Ex1Task2.dir/timeseries.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ben/CLionProjects/Ex1Task2/timeseries.cpp > CMakeFiles/Ex1Task2.dir/timeseries.cpp.i
+
+CMakeFiles/Ex1Task2.dir/timeseries.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Ex1Task2.dir/timeseries.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ben/CLionProjects/Ex1Task2/timeseries.cpp -o CMakeFiles/Ex1Task2.dir/timeseries.cpp.s
+
 # Object files for target Ex1Task2
 Ex1Task2_OBJECTS = \
 "CMakeFiles/Ex1Task2.dir/MainTrain.cpp.o" \
-"CMakeFiles/Ex1Task2.dir/timeseries.cpp.o" \
 "CMakeFiles/Ex1Task2.dir/anomaly_detection_util.cpp.o" \
-"CMakeFiles/Ex1Task2.dir/SimpleAnomalyDetector.cpp.o"
+"CMakeFiles/Ex1Task2.dir/SimpleAnomalyDetector.cpp.o" \
+"CMakeFiles/Ex1Task2.dir/timeseries.cpp.o"
 
 # External object files for target Ex1Task2
 Ex1Task2_EXTERNAL_OBJECTS =
 
 Ex1Task2: CMakeFiles/Ex1Task2.dir/MainTrain.cpp.o
-Ex1Task2: CMakeFiles/Ex1Task2.dir/timeseries.cpp.o
 Ex1Task2: CMakeFiles/Ex1Task2.dir/anomaly_detection_util.cpp.o
 Ex1Task2: CMakeFiles/Ex1Task2.dir/SimpleAnomalyDetector.cpp.o
+Ex1Task2: CMakeFiles/Ex1Task2.dir/timeseries.cpp.o
 Ex1Task2: CMakeFiles/Ex1Task2.dir/build.make
 Ex1Task2: CMakeFiles/Ex1Task2.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ben/CLionProjects/Ex1Task2/cmake-build-default/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable Ex1Task2"

@@ -11,6 +11,7 @@
 #include <math.h>
 #define THRESHOLD 1.1
 #define PEARSON 0.9
+
 struct correlatedFeatures {
     string feature1, feature2;// names of the correlated features
     int col1, col2;
