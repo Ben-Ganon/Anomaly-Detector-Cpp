@@ -9,8 +9,8 @@
 #include <algorithm>
 #include <string.h>
 #include <math.h>
-#define THRESHOLD 1.1
-#define PEARSON 0.9
+#define THRESHOLD 1.2
+#define PEARSON 0.90
 
 struct correlatedFeatures {
     string feature1, feature2;// names of the correlated features
