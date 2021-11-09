@@ -3,20 +3,17 @@
 #include "anomaly_detection_util.h"
 
 SimpleAnomalyDetector::SimpleAnomalyDetector() {
-	//TODO Auto-generated constructor stub
     this->cf = new vector<correlatedFeatures>;
 
 }
 
 SimpleAnomalyDetector::~SimpleAnomalyDetector() {
-    //TODO Auto-generated destructor stub
     this->cf->clear();
     delete cf;
 }
 
 
 void SimpleAnomalyDetector::learnNormal(const TimeSeries &ts) {
-    //TODO Auto-generated destructor stub
     float m, p;
     int index;
     for (int i = 0; i < ts.numColumns(); i++) {
@@ -30,23 +27,26 @@ void SimpleAnomalyDetector::learnNormal(const TimeSeries &ts) {
             }
         }
         if (-1 != index) {
-            //remember delete this
-            correlatedFeatures *correlatedFeature = new correlatedFeatures();
-            correlatedFeature->corrlation = m;
-            //need to change the function operation in timeSeries - need to return vector with floats
-            correlatedFeature->feature1 = ts.getNameOfRaw(i);
-            correlatedFeature->feature2 = ts.getNameOfRaw(index);
-            correlatedFeature->col1 = i;
-            correlatedFeature->col2 = index;
-            //need to add to those two:
-            correlatedFeature->lin_reg = linear_reg(ts.getColumn(i), ts.getColumn(index), ts.getColumn(i).size());
-            correlatedFeature->threshold = maxDev(ts.getColumn(i), ts.getColumn(index), ts.getColumn(i).size(),
-                                                  correlatedFeature->lin_reg);
-            cf->push_back(*correlatedFeature);
+            if (m >= PEARSON) {
+                //remember delete this
+                correlatedFeatures *correlatedFeature = new correlatedFeatures();
+                correlatedFeature->corrlation = m;
+                //need to change the function operation in timeSeries - need to return vector with floats
+                correlatedFeature->feature1 = ts.getNameOfRaw(i);
+                correlatedFeature->feature2 = ts.getNameOfRaw(index);
+                correlatedFeature->col1 = i;
+                correlatedFeature->col2 = index;
+                //need to add to those two:
+                correlatedFeature->lin_reg = linear_reg(ts.getColumn(i), ts.getColumn(index), ts.getColumn(i).size());
+                correlatedFeature->threshold = maxDev(ts.getColumn(i), ts.getColumn(index), ts.getColumn(i).size(),
+                                                      correlatedFeature->lin_reg) * THRESHOLD;
+                cf->push_back(*correlatedFeature);
+            }
         }
 
     }
 }
+
 /**
  * detect iterates over the correlatedd features created in learnNormal,
  * then measures each point's distance from the linear regression line of the two cf's,
@@ -58,7 +58,7 @@ void SimpleAnomalyDetector::learnNormal(const TimeSeries &ts) {
 vector<AnomalyReport> SimpleAnomalyDetector::detect(const TimeSeries &ts) {
     auto anomalies = new vector<AnomalyReport>;
     //iteration over cf's
-    for (correlatedFeatures currCf : *cf) {
+    for (correlatedFeatures currCf: *cf) {
         //the two columns from the timeseries
         vector<float> col1 = ts.getColumn(currCf.col1);
         vector<float> col2 = ts.getColumn(currCf.col2);
@@ -69,7 +69,7 @@ vector<AnomalyReport> SimpleAnomalyDetector::detect(const TimeSeries &ts) {
             if (dev(*currP, currCf.lin_reg) > currCf.threshold) {
                 //creating a new anomaly report
                 string desc = currCf.feature1 + "-" + currCf.feature2;
-                AnomalyReport anom = AnomalyReport(desc, i+1);
+                AnomalyReport anom = AnomalyReport(desc, i + 1);
                 anomalies->push_back(anom);
             }
             delete currP;

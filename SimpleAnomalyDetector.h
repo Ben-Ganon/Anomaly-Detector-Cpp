@@ -9,15 +9,15 @@
 #include <algorithm>
 #include <string.h>
 #include <math.h>
-
+#define THRESHOLD 1.1
+#define PEARSON 0.9
 struct correlatedFeatures {
     string feature1, feature2;// names of the correlated features
     int col1, col2;
-    float correlation;
+    float corrlation;
     Line lin_reg;
     float threshold;
 };
-
 
 class SimpleAnomalyDetector : public TimeSeriesAnomalyDetector {
     //this vector is a dynamic array of correlated features.
