@@ -129,6 +129,30 @@ Ex1Task2/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Ex1Task2.dir/build.make CMakeFiles/Ex1Task2.dir/build
 .PHONY : Ex1Task2/fast
 
+MainTrain.o: MainTrain.cpp.o
+.PHONY : MainTrain.o
+
+# target to build an object file
+MainTrain.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Ex1Task2.dir/build.make CMakeFiles/Ex1Task2.dir/MainTrain.cpp.o
+.PHONY : MainTrain.cpp.o
+
+MainTrain.i: MainTrain.cpp.i
+.PHONY : MainTrain.i
+
+# target to preprocess a source file
+MainTrain.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Ex1Task2.dir/build.make CMakeFiles/Ex1Task2.dir/MainTrain.cpp.i
+.PHONY : MainTrain.cpp.i
+
+MainTrain.s: MainTrain.cpp.s
+.PHONY : MainTrain.s
+
+# target to generate assembly for a file
+MainTrain.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Ex1Task2.dir/build.make CMakeFiles/Ex1Task2.dir/MainTrain.cpp.s
+.PHONY : MainTrain.cpp.s
+
 SimpleAnomalyDetector.o: SimpleAnomalyDetector.cpp.o
 .PHONY : SimpleAnomalyDetector.o
 
@@ -177,29 +201,29 @@ anomaly_detection_util.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Ex1Task2.dir/build.make CMakeFiles/Ex1Task2.dir/anomaly_detection_util.cpp.s
 .PHONY : anomaly_detection_util.cpp.s
 
-main.o: main.cpp.o
-.PHONY : main.o
+timeseries.o: timeseries.cpp.o
+.PHONY : timeseries.o
 
 # target to build an object file
-main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Ex1Task2.dir/build.make CMakeFiles/Ex1Task2.dir/main.cpp.o
-.PHONY : main.cpp.o
+timeseries.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Ex1Task2.dir/build.make CMakeFiles/Ex1Task2.dir/timeseries.cpp.o
+.PHONY : timeseries.cpp.o
 
-main.i: main.cpp.i
-.PHONY : main.i
+timeseries.i: timeseries.cpp.i
+.PHONY : timeseries.i
 
 # target to preprocess a source file
-main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Ex1Task2.dir/build.make CMakeFiles/Ex1Task2.dir/main.cpp.i
-.PHONY : main.cpp.i
+timeseries.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Ex1Task2.dir/build.make CMakeFiles/Ex1Task2.dir/timeseries.cpp.i
+.PHONY : timeseries.cpp.i
 
-main.s: main.cpp.s
-.PHONY : main.s
+timeseries.s: timeseries.cpp.s
+.PHONY : timeseries.s
 
 # target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Ex1Task2.dir/build.make CMakeFiles/Ex1Task2.dir/main.cpp.s
-.PHONY : main.cpp.s
+timeseries.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Ex1Task2.dir/build.make CMakeFiles/Ex1Task2.dir/timeseries.cpp.s
+.PHONY : timeseries.cpp.s
 
 # Help Target
 help:
@@ -210,15 +234,18 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... Ex1Task2"
+	@echo "... MainTrain.o"
+	@echo "... MainTrain.i"
+	@echo "... MainTrain.s"
 	@echo "... SimpleAnomalyDetector.o"
 	@echo "... SimpleAnomalyDetector.i"
 	@echo "... SimpleAnomalyDetector.s"
 	@echo "... anomaly_detection_util.o"
 	@echo "... anomaly_detection_util.i"
 	@echo "... anomaly_detection_util.s"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
+	@echo "... timeseries.o"
+	@echo "... timeseries.i"
+	@echo "... timeseries.s"
 .PHONY : help
 
 

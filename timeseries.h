@@ -7,36 +7,37 @@
 #include <string>
 #include <iostream>
 
-using namespace std;
 
 class TimeSeries {
 private:
-    vector<vector<float> *> *table;
-    vector<string> *columnNames;
+    std::vector<std::vector<float> *> *table;
+    std::vector<std::string> *columnNames;
 public:
     TimeSeries(const char *CSVfileName);
 
+    ~TimeSeries();
+
     void printTable();
 
-    void addColumn(vector<float> *column, string name);
+    void addColumn(std::vector<float> *column, std::string name);
 
-    void addRow(vector<float> values);
+    void addRow(std::vector<float> values);
 
-    vector<float> getColumn(int column) const;
+    std::vector<float> getColumn(int column) const;
 
-    vector<float> getRow(int row);
+    std::vector<float> getRow(int row);
 
     float getCell(int row, int column) const;
 
     void setCell(int row, int column, float val);
 
-    vector<float> *copyVector(vector<float> *v);
+    std::vector<float> *copyVector(std::vector<float> *v);
 
     int numColumns() const;
 
-    string getNameOfRaw(int i) const;
+    std::string getNameOfRaw(int i) const;
 
-    vector<string> * getNames() const;
+    std::vector<std::string> * getNames() const;
 };
 
 

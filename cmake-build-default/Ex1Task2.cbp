@@ -82,6 +82,9 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/home/ben/CLionProjects/Ex1Task2/MainTrain.cpp">
+			<Option target="Ex1Task2"/>
+		</Unit>
 		<Unit filename="/home/ben/CLionProjects/Ex1Task2/SimpleAnomalyDetector.cpp">
 			<Option target="Ex1Task2"/>
 		</Unit>
@@ -94,7 +97,10 @@
 		<Unit filename="/home/ben/CLionProjects/Ex1Task2/anomaly_detection_util.h">
 			<Option target="Ex1Task2"/>
 		</Unit>
-		<Unit filename="/home/ben/CLionProjects/Ex1Task2/main.cpp">
+		<Unit filename="/home/ben/CLionProjects/Ex1Task2/timeseries.cpp">
+			<Option target="Ex1Task2"/>
+		</Unit>
+		<Unit filename="/home/ben/CLionProjects/Ex1Task2/timeseries.h">
 			<Option target="Ex1Task2"/>
 		</Unit>
 		<Unit filename="/home/ben/CLionProjects/Ex1Task2/CMakeLists.txt">
