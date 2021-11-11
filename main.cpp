@@ -44,7 +44,6 @@ int main() {
     for (float i: values)
         std::cout << i << ' ';
     cout<<endl;
-
     delete a;
     return 0;
 }
