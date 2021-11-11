@@ -111,6 +111,10 @@ Line linear_reg(Point **points, int size) {
     return Line(a, b);
 }
 
+/**
+ * linear_reg- performs a linear regression and returns the line equation
+ * @return Line - returns the line equation from the linear regression operation on the given points
+ */
 Line linear_reg(std::vector<float> v1, std::vector<float> v2, int size){
     float* feature1 = v1.data();
     float* feature2= v2.data();

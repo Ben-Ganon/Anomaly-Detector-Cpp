@@ -12,7 +12,7 @@
 #define THRESHOLD 1.2
 #define PEARSON 0.9
 struct correlatedFeatures {
-    string feature1, feature2;// names of the correlated features
+    std::string feature1, feature2;// names of the correlated features
     int col1, col2;
     float corrlation;
     Line lin_reg;
@@ -21,7 +21,7 @@ struct correlatedFeatures {
 
 class SimpleAnomalyDetector : public TimeSeriesAnomalyDetector {
     //this vector is a dynamic array of correlated features.
-    vector<correlatedFeatures>* cf;
+    std::vector<correlatedFeatures>* cf;
 public:
     SimpleAnomalyDetector();
 
@@ -31,11 +31,11 @@ public:
 
     virtual void learnNormal(const TimeSeries &ts);
 
-    virtual vector<AnomalyReport> detect(const TimeSeries &ts);
+    virtual std::vector<AnomalyReport> detect(const TimeSeries &ts);
 
-    vector<correlatedFeatures> getNormalModel();
+    std::vector<correlatedFeatures> getNormalModel();
 
-    float maxDev(vector<float> vector1, vector<float> vector2, unsigned int size,Line l);
+    float maxDev(std::vector<float> vector1, std::vector<float> vector2, unsigned int size,Line l);
 };
 
 
