@@ -34,6 +34,12 @@ time.h
 math.h
 -
 
+/home/ben/CLionProjects/Ex1Task2/SimpleAnomalyDetector.cpp
+SimpleAnomalyDetector.h
+/home/ben/CLionProjects/Ex1Task2/SimpleAnomalyDetector.h
+anomaly_detection_util.h
+/home/ben/CLionProjects/Ex1Task2/anomaly_detection_util.h
+
 /home/ben/CLionProjects/Ex1Task2/SimpleAnomalyDetector.h
 anomaly_detection_util.h
 /home/ben/CLionProjects/Ex1Task2/anomaly_detection_util.h

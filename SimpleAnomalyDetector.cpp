@@ -24,7 +24,7 @@ void SimpleAnomalyDetector::learnNormal(const TimeSeries &ts) {
         m = 0;
         index = -1;
         for (int j = i + 1; j < ts.numColumns(); j++) {
-            p = pearson(convertVector(ts.getColumn(i)), convertVector(ts.getColumn(j)), ts.getColumn(i).size());
+            p = pearson(ts.getColumn(i).data(), ts.getColumn(j).data(), ts.getColumn(i).size());
             if (p > m) {
                 m = p;
                 index = j;
@@ -60,7 +60,7 @@ void SimpleAnomalyDetector::learnNormal(const TimeSeries &ts) {
  * @return
  */
 vector<AnomalyReport> SimpleAnomalyDetector::detect(const TimeSeries &ts) {
-    auto anomalies = new vector<AnomalyReport>;
+    vector<AnomalyReport> anomalies;
     //iteration over cf's
     for (correlatedFeatures currCf: *cf) {
         //the two columns from the timeseries
@@ -74,12 +74,12 @@ vector<AnomalyReport> SimpleAnomalyDetector::detect(const TimeSeries &ts) {
                 //creating a new anomaly report
                 string desc = currCf.feature1 + "-" + currCf.feature2;
                 AnomalyReport anom = AnomalyReport(desc, i + 1);
-                anomalies->push_back(anom);
+                anomalies.push_back(anom);
             }
             delete currP;
         }
     }
-    return *anomalies;
+    return anomalies;
 }
 
 /**

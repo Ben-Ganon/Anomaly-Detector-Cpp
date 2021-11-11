@@ -112,13 +112,14 @@ Line linear_reg(Point **points, int size) {
 }
 
 Line linear_reg(std::vector<float> v1, std::vector<float> v2, int size){
-    float* feature1 = convertVector(v1);
-    float* feature2= convertVector(v2);
+    float* feature1 = v1.data();
+    float* feature2= v2.data();
     //𝑎=𝐶𝑂𝑉(𝑥,𝑦)/𝑉𝐴𝑅(𝑥)
     float a = cov(feature1, feature2, size) / var(feature1, size);
     //𝑏=𝑦̅−𝑎𝑥̅ (𝑥̅ and 𝑦̅ are the avg of x and y)
     float b = avg(feature2, size) - a * avg(feature1, size);
     return Line(a, b);
+
 }
 /**
  * dev - returns the deviation between point p and the line equation of the points
@@ -146,21 +147,4 @@ float dev(Point p, Line l) {
     //return the absolute value of their distance difference
     return std::abs(p.y - lineYValue);
 }
-
-/**
- * converts a vector (v) to a float array and returns a pointer to that array
- * @param v - desired vector to convert
- * @return - float*
- */
-float* convertVector(std::vector<float> v) {
-    float *fArr = new float[v.size()];
-    for (int i =0; i < v.size(); i++) {
-        fArr[i] = v.at(i);
-    }
-    return fArr;
-
-}
-
-
-
 

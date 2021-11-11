@@ -52,6 +52,5 @@ float dev(Point p, Point **points, int size);
 // returns the deviation between point p and the line
 float dev(Point p, Line l);
 
-float *convertVector(std::vector<float> v);
 
 #endif
