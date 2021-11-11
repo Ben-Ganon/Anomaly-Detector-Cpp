@@ -54,6 +54,16 @@ string.h
 math.h
 -
 
+/home/ben/CLionProjects/Ex1Task2/anomaly_detection_util.cpp
+math.h
+-
+cmath
+-
+anomaly_detection_util.h
+/home/ben/CLionProjects/Ex1Task2/anomaly_detection_util.h
+vector
+-
+
 /home/ben/CLionProjects/Ex1Task2/anomaly_detection_util.h
 vector
 -
