@@ -1,4 +1,3 @@
-
 #include "SimpleAnomalyDetector.h"
 #include "anomaly_detection_util.h"
 
@@ -34,18 +33,18 @@ void SimpleAnomalyDetector::learnNormal(const TimeSeries &ts) {
         if (-1 != index) {
             if (m >= PEARSON) {
                 //remember delete this
-                correlatedFeatures *correlatedFeature = new correlatedFeatures();
-                correlatedFeature->corrlation = m;
+                correlatedFeatures correlatedFeature;
+                correlatedFeature.corrlation = m;
                 //need to change the function operation in timeSeries - need to return vector with floats
-                correlatedFeature->feature1 = ts.getNameOfRaw(i);
-                correlatedFeature->feature2 = ts.getNameOfRaw(index);
-                correlatedFeature->col1 = i;
-                correlatedFeature->col2 = index;
+                correlatedFeature.feature1 = ts.getNameOfRaw(i);
+                correlatedFeature.feature2 = ts.getNameOfRaw(index);
+                correlatedFeature.col1 = i;
+                correlatedFeature.col2 = index;
                 //need to add to those two:
-                correlatedFeature->lin_reg = linear_reg(ts.getColumn(i), ts.getColumn(index), ts.getColumn(i).size());
-                correlatedFeature->threshold = maxDev(ts.getColumn(i), ts.getColumn(index), ts.getColumn(i).size(),
-                                                      correlatedFeature->lin_reg) * THRESHOLD;
-                cf->push_back(*correlatedFeature);
+                correlatedFeature.lin_reg = linear_reg(ts.getColumn(i), ts.getColumn(index), ts.getColumn(i).size());
+                correlatedFeature.threshold = maxDev(ts.getColumn(i), ts.getColumn(index), ts.getColumn(i).size(),
+                                                      correlatedFeature.lin_reg) * THRESHOLD;
+                cf->push_back(correlatedFeature);
             }
         }
 
