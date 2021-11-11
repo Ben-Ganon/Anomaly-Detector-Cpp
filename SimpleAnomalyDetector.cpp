@@ -8,6 +8,11 @@ SimpleAnomalyDetector::SimpleAnomalyDetector() {
 }
 
 SimpleAnomalyDetector::~SimpleAnomalyDetector() {
+    for (correlatedFeatures curr : *this->cf) {
+        curr.feature1.clear();
+        curr.feature2.clear();
+
+    }
     this->cf->clear();
     delete cf;
 }
