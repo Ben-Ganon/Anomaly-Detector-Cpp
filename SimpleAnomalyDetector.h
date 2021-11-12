@@ -1,4 +1,7 @@
-
+/* Authors:
+ * Ben Ganon - 318731007
+ * Sagiv Antebi - 318159282
+ */
 
 #ifndef SIMPLEANOMALYDETECTOR_H_
 #define SIMPLEANOMALYDETECTOR_H_
