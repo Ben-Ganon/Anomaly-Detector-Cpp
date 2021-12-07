@@ -26,7 +26,7 @@ float dist(const Point& a, const Point& b)
 // or on the boundaries of the circle
 bool is_inside(const Circle& c, const Point& p)
 {
-    return dist(c.C, p) <= c.R;
+    return dist(c.center, p) <= c.radius;
 }
 
 // The following two functions are used
@@ -167,16 +167,16 @@ int main()
     Circle mec = welzl({ { 0, 0 },
                          { 0, 1 },
                          { 1, 0 } });
-    cout << "Center = { " << mec.C.x << ", " << mec.C.y
-         << " } Radius = " << mec.R << endl;
+    cout << "Center = { " << mec.center.x << ", " << mec.center.y
+         << " } Radius = " << mec.radius << endl;
 
     Circle mec2 = welzl({ { 5, -2 },
                           { -3, -2 },
                           { -2, 5 },
                           { 1, 6 },
                           { 0, 2 } });
-    cout << "Center = { " << mec2.C.x << ", " << mec2.C.y
-         << " } Radius = " << mec2.R << endl;
+    cout << "Center = { " << mec2.center.x << ", " << mec2.center.y
+         << " } Radius = " << mec2.radius << endl;
 
     return 0;
 }
