@@ -7,6 +7,7 @@
 #include <vector>
 #include "anomaly_detection_util.h"
 #include "minCircle.h"
+
 using namespace std;
 
 // Defining infinity
@@ -156,7 +157,8 @@ Circle welzl(const vector<Point>& P)
 }
 
 Circle findMinCircle(Point** points,size_t size){
-    vector<Point> P =
+    const vector<Point> P = PointArrayToVector(points, size);
+    return welzl(P);
 }
 
 // Driver code
