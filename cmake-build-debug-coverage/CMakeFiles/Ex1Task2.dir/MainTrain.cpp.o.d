@@ -140,9 +140,8 @@ CMakeFiles/Ex1Task2.dir/MainTrain.cpp.o: \
  /usr/include/c++/9/bits/stl_uninitialized.h \
  /usr/include/c++/9/bits/stl_vector.h \
  /usr/include/c++/9/bits/stl_bvector.h /usr/include/c++/9/bits/vector.tcc \
- /home/ben/CLionProjects/AdvancedCompEx1Task2/AnomalyDetector.h \
- /home/ben/CLionProjects/AdvancedCompEx1Task2/timeseries.h \
- /usr/include/c++/9/math.h /usr/include/c++/9/cmath /usr/include/math.h \
+ /usr/include/c++/9/stdlib.h /usr/include/c++/9/math.h \
+ /usr/include/c++/9/cmath /usr/include/math.h \
  /usr/include/x86_64-linux-gnu/bits/math-vector.h \
  /usr/include/x86_64-linux-gnu/bits/libm-simd-decl-stubs.h \
  /usr/include/x86_64-linux-gnu/bits/flt-eval-method.h \
@@ -152,15 +151,8 @@ CMakeFiles/Ex1Task2.dir/MainTrain.cpp.o: \
  /usr/include/x86_64-linux-gnu/bits/mathcalls.h \
  /usr/include/x86_64-linux-gnu/bits/mathcalls-narrow.h \
  /usr/include/x86_64-linux-gnu/bits/iscanonical.h \
- /home/ben/CLionProjects/AdvancedCompEx1Task2/SimpleAnomalyDetector.h \
+ /home/ben/CLionProjects/AdvancedCompEx1Task2/minCircle.h \
  /home/ben/CLionProjects/AdvancedCompEx1Task2/anomaly_detection_util.h \
- /usr/include/c++/9/algorithm /usr/include/c++/9/utility \
- /usr/include/c++/9/bits/stl_relops.h /usr/include/c++/9/bits/stl_algo.h \
- /usr/include/c++/9/bits/algorithmfwd.h \
- /usr/include/c++/9/bits/stl_heap.h /usr/include/c++/9/bits/stl_tempbuf.h \
- /usr/include/c++/9/bits/uniform_int_dist.h /usr/include/c++/9/limits \
- /usr/include/string.h /usr/include/strings.h /usr/include/c++/9/fstream \
- /usr/include/c++/9/bits/codecvt.h \
- /usr/include/x86_64-linux-gnu/c++/9/bits/basic_file.h \
- /usr/include/x86_64-linux-gnu/c++/9/bits/c++io.h \
- /usr/include/c++/9/bits/fstream.tcc /usr/include/c++/9/stdlib.h
+ /usr/include/c++/9/chrono /usr/include/c++/9/ratio \
+ /usr/include/c++/9/limits /usr/include/c++/9/ctime \
+ /usr/include/c++/9/bits/parse_numbers.h
