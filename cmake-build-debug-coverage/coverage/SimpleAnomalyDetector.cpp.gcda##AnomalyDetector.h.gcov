@@ -1,0 +1,45 @@
+        -:    0:Source:/home/ben/CLionProjects/AdvancedCompEx1Task2/AnomalyDetector.h
+        -:    0:Graph:/home/ben/CLionProjects/AdvancedCompEx1Task2/cmake-build-debug-coverage/CMakeFiles/Ex1Task2.dir/SimpleAnomalyDetector.cpp.gcno
+        -:    0:Data:/home/ben/CLionProjects/AdvancedCompEx1Task2/cmake-build-debug-coverage/CMakeFiles/Ex1Task2.dir/SimpleAnomalyDetector.cpp.gcda
+        -:    0:Runs:1
+        -:    1:
+        -:    2:
+        -:    3:#ifndef ANOMALYDETECTOR_H_
+        -:    4:#define ANOMALYDETECTOR_H_
+        -:    5:
+        -:    6:#include <string>
+        -:    7:#include <vector>
+        -:    8:#include "timeseries.h"
+        -:    9:#include "math.h"
+        -:   10:
+        -:   11:
+        -:   12:class AnomalyReport{
+        -:   13:public:
+        -:   14:	const std::string description;
+        -:   15:	const long timeStep;
+function _ZN13AnomalyReportC2ENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEl called 100 returned 100% blocks executed 100%
+      100:   16:	AnomalyReport(std::string description, long timeStep):description(description),timeStep(timeStep){}
+      100:   16-block  0
+call    0 returned 100
+        -:   17:};
+        -:   18:
+        -:   19:class TimeSeriesAnomalyDetector {
+        -:   20:public:
+        -:   21:	virtual void learnNormal(const TimeSeries& ts)=0;
+        -:   22:	virtual std::vector<AnomalyReport> detect(const TimeSeries& ts)=0;
+     100*:   23:	virtual ~TimeSeriesAnomalyDetector(){}
+------------------
+_ZN25TimeSeriesAnomalyDetectorD0Ev:
+function _ZN25TimeSeriesAnomalyDetectorD0Ev called 0 returned 0% blocks executed 0%
+    #####:   23:	virtual ~TimeSeriesAnomalyDetector(){}
+    %%%%%:   23-block  0
+call    0 never executed
+call    1 never executed
+------------------
+_ZN25TimeSeriesAnomalyDetectorD2Ev:
+function _ZN25TimeSeriesAnomalyDetectorD2Ev called 100 returned 100% blocks executed 100%
+      100:   23:	virtual ~TimeSeriesAnomalyDetector(){}
+------------------
+        -:   24:};
+        -:   25:
+        -:   26:#endif /* ANOMALYDETECTOR_H_ */

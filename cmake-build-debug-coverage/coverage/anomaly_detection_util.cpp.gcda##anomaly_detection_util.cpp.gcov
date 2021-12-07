@@ -1,0 +1,247 @@
+        -:    0:Source:/home/ben/CLionProjects/AdvancedCompEx1Task2/anomaly_detection_util.cpp
+        -:    0:Graph:/home/ben/CLionProjects/AdvancedCompEx1Task2/cmake-build-debug-coverage/CMakeFiles/Ex1Task2.dir/anomaly_detection_util.cpp.gcno
+        -:    0:Data:/home/ben/CLionProjects/AdvancedCompEx1Task2/cmake-build-debug-coverage/CMakeFiles/Ex1Task2.dir/anomaly_detection_util.cpp.gcda
+        -:    0:Runs:1
+        -:    1:/* Authors:
+        -:    2: * Ben Ganon - 318731007
+        -:    3: * Sagiv Antebi - 318159282
+        -:    4: */
+        -:    5:
+        -:    6:#include <math.h>
+        -:    7:#include <cmath>
+        -:    8:#include "anomaly_detection_util.h"
+        -:    9:#include <vector>
+        -:   10:
+        -:   11:
+        -:   12:/**
+        -:   13: * avg - calculate the avg of the x array numbers
+        -:   14: * @param x  - the float array
+        -:   15: * @param size  - the size of the array
+        -:   16: * @return the avg
+        -:   17: */
+function _Z3avgPfi called 4200 returned 100% blocks executed 100%
+     4200:   18:float avg(float *x, int size) {
+     4200:   19:    float sum = 0;
+   424200:   20:    for (int i = 0; i < size; ++i) {
+     4200:   20-block  0
+   424200:   20-block  1
+branch  0 taken 420000 (fallthrough)
+branch  1 taken 4200
+   420000:   21:        sum += x[i];
+   420000:   21-block  0
+        -:   22:    }
+     4200:   23:    return sum / size;
+     4200:   23-block  0
+        -:   24:}
+        -:   25:
+        -:   26:/**
+        -:   27: * multiply array x by array y, one cell at a time-
+        -:   28: * x1*y1, x2*y2, etc.
+        -:   29: * @param x - float array
+        -:   30: * @param y - float array
+        -:   31: * @param size - size of both arrays
+        -:   32: * @return - new array z that contains the multiplication of each cell
+        -:   33: */
+function _Z13multiplyArrayPfS_i called 800 returned 100% blocks executed 89%
+      800:   34:float *multiplyArray(float *x, float *y, int size) {
+        -:   35:    float *multi;
+     800*:   36:    multi = new float[size];
+      800:   36-block  0
+branch  0 taken 800 (fallthrough)
+branch  1 taken 0
+      800:   36-block  1
+    %%%%%:   36-block  2
+call    2 never executed
+      800:   36-block  3
+call    3 returned 800
+    80800:   37:    for (int i = 0; i < size; i++) {
+    80800:   37-block  0
+branch  0 taken 80000 (fallthrough)
+branch  1 taken 800
+    80000:   38:        multi[i] = x[i] * y[i];
+    80000:   38-block  0
+        -:   39:    }
+      800:   40:    return multi;
+      800:   40-block  0
+        -:   41:
+        -:   42:}
+        -:   43:// returns the variance of X and Y
+        -:   44:/**
+        -:   45: * var -  returns the variance of X and Y
+        -:   46: * @param x  - the float array
+        -:   47: * @param size  - the size of the array
+        -:   48: * @return - the variance of X and Y
+        -:   49: */
+function _Z3varPfi called 1400 returned 100% blocks executed 100%
+     1400:   50:float var(float *x, int size) {
+        -:   51:    //the mean of the group
+     1400:   52:    float mean = avg(x, size);
+     1400:   52-block  0
+call    0 returned 1400
+        -:   53:    //the sum of all the SquaredDifference
+     1400:   54:    float sumDif = 0;
+   141400:   55:    for (int i = 0; i < size; ++i) {
+   141400:   55-block  0
+branch  0 taken 140000 (fallthrough)
+branch  1 taken 1400
+   140000:   56:        sumDif += pow((x[i] - mean), 2);
+   140000:   56-block  0
+call    0 returned 140000
+        -:   57:    }
+        -:   58:    //return the variance
+     1400:   59:    return sumDif / size;
+     1400:   59-block  0
+        -:   60:}
+        -:   61:/**
+        -:   62: * returns the covariance of X and Y
+        -:   63: * @param x
+        -:   64: * @param y
+        -:   65: * @param size
+        -:   66: * @return - float representing the covariance of x and y
+        -:   67: */
+function _Z3covPfS_i called 800 returned 100% blocks executed 100%
+      800:   68:float cov(float *x, float *y, int size) {
+        -:   69:    //average of array x
+      800:   70:    float avgX = avg(x, size);
+      800:   70-block  0
+call    0 returned 800
+        -:   71:    //average of array y
+      800:   72:    float avgY = avg(y, size);
+call    0 returned 800
+        -:   73:    //average of the two arrays multiplied
+      800:   74:    float *multi = multiplyArray(x, y, size);
+call    0 returned 800
+      800:   75:    float avgXY = avg(multi, size);
+call    0 returned 800
+      800:   76:    delete[]multi;
+branch  0 taken 800 (fallthrough)
+branch  1 taken 0
+      800:   76-block  0
+call    2 returned 800
+        -:   77:    //subtraction to give the final result
+      800:   78:    return avgXY - avgX * avgY;
+      800:   78-block  0
+        -:   79:}
+        -:   80:
+        -:   81:/**
+        -:   82: * returns the Pearson correlation coefficient of X and Y
+        -:   83: * @param x - float array
+        -:   84: * @param y - float array
+        -:   85: * @param size - size of both arrays
+        -:   86: * @return - returns (float) pearson correlation coefficient
+        -:   87: */
+function _Z7pearsonPfS_i called 600 returned 100% blocks executed 100%
+      600:   88:float pearson(float *x, float *y, int size) {
+      600:   89:    return cov(x, y, size) / (sqrt(var(x, size)) * sqrt(var(y, size)));
+      600:   89-block  0
+call    0 returned 600
+call    1 returned 600
+call    2 returned 600
+call    3 returned 600
+call    4 returned 600
+        -:   90:}
+        -:   91:
+        -:   92:/**
+        -:   93: * linear_reg- performs a linear regression and returns the line equation
+        -:   94: * @param points - array of points
+        -:   95: * @param size - size of the array of points
+        -:   96: * @return Line - returns the line equation from the linear regression operation on the given points
+        -:   97: */
+function _Z10linear_regPP5Pointi called 0 returned 0% blocks executed 0%
+    #####:   98:Line linear_reg(Point **points, int size) {
+        -:   99:    //all the x,y points in arrays
+    #####:  100:    float xPoints[size];
+    #####:  101:    float yPoints[size];
+        -:  102:    //for loop to insert the points value into the array accordingly
+    #####:  103:    for (int i = 0; i < size; ++i) {
+    %%%%%:  103-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:  104:        xPoints[i] = points[i]->x;
+    #####:  105:        yPoints[i] = points[i]->y;
+    %%%%%:  105-block  0
+        -:  106:    }
+        -:  107:    //𝑎=𝐶𝑂𝑉(𝑥,𝑦)/𝑉𝐴𝑅(𝑥)
+    #####:  108:    float a = cov(xPoints, yPoints, size) / var(xPoints, size);
+    %%%%%:  108-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  108-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+        -:  109:    //𝑏=𝑦̅−𝑎𝑥̅ (𝑥̅ and 𝑦̅ are the avg of x and y)
+    #####:  110:    float b = avg(yPoints, size) - a * avg(xPoints, size);
+    %%%%%:  110-block  0
+call    0 never executed
+call    1 never executed
+    #####:  111:    return Line(a, b);
+    %%%%%:  111-block  0
+call    0 never executed
+    %%%%%:  111-block  1
+        -:  112:}
+        -:  113:
+        -:  114:/**
+        -:  115: * linear_reg- performs a linear regression and returns the line equation
+        -:  116: * @return Line - returns the line equation from the linear regression operation on the given points
+        -:  117: */
+function _Z10linear_regSt6vectorIfSaIfEES1_i called 200 returned 100% blocks executed 100%
+      200:  118:Line linear_reg(std::vector<float> v1, std::vector<float> v2, int size){
+      200:  119:    float* feature1 = v1.data();
+      200:  119-block  0
+call    0 returned 200
+      200:  120:    float* feature2= v2.data();
+call    0 returned 200
+        -:  121:    //𝑎=𝐶𝑂𝑉(𝑥,𝑦)/𝑉𝐴𝑅(𝑥)
+      200:  122:    float a = cov(feature1, feature2, size) / var(feature1, size);
+call    0 returned 200
+call    1 returned 200
+        -:  123:    //𝑏=𝑦̅−𝑎𝑥̅ (𝑥̅ and 𝑦̅ are the avg of x and y)
+      200:  124:    float b = avg(feature2, size) - a * avg(feature1, size);
+call    0 returned 200
+call    1 returned 200
+      200:  125:    return Line(a, b);
+call    0 returned 200
+        -:  126:
+        -:  127:}
+        -:  128:/**
+        -:  129: * dev - returns the deviation between point p and the line equation of the points
+        -:  130: * @param p - point to measure the distance to
+        -:  131: * @param points - array of points to create the line to measure the distance from the point
+        -:  132: * @param size - num of the points
+        -:  133: * @return the deviation between point p and the line equation of the points
+        -:  134: */
+function _Z3dev5PointPPS_i called 0 returned 0% blocks executed 0%
+    #####:  135:float dev(Point p, Point **points, int size) {
+    #####:  136:    Line l = linear_reg(points, size);
+    %%%%%:  136-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  137:    //calculate the y value of the line l
+    #####:  138:    float lineYValue = l.f(p.x);
+    %%%%%:  138-block  0
+call    0 never executed
+        -:  139:    //return the absolute value of their distance difference
+    #####:  140:    return std::abs(p.y - lineYValue);
+call    0 never executed
+    %%%%%:  140-block  0
+        -:  141:}
+        -:  142:/**
+        -:  143: * dev - returns the deviation between point p and the line equation of the points
+        -:  144: * @param p - point to measure the distance to the line
+        -:  145: * @param l - line to measure the distance from the point
+        -:  146: * @return the deviation between point p and the line equation of the points
+        -:  147: */
+function _Z3dev5Point4Line called 40000 returned 100% blocks executed 100%
+    40000:  148:float dev(Point p, Line l) {
+        -:  149:    //calculate the y value of the line l
+    40000:  150:    float lineYValue = l.f(p.x);
+    40000:  150-block  0
+call    0 returned 40000
+        -:  151:    //return the absolute value of their distance difference
+    40000:  152:    return std::abs(p.y - lineYValue);
+call    0 returned 40000
+        -:  153:}
+        -:  154:

@@ -1,0 +1,62 @@
+        -:    0:Source:/home/ben/CLionProjects/AdvancedCompEx1Task2/anomaly_detection_util.h
+        -:    0:Graph:/home/ben/CLionProjects/AdvancedCompEx1Task2/cmake-build-debug-coverage/CMakeFiles/Ex1Task2.dir/SimpleAnomalyDetector.cpp.gcno
+        -:    0:Data:/home/ben/CLionProjects/AdvancedCompEx1Task2/cmake-build-debug-coverage/CMakeFiles/Ex1Task2.dir/SimpleAnomalyDetector.cpp.gcda
+        -:    0:Runs:1
+        -:    1:/* Authors:
+        -:    2: * Ben Ganon - 318731007
+        -:    3: * Sagiv Antebi - 318159282
+        -:    4: */
+        -:    5:#ifndef ANOMALYDETECTORUTIL_H_
+        -:    6:#define ANOMALYDETECTORUTIL_H_
+        -:    7:
+        -:    8:#include <vector>
+        -:    9:
+        -:   10:float avg(float *x, int size);
+        -:   11:
+        -:   12:float *multiplyArray(float *x, float *y, int size);
+        -:   13:
+        -:   14:// returns the variance of X and Y
+        -:   15:float var(float *x, int size);
+        -:   16:
+        -:   17:// returns the covariance of X and Y
+        -:   18:float cov(float *x, float *y, int size);
+        -:   19:
+        -:   20:
+        -:   21:// returns the Pearson correlation coefficient of X and Y
+        -:   22:float pearson(float *x, float *y, int size);
+        -:   23:
+        -:   24:class Line {
+        -:   25:public:
+        -:   26:    float a, b;
+        -:   27:
+function _ZN4LineC2Ev called 200 returned 100% blocks executed 100%
+      200:   28:    Line() : a(0), b(0) {}
+        -:   29:
+        -:   30:    Line(float a, float b) : a(a), b(b) {}
+        -:   31:
+        -:   32:    float f(float x) {
+        -:   33:        return a * x + b;
+        -:   34:    }
+        -:   35:};
+        -:   36:
+        -:   37:class Point {
+        -:   38:public:
+        -:   39:    float x, y;
+        -:   40:
+function _ZN5PointC2Eff called 40000 returned 100% blocks executed 100%
+    40000:   41:    Point(float x, float y) : x(x), y(y) {}
+        -:   42:};
+        -:   43:
+        -:   44:// performs a linear regression and returns the line equation
+        -:   45:Line linear_reg(Point **points, int size);
+        -:   46:
+        -:   47:Line linear_reg(std::vector<float> v1, std::vector<float> v2, int size);
+        -:   48:
+        -:   49:// returns the deviation between point p and the line equation of the points
+        -:   50:float dev(Point p, Point **points, int size);
+        -:   51:
+        -:   52:// returns the deviation between point p and the line
+        -:   53:float dev(Point p, Line l);
+        -:   54:
+        -:   55:
+        -:   56:#endif

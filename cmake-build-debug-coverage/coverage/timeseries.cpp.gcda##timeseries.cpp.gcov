@@ -1,0 +1,502 @@
+        -:    0:Source:/home/ben/CLionProjects/AdvancedCompEx1Task2/timeseries.cpp
+        -:    0:Graph:/home/ben/CLionProjects/AdvancedCompEx1Task2/cmake-build-debug-coverage/CMakeFiles/Ex1Task2.dir/timeseries.cpp.gcno
+        -:    0:Data:/home/ben/CLionProjects/AdvancedCompEx1Task2/cmake-build-debug-coverage/CMakeFiles/Ex1Task2.dir/timeseries.cpp.gcda
+        -:    0:Runs:1
+        -:    1:/* Authors:
+        -:    2: * Ben Ganon - 318731007
+        -:    3: * Sagiv Antebi - 318159282
+        -:    4: */
+        -:    5:#include "timeseries.h"
+        -:    6:#include <iostream>
+        -:    7:#include <fstream>
+        -:    8:#include <sstream>
+        -:    9:#include <vector>
+        -:   10:#include <string>
+        -:   11:#include <algorithm>
+        -:   12:
+function _ZN10TimeSeriesC2EPKc called 200 returned 100% blocks executed 76%
+      200:   13:TimeSeries::TimeSeries(const char *CSVfileName) {
+      400:   14:    std::ifstream file;
+      200:   14-block  0
+call    0 returned 200
+branch  1 taken 200 (fallthrough)
+branch  2 taken 0 (throw)
+call    3 returned 200
+    $$$$$:   14-block  1
+call    4 never executed
+        -:   15:    //openning the file given
+      200:   16:    file.open(CSVfileName);
+      200:   16-block  0
+call    0 returned 200
+branch  1 taken 200 (fallthrough)
+branch  2 taken 0 (throw)
+        -:   17:    //a line string to hold the current line in the file as we iterate
+      400:   18:    std::string line;
+      200:   18-block  0
+call    0 returned 200
+call    1 returned 200
+    $$$$$:   18-block  1
+call    2 never executed
+        -:   19:    //word string to hold the current word
+      400:   20:    std::string word;
+call    0 returned 200
+call    1 returned 200
+    $$$$$:   20-block  0
+call    2 never executed
+        -:   21:    //insert the fist line
+      200:   22:    getline(file, line);
+call    0 returned 200
+branch  1 taken 200 (fallthrough)
+branch  2 taken 0 (throw)
+      400:   23:    std::stringstream stream(line);
+      200:   23-block  0
+call    0 returned 200
+call    1 returned 200
+branch  2 taken 200 (fallthrough)
+branch  3 taken 0 (throw)
+call    4 returned 200
+    $$$$$:   23-block  1
+call    5 never executed
+        -:   24:    //the first raw , the categories
+      400:   25:    std::vector<std::string> firstLine;
+      200:   25-block  0
+call    0 returned 200
+      200:   25-block  1
+call    1 returned 200
+    $$$$$:   25-block  2
+call    2 never executed
+        -:   26:
+      200:   27:    columnNames = new std::vector<std::string>;
+call    0 returned 200
+branch  1 taken 200 (fallthrough)
+branch  2 taken 0 (throw)
+      200:   27-block  0
+call    3 returned 200
+        -:   28:    //while loop goes through each word in the line and insert it into columnNames
+     1000:   29:    while (getline(stream, word, ',')) {
+     1000:   29-block  0
+call    0 returned 1000
+branch  1 taken 1000 (fallthrough)
+branch  2 taken 0 (throw)
+     1000:   29-block  1
+call    3 returned 1000
+branch  4 taken 1000 (fallthrough)
+branch  5 taken 0 (throw)
+     1000:   29-block  2
+branch  6 taken 800 (fallthrough)
+branch  7 taken 200
+      800:   29-block  3
+      800:   30:        columnNames->push_back(word);
+      800:   30-block  0
+call    0 returned 800
+branch  1 taken 800 (fallthrough)
+branch  2 taken 0 (throw)
+        -:   31:    }
+      200:   32:    table = new std::vector<std::vector<float>*>;
+      200:   32-block  0
+call    0 returned 200
+branch  1 taken 200 (fallthrough)
+branch  2 taken 0 (throw)
+      200:   32-block  1
+call    3 returned 200
+     1000:   33:    for(int i = 0; i < columnNames->size(); i++) {
+     1000:   33-block  0
+call    0 returned 1000
+branch  1 taken 800 (fallthrough)
+branch  2 taken 200
+      800:   33-block  1
+      800:   34:        auto *p = new std::vector<float>;
+      800:   34-block  0
+call    0 returned 800
+branch  1 taken 800 (fallthrough)
+branch  2 taken 0 (throw)
+      800:   34-block  1
+call    3 returned 800
+      800:   35:        table->push_back(p);
+call    0 returned 800
+branch  1 taken 800 (fallthrough)
+branch  2 taken 0 (throw)
+        -:   36:    }
+        -:   37:    //insert the values
+    20200:   38:    while (getline(file, line)) {
+    20200:   38-block  0
+call    0 returned 20200
+branch  1 taken 20200 (fallthrough)
+branch  2 taken 0 (throw)
+    20200:   38-block  1
+call    3 returned 20200
+branch  4 taken 20200 (fallthrough)
+branch  5 taken 0 (throw)
+    20200:   38-block  2
+branch  6 taken 20000 (fallthrough)
+branch  7 taken 200
+    40000:   39:        std::stringstream floatStream(line);
+    20000:   39-block  0
+call    0 returned 20000
+call    1 returned 20000
+branch  2 taken 20000 (fallthrough)
+branch  3 taken 0 (throw)
+    20000:   39-block  1
+call    4 returned 20000
+    $$$$$:   39-block  2
+call    5 never executed
+    20000:   40:        int place = 0;
+    20000:   40-block  0
+   100000:   41:        while (getline(floatStream, word, ',')) {
+   100000:   41-block  0
+call    0 returned 100000
+branch  1 taken 100000 (fallthrough)
+branch  2 taken 0 (throw)
+   100000:   41-block  1
+call    3 returned 100000
+branch  4 taken 100000 (fallthrough)
+branch  5 taken 0 (throw)
+   100000:   41-block  2
+branch  6 taken 80000 (fallthrough)
+branch  7 taken 20000
+    80000:   42:           this->table->at(place)->push_back(stof(word));
+    80000:   42-block  0
+call    0 returned 80000
+branch  1 taken 80000 (fallthrough)
+branch  2 taken 0 (throw)
+    80000:   42-block  1
+call    3 returned 80000
+branch  4 taken 80000 (fallthrough)
+branch  5 taken 0 (throw)
+    80000:   42-block  2
+call    6 returned 80000
+branch  7 taken 80000 (fallthrough)
+branch  8 taken 0 (throw)
+    $$$$$:   42-block  3
+    80000:   43:           place++;
+    80000:   43-block  0
+        -:   44:        }
+        -:   45:    }
+      200:   46:    file.close();
+      200:   46-block  0
+call    0 returned 200
+branch  1 taken 200 (fallthrough)
+branch  2 taken 0 (throw)
+      200:   47:}
+        -:   48://test
+function _ZN10TimeSeriesD2Ev called 200 returned 100% blocks executed 100%
+      400:   49:TimeSeries::~TimeSeries(){
+     1000:   50:    for(std::string s : *this->columnNames) {
+      200:   50-block  0
+call    0 returned 200
+call    1 returned 200
+     1000:   50-block  1
+call    2 returned 1000
+branch  3 taken 800 (fallthrough)
+branch  4 taken 200
+      800:   50-block  2
+call    5 returned 800
+call    6 returned 800
+call    7 returned 800
+call    8 returned 800
+      800:   51:        s.clear();
+call    0 returned 800
+        -:   52:    }
+      200:   53:    this->columnNames->clear();
+      200:   53-block  0
+call    0 returned 200
+      200:   54:    delete this->columnNames;
+branch  0 taken 200 (fallthrough)
+branch  1 taken 0
+      200:   54-block  0
+call    2 returned 200
+call    3 returned 200
+     1000:   55:    for(std::vector<float> * v : *this->table) {
+      200:   55-block  0
+call    0 returned 200
+call    1 returned 200
+     1000:   55-block  1
+call    2 returned 1000
+branch  3 taken 800 (fallthrough)
+branch  4 taken 200
+      800:   55-block  2
+call    5 returned 800
+      800:   55-block  3
+call    6 returned 800
+      800:   56:        v->clear();
+call    0 returned 800
+      800:   57:        delete v;
+branch  0 taken 800 (fallthrough)
+branch  1 taken 0
+      800:   57-block  0
+call    2 returned 800
+call    3 returned 800
+        -:   58:    }
+      200:   59:    this->table->clear();
+      200:   59-block  0
+call    0 returned 200
+      200:   60:    delete this->table;
+branch  0 taken 200 (fallthrough)
+branch  1 taken 0
+      200:   60-block  0
+call    2 returned 200
+call    3 returned 200
+      200:   61:}
+        -:   62:
+        -:   63:/**
+        -:   64: * prints the timeseries.
+        -:   65: */
+function _ZN10TimeSeries10printTableEv called 0 returned 0% blocks executed 0%
+    #####:   66:void TimeSeries::printTable() {
+    #####:   67:    for (std::string s: *columnNames) {
+    %%%%%:   67-block  0
+call    0 never executed
+call    1 never executed
+    %%%%%:   67-block  1
+call    2 never executed
+branch  3 never executed
+branch  4 never executed
+    %%%%%:   67-block  2
+call    5 never executed
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+    %%%%%:   67-block  3
+call    9 never executed
+call   10 never executed
+    $$$$$:   67-block  4
+call   11 never executed
+    #####:   68:        std::cout << s;
+    %%%%%:   68-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:   69:    }
+    #####:   70:    std::cout << std::endl;
+    %%%%%:   70-block  0
+call    0 never executed
+    #####:   71:    for (int i = 0; i < this->table->at(0)->size(); i++) {
+    %%%%%:   71-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    #####:   72:        for (std::vector<float> *v: *this->table) {
+    %%%%%:   72-block  0
+call    0 never executed
+call    1 never executed
+    %%%%%:   72-block  1
+call    2 never executed
+branch  3 never executed
+branch  4 never executed
+    %%%%%:   72-block  2
+call    5 never executed
+    %%%%%:   72-block  3
+call    6 never executed
+    #####:   73:            std::cout << v->at(i) << "    ";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:   73-block  0
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:   73-block  1
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+        -:   74:        }
+    #####:   75:    std::cout << std::endl;
+    %%%%%:   75-block  0
+call    0 never executed
+        -:   76:    }
+    #####:   77:}
+    %%%%%:   77-block  0
+        -:   78:/**
+        -:   79: * adds a column to the table - each row will receive a new member at the back
+        -:   80: * @param column - the column vector given to add
+        -:   81: * @param name - name of the column to add to the columnNames vector
+        -:   82: */
+function _ZN10TimeSeries9addColumnEPSt6vectorIfSaIfEENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 0 returned 0% blocks executed 0%
+    #####:   83:void TimeSeries::addColumn(std::vector<float>* column, std::string name) {
+        -:   84:    //adding the name to the column vector
+    #####:   85:    columnNames->push_back(name);
+    %%%%%:   85-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   86:    std::vector<float>* inCol = copyVector(column);
+    %%%%%:   86-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   87:    this->table->push_back(inCol);
+    %%%%%:   87-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:   88:
+    #####:   89:}
+    %%%%%:   89-block  0
+        -:   90:
+        -:   91:/**
+        -:   92: * adds a new row to the timeseries.
+        -:   93: * @param values
+        -:   94: */
+function _ZN10TimeSeries6addRowESt6vectorIfSaIfEE called 0 returned 0% blocks executed 0%
+    #####:   95:void TimeSeries::addRow(std::vector<float> values) {
+    #####:   96:    if (values.size() > this->table->size() || values.size() < this->table->size()) {
+    %%%%%:   96-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:   96-block  1
+call    4 never executed
+call    5 never executed
+branch  6 never executed
+branch  7 never executed
+    %%%%%:   96-block  2
+    %%%%%:   96-block  3
+    %%%%%:   96-block  4
+branch  8 never executed
+branch  9 never executed
+    #####:   97:        std::cout << "number of columns is mismatched!";
+    %%%%%:   97-block  0
+call    0 never executed
+    #####:   98:        exit(1);
+call    0 never executed
+        -:   99:    }
+    #####:  100:    for (int i = 0; i < this->table->size(); i++) {
+    %%%%%:  100-block  0
+    %%%%%:  100-block  1
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  101:        this->table->at(i)->push_back(values[i]);
+    %%%%%:  101-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+        -:  102:    }
+    #####:  103:}
+        -:  104:
+        -:  105:/**
+        -:  106: * retreives a desired column from the timeseries
+        -:  107: * @param column
+        -:  108: * @return
+        -:  109: */
+function _ZNK10TimeSeries9getColumnEi called 3400 returned 100% blocks executed 100%
+     3400:  110:std::vector<float> TimeSeries::getColumn(int column) const {
+     3400:  111:    return *this->table->at(column);
+     3400:  111-block  0
+call    0 returned 3400
+call    1 returned 3400
+        -:  112:}
+        -:  113:
+        -:  114:/**
+        -:  115: * retreives a desired row from the timeseries
+        -:  116: * @param row
+        -:  117: * @return
+        -:  118: */
+function _ZN10TimeSeries6getRowEi called 0 returned 0% blocks executed 0%
+    #####:  119:std::vector<float> TimeSeries::getRow(int row) {
+    #####:  120:    std::vector<float> f;
+    %%%%%:  120-block  0
+call    0 never executed
+    #####:  121:    for (std::vector<float>* v : *this->table) {
+call    0 never executed
+call    1 never executed
+    %%%%%:  121-block  0
+call    2 never executed
+branch  3 never executed
+branch  4 never executed
+    %%%%%:  121-block  1
+call    5 never executed
+    %%%%%:  121-block  2
+call    6 never executed
+    #####:  122:        f.push_back(v->at(row));
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  122-block  0
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+        -:  123:    }
+    #####:  124:    return f;
+    %%%%%:  124-block  0
+    %%%%%:  124-block  1
+        -:  125:}
+        -:  126:
+        -:  127:/**
+        -:  128: * returns the desired cell's value
+        -:  129: * @param row
+        -:  130: * @param column
+        -:  131: * @return
+        -:  132: */
+function _ZNK10TimeSeries7getCellEii called 0 returned 0% blocks executed 0%
+    #####:  133:float TimeSeries::getCell(int row, int column) const{
+    #####:  134:    return this->table->at(column)->at(row);
+    %%%%%:  134-block  0
+call    0 never executed
+call    1 never executed
+        -:  135:}
+        -:  136:
+        -:  137:/**
+        -:  138: * sets the desired cell's value to val
+        -:  139: * @param row
+        -:  140: * @param column
+        -:  141: * @param val
+        -:  142: */
+function _ZN10TimeSeries7setCellEiif called 0 returned 0% blocks executed 0%
+    #####:  143:void TimeSeries::setCell(int row, int column, float val) {
+    #####:  144:    this->table->at(column)->at(row) = val;
+    %%%%%:  144-block  0
+call    0 never executed
+call    1 never executed
+    #####:  145:}
+        -:  146:
+        -:  147:/**
+        -:  148: * copies a given vector (deep copy) and returns it.
+        -:  149: * @param v
+        -:  150: * @return
+        -:  151: */
+function _ZN10TimeSeries10copyVectorEPSt6vectorIfSaIfEE called 0 returned 0% blocks executed 0%
+    #####:  152:std::vector<float>* TimeSeries::copyVector(std::vector<float>* v) {
+    #####:  153:    auto* newV = new std::vector<float>;
+    %%%%%:  153-block  0
+call    0 never executed
+call    1 never executed
+    #####:  154:    for(int i = 0; i < v->size(); i++) {
+    %%%%%:  154-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  155:        newV->push_back(v->at(i));
+    %%%%%:  155-block  0
+call    0 never executed
+call    1 never executed
+        -:  156:    }
+    #####:  157:    return newV;
+    %%%%%:  157-block  0
+        -:  158:}
+        -:  159:
+        -:  160:/**
+        -:  161: * returns the number of columns in the timeseries.
+        -:  162: * @return
+        -:  163: */
+function _ZNK10TimeSeries10numColumnsEv called 1500 returned 100% blocks executed 100%
+     1500:  164:int TimeSeries::numColumns() const {
+     1500:  165:    return this->columnNames->size();
+     1500:  165-block  0
+call    0 returned 1500
+        -:  166:}
+        -:  167:
+function _ZNK10TimeSeries12getNameOfRawB5cxx11Ei called 400 returned 100% blocks executed 100%
+      400:  168:std::string TimeSeries::getNameOfRaw(int i) const{
+      400:  169:    return this->columnNames->at(i);
+      400:  169-block  0
+call    0 returned 400
+call    1 returned 400
+        -:  170:}
+function _ZNK10TimeSeries8getNamesB5cxx11Ev called 0 returned 0% blocks executed 0%
+    #####:  171:std::vector<std::string>* TimeSeries::getNames() const {
+    #####:  172:    return this->columnNames;
+    %%%%%:  172-block  0
+        -:  173:}
