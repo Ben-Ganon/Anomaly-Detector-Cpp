@@ -1,0 +1,573 @@
+        -:    0:Source:/home/ben/CLionProjects/AdvancedCompEx1Task2/MainTrain.cpp
+        -:    0:Graph:/home/ben/CLionProjects/AdvancedCompEx1Task2/cmake-build-debug-coverage/CMakeFiles/Ex1Task2.dir/MainTrain.cpp.gcno
+        -:    0:Data:/home/ben/CLionProjects/AdvancedCompEx1Task2/cmake-build-debug-coverage/CMakeFiles/Ex1Task2.dir/MainTrain.cpp.gcda
+        -:    0:Runs:1
+        -:    1:
+        -:    2:
+        -:    3:#include <iostream>
+        -:    4:#include <vector>
+        -:    5:#include "AnomalyDetector.h"
+        -:    6:#include "SimpleAnomalyDetector.h"
+        -:    7:#include <fstream>
+        -:    8:#include <stdlib.h>     /* srand, rand */
+        -:    9:#include <time.h>       /* time */
+        -:   10:#include <math.h>
+        -:   11:
+        -:   12:using namespace std;
+        -:   13:
+        -:   14:// this is a simple test to put you on the right track
+function _Z16generateTrainCSVffff called 100 returned 100% blocks executed 93%
+      100:   15:void generateTrainCSV(float a1,float b1, float a2, float b2){
+      200:   16:    ofstream out("trainFile1.csv");
+      100:   16-block  0
+call    0 returned 100
+branch  1 taken 100 (fallthrough)
+branch  2 taken 0 (throw)
+      100:   16-block  1
+call    3 returned 100
+    $$$$$:   16-block  2
+call    4 never executed
+      100:   17:    out<<"A,B,C,D"<<endl;
+      100:   17-block  0
+call    0 returned 100
+branch  1 taken 100 (fallthrough)
+branch  2 taken 0 (throw)
+      100:   17-block  1
+call    3 returned 100
+branch  4 taken 100 (fallthrough)
+branch  5 taken 0 (throw)
+      100:   18:    Line ac(a1,b1);
+      100:   18-block  0
+call    0 returned 100
+      100:   19:    Line bd(a2,b2);
+call    0 returned 100
+    10100:   20:    for(int i=1;i<=100;i++){
+    10100:   20-block  0
+branch  0 taken 10000 (fallthrough)
+branch  1 taken 100
+    10000:   20-block  1
+    10000:   21:        float a=i;
+    10000:   22:        float b=rand()%40;
+    10000:   22-block  0
+call    0 returned 10000
+    10000:   23:        out<<a<<","<<b<<","<<ac.f(a)-0.02+(rand()%40)/100.0f<<","<<bd.f(b)-0.02+(rand()%40)/100.0f<<endl;
+call    0 returned 10000
+branch  1 taken 10000 (fallthrough)
+branch  2 taken 0 (throw)
+    10000:   23-block  0
+call    3 returned 10000
+branch  4 taken 10000 (fallthrough)
+branch  5 taken 0 (throw)
+    10000:   23-block  1
+call    6 returned 10000
+branch  7 taken 10000 (fallthrough)
+branch  8 taken 0 (throw)
+    10000:   23-block  2
+call    9 returned 10000
+branch 10 taken 10000 (fallthrough)
+branch 11 taken 0 (throw)
+    10000:   23-block  3
+call   12 returned 10000
+call   13 returned 10000
+call   14 returned 10000
+branch 15 taken 10000 (fallthrough)
+branch 16 taken 0 (throw)
+    10000:   23-block  4
+call   17 returned 10000
+branch 18 taken 10000 (fallthrough)
+branch 19 taken 0 (throw)
+    10000:   23-block  5
+call   20 returned 10000
+call   21 returned 10000
+call   22 returned 10000
+branch 23 taken 10000 (fallthrough)
+branch 24 taken 0 (throw)
+    10000:   23-block  6
+call   25 returned 10000
+branch 26 taken 10000 (fallthrough)
+branch 27 taken 0 (throw)
+        -:   24:    }
+      100:   25:    out.close();
+      100:   25-block  0
+call    0 returned 100
+branch  1 taken 100 (fallthrough)
+branch  2 taken 0 (throw)
+      100:   26:}
+        -:   27:
+function _Z15generateTestCSVffffi called 100 returned 100% blocks executed 95%
+      100:   28:void generateTestCSV(float a1,float b1, float a2, float b2, int anomaly){
+      200:   29:    ofstream out("testFile1.csv");
+      100:   29-block  0
+call    0 returned 100
+branch  1 taken 100 (fallthrough)
+branch  2 taken 0 (throw)
+      100:   29-block  1
+call    3 returned 100
+    $$$$$:   29-block  2
+call    4 never executed
+      100:   30:    out<<"A,B,C,D"<<endl;
+      100:   30-block  0
+call    0 returned 100
+branch  1 taken 100 (fallthrough)
+branch  2 taken 0 (throw)
+      100:   30-block  1
+call    3 returned 100
+branch  4 taken 100 (fallthrough)
+branch  5 taken 0 (throw)
+      100:   31:    Line ac(a1,b1);
+      100:   31-block  0
+call    0 returned 100
+      100:   32:    Line bd(a2,b2);
+call    0 returned 100
+    10100:   33:    for(int i=1;i<=100;i++){
+    10100:   33-block  0
+branch  0 taken 10000 (fallthrough)
+branch  1 taken 100
+    10000:   33-block  1
+    10000:   34:        float a=i;
+    10000:   35:        float b=rand()%40;
+    10000:   35-block  0
+call    0 returned 10000
+    10000:   36:        if(i!=anomaly)
+branch  0 taken 9900 (fallthrough)
+branch  1 taken 100
+     9900:   37:            out<<a<<","<<b<<","<<ac.f(a)-0.02+(rand()%40)/100.0f<<","<<bd.f(b)-0.02+(rand()%40)/100.0f<<endl;
+     9900:   37-block  0
+call    0 returned 9900
+branch  1 taken 9900 (fallthrough)
+branch  2 taken 0 (throw)
+     9900:   37-block  1
+call    3 returned 9900
+branch  4 taken 9900 (fallthrough)
+branch  5 taken 0 (throw)
+     9900:   37-block  2
+call    6 returned 9900
+branch  7 taken 9900 (fallthrough)
+branch  8 taken 0 (throw)
+     9900:   37-block  3
+call    9 returned 9900
+branch 10 taken 9900 (fallthrough)
+branch 11 taken 0 (throw)
+     9900:   37-block  4
+call   12 returned 9900
+call   13 returned 9900
+call   14 returned 9900
+branch 15 taken 9900 (fallthrough)
+branch 16 taken 0 (throw)
+     9900:   37-block  5
+call   17 returned 9900
+branch 18 taken 9900 (fallthrough)
+branch 19 taken 0 (throw)
+     9900:   37-block  6
+call   20 returned 9900
+call   21 returned 9900
+call   22 returned 9900
+branch 23 taken 9900 (fallthrough)
+branch 24 taken 0 (throw)
+     9900:   37-block  7
+call   25 returned 9900
+branch 26 taken 9900 (fallthrough)
+branch 27 taken 0 (throw)
+        -:   38:        else
+      100:   39:            out<<a<<","<<b<<","<<ac.f(a)+1<<","<<bd.f(b)-0.02+(rand()%40)/100.0f<<endl;
+      100:   39-block  0
+call    0 returned 100
+branch  1 taken 100 (fallthrough)
+branch  2 taken 0 (throw)
+      100:   39-block  1
+call    3 returned 100
+branch  4 taken 100 (fallthrough)
+branch  5 taken 0 (throw)
+      100:   39-block  2
+call    6 returned 100
+branch  7 taken 100 (fallthrough)
+branch  8 taken 0 (throw)
+      100:   39-block  3
+call    9 returned 100
+branch 10 taken 100 (fallthrough)
+branch 11 taken 0 (throw)
+      100:   39-block  4
+call   12 returned 100
+call   13 returned 100
+branch 14 taken 100 (fallthrough)
+branch 15 taken 0 (throw)
+      100:   39-block  5
+call   16 returned 100
+branch 17 taken 100 (fallthrough)
+branch 18 taken 0 (throw)
+      100:   39-block  6
+call   19 returned 100
+call   20 returned 100
+call   21 returned 100
+branch 22 taken 100 (fallthrough)
+branch 23 taken 0 (throw)
+      100:   39-block  7
+call   24 returned 100
+branch 25 taken 100 (fallthrough)
+branch 26 taken 0 (throw)
+        -:   40:    }
+      100:   41:    out.close();
+      100:   41-block  0
+call    0 returned 100
+branch  1 taken 100 (fallthrough)
+branch  2 taken 0 (throw)
+      100:   42:}
+        -:   43:
+function _Z21checkCorrelationTrain18correlatedFeaturesNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_ff called 400 returned 100% blocks executed 31%
+      400:   44:void checkCorrelationTrain(correlatedFeatures c,string f1, string f2, float a, float b){
+      400:   45:    if(c.feature1==f1){
+      400:   45-block  0
+call    0 returned 400
+branch  1 taken 200 (fallthrough)
+branch  2 taken 200
+      200:   46:        if(c.feature2!=f2)
+      200:   46-block  0
+call    0 returned 200
+branch  1 taken 0 (fallthrough)
+branch  2 taken 200
+    #####:   47:            cout<<"wrong correlated feature of "<<f1<<" (-20)"<<endl;
+    %%%%%:   47-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+call    3 never executed
+        -:   48:        else{
+      200:   49:            if(c.corrlation<0.99)
+      200:   49-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 200
+    #####:   50:                cout<<f1<<"-"<<f2<<" wrong correlation detected (-5)"<<endl;
+    %%%%%:   50-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+call    3 never executed
+call    4 never executed
+      200:   51:            if(c.lin_reg.a<a-0.5f || c.lin_reg.a>a+0.5f)
+      200:   51-block  0
+branch  0 taken 200 (fallthrough)
+branch  1 taken 0
+      200:   51-block  1
+branch  2 taken 0 (fallthrough)
+branch  3 taken 200
+    #####:   52:                cout<<f1<<"-"<<f2<<" wrong value of line_reg.a (-5)"<<endl;
+    %%%%%:   52-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+call    3 never executed
+call    4 never executed
+      200:   53:            if(c.lin_reg.b<b-0.5f || c.lin_reg.b>b+0.5f)
+      200:   53-block  0
+branch  0 taken 200 (fallthrough)
+branch  1 taken 0
+      200:   53-block  1
+branch  2 taken 0 (fallthrough)
+branch  3 taken 200
+    #####:   54:                cout<<f1<<"-"<<f2<<" wrong value of line_reg.b (-5)"<<endl;
+    %%%%%:   54-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+call    3 never executed
+call    4 never executed
+      200:   55:            if(c.threshold>0.3)
+      200:   55-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 200
+    #####:   56:                cout<<f1<<"-"<<f2<<" wrong threshold detected (-5)"<<endl;
+    %%%%%:   56-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+call    3 never executed
+call    4 never executed
+        -:   57:        }
+        -:   58:    }
+        -:   59:
+      400:   60:}
+        -:   61:
+function main called 1 returned 100% blocks executed 62%
+        1:   62:int main(){
+      101:   63:    for (int i = 0; i < 100; ++i) {
+        1:   63-block  0
+      101:   63-block  1
+branch  0 taken 100 (fallthrough)
+branch  1 taken 1
+        -:   64:
+        -:   65:
+      100:   66:        srand(time(NULL));
+      100:   66-block  0
+call    0 returned 100
+call    1 returned 100
+      100:   67:        float a1 = 1 + rand() % 10, b1 = -50 + rand() % 100;
+call    0 returned 100
+call    1 returned 100
+      100:   68:        float a2 = 1 + rand() % 20, b2 = -50 + rand() % 100;
+call    0 returned 100
+call    1 returned 100
+        -:   69:
+        -:   70:
+        -:   71:        // test the learned model: (40 points)
+        -:   72:        // expected correlations:
+        -:   73:        //	A-C: y=a1*x+b1
+        -:   74:        //	B-D: y=a2*x+b2
+        -:   75:
+      100:   76:        generateTrainCSV(a1, b1, a2, b2);
+call    0 returned 100
+branch  1 taken 100 (fallthrough)
+branch  2 taken 0 (throw)
+      200:   77:        TimeSeries ts("trainFile1.csv");
+      100:   77-block  0
+call    0 returned 100
+branch  1 taken 100 (fallthrough)
+branch  2 taken 0 (throw)
+call    3 returned 100
+    $$$$$:   77-block  1
+call    4 never executed
+      200:   78:        SimpleAnomalyDetector ad;
+      100:   78-block  0
+call    0 returned 100
+branch  1 taken 100 (fallthrough)
+branch  2 taken 0 (throw)
+call    3 returned 100
+    $$$$$:   78-block  1
+call    4 never executed
+      100:   79:        ad.learnNormal(ts);
+      100:   79-block  0
+call    0 returned 100
+branch  1 taken 100 (fallthrough)
+branch  2 taken 0 (throw)
+      200:   80:        vector<correlatedFeatures> cf = ad.getNormalModel();
+      100:   80-block  0
+call    0 returned 100
+branch  1 taken 100 (fallthrough)
+branch  2 taken 0 (throw)
+call    3 returned 100
+    $$$$$:   80-block  1
+call    4 never executed
+        -:   81:
+      100:   82:        if (cf.size() != 2)
+      100:   82-block  0
+call    0 returned 100
+branch  1 taken 0 (fallthrough)
+branch  2 taken 100
+    #####:   83:            cout << "wrong size of correlated features (-40)" << endl;
+    %%%%%:   83-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:   83-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+        -:   84:        else
+function _ZZ4mainENKUl18correlatedFeaturesE_clES_ called 200 returned 100% blocks executed 45%
+      100:   85:            for_each(cf.begin(), cf.end(), [&a1, &b1, &a2, &b2](correlatedFeatures c) {
+      100:   85-block  0
+      200:   86:                checkCorrelationTrain(c, "A", "C", a1, b1); // 20 points
+      200:   86-block  0
+call    0 returned 200
+call    1 returned 200
+branch  2 taken 200 (fallthrough)
+branch  3 taken 0 (throw)
+      200:   86-block  1
+call    4 returned 200
+call    5 returned 200
+branch  6 taken 200 (fallthrough)
+branch  7 taken 0 (throw)
+      200:   86-block  2
+call    8 returned 200
+branch  9 taken 200 (fallthrough)
+branch 10 taken 0 (throw)
+      200:   86-block  3
+call   11 returned 200
+branch 12 taken 200 (fallthrough)
+branch 13 taken 0 (throw)
+      200:   86-block  4
+call   14 returned 200
+call   15 returned 200
+call   16 returned 200
+call   17 returned 200
+call   18 returned 200
+    $$$$$:   86-block  5
+call   19 never executed
+    $$$$$:   86-block  6
+    $$$$$:   86-block  7
+call   20 never executed
+    $$$$$:   86-block  8
+    $$$$$:   86-block  9
+call   21 never executed
+    $$$$$:   86-block 10
+    $$$$$:   86-block 11
+call   22 never executed
+    $$$$$:   86-block 12
+    $$$$$:   86-block 13
+call   23 never executed
+    $$$$$:   86-block 14
+call   24 never executed
+      200:   87:                checkCorrelationTrain(c, "B", "D", a2, b2); // 20 points
+call    0 returned 200
+call    1 returned 200
+branch  2 taken 200 (fallthrough)
+branch  3 taken 0 (throw)
+      200:   87-block  0
+call    4 returned 200
+call    5 returned 200
+branch  6 taken 200 (fallthrough)
+branch  7 taken 0 (throw)
+      200:   87-block  1
+call    8 returned 200
+branch  9 taken 200 (fallthrough)
+branch 10 taken 0 (throw)
+      200:   87-block  2
+call   11 returned 200
+branch 12 taken 200 (fallthrough)
+branch 13 taken 0 (throw)
+      200:   87-block  3
+call   14 returned 200
+call   15 returned 200
+call   16 returned 200
+call   17 returned 200
+call   18 returned 200
+    $$$$$:   87-block  4
+call   19 never executed
+    $$$$$:   87-block  5
+    $$$$$:   87-block  6
+call   20 never executed
+    $$$$$:   87-block  7
+    $$$$$:   87-block  8
+call   21 never executed
+    $$$$$:   87-block  9
+    $$$$$:   87-block 10
+call   22 never executed
+    $$$$$:   87-block 11
+    $$$$$:   87-block 12
+call   23 never executed
+      300:   88:            });
+      100:   88-block  0
+call    0 returned 100
+call    1 returned 100
+call    2 returned 100
+branch  3 taken 100 (fallthrough)
+branch  4 taken 0 (throw)
+        -:   89:
+        -:   90:        // test the anomaly detector: (60 points)
+        -:   91:        // one simply anomaly is injected to the data
+      100:   92:        int anomaly = 5 + rand() % 90; // one anomaly injected in a random time step
+      100:   92-block  0
+call    0 returned 100
+      100:   93:        generateTestCSV(a1, b1, a2, b2, anomaly);
+call    0 returned 100
+branch  1 taken 100 (fallthrough)
+branch  2 taken 0 (throw)
+      200:   94:        TimeSeries ts2("testFile1.csv");
+      100:   94-block  0
+call    0 returned 100
+branch  1 taken 100 (fallthrough)
+branch  2 taken 0 (throw)
+call    3 returned 100
+    $$$$$:   94-block  1
+call    4 never executed
+      200:   95:        vector<AnomalyReport> r = ad.detect(ts2);
+      100:   95-block  0
+call    0 returned 100
+branch  1 taken 100 (fallthrough)
+branch  2 taken 0 (throw)
+      100:   95-block  1
+call    3 returned 100
+    $$$$$:   95-block  2
+call    4 never executed
+        -:   96:
+      100:   97:        bool anomlyDetected = false;
+      100:   98:        int falseAlarms = 0;
+function _ZZ4mainENKUl13AnomalyReportE0_clES_ called 100 returned 100% blocks executed 78%
+     400*:   99:        for_each(r.begin(), r.end(), [&anomaly, &anomlyDetected, &falseAlarms](AnomalyReport ar) {
+     100*:  100:            if (ar.description == "A-C" && ar.timeStep == anomaly)
+      100:  100-block  0
+call    0 returned 100
+branch  1 taken 100 (fallthrough)
+branch  2 taken 0
+      100:  100-block  1
+branch  3 taken 100 (fallthrough)
+branch  4 taken 0
+      100:  100-block  2
+    %%%%%:  100-block  3
+      100:  100-block  4
+branch  5 taken 100 (fallthrough)
+branch  6 taken 0
+      100:  101:                anomlyDetected = true;
+      100:  101-block  0
+        -:  102:            else
+    #####:  103:                falseAlarms++;
+    %%%%%:  103-block  0
+      100:  104:        });
+      100:  104-block  0
+call    0 returned 100
+call    1 returned 100
+call    2 returned 100
+branch  3 taken 100 (fallthrough)
+branch  4 taken 0 (throw)
+        -:  105:
+      100:  106:        if (!anomlyDetected)
+      100:  106-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 100
+    #####:  107:            cout << "the anomaly was not detected (-30)" << endl;
+    %%%%%:  107-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  107-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+        -:  108:
+      100:  109:        if (falseAlarms > 0)
+      100:  109-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 100
+    #####:  110:            cout << "you have " << falseAlarms << " false alarms (-" << min(30, falseAlarms * 3) << ")" << endl;
+    %%%%%:  110-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  110-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:  110-block  2
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+    %%%%%:  110-block  3
+call    9 never executed
+call   10 never executed
+branch 11 never executed
+branch 12 never executed
+    %%%%%:  110-block  4
+call   13 never executed
+branch 14 never executed
+branch 15 never executed
+    %%%%%:  110-block  5
+call   16 never executed
+branch 17 never executed
+branch 18 never executed
+    %%%%%:  110-block  6
+    $$$$$:  110-block  7
+    $$$$$:  110-block  8
+        -:  111:
+      100:  112:        cout << "done" << endl;
+      100:  112-block  0
+call    0 returned 100
+branch  1 taken 100 (fallthrough)
+branch  2 taken 0 (throw)
+      100:  112-block  1
+call    3 returned 100
+branch  4 taken 100 (fallthrough)
+branch  5 taken 0 (throw)
+        -:  113:    }
+        1:  114:        return 0;
+        1:  114-block  0
+        -:  115:
+        -:  116:}

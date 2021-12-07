@@ -52,7 +52,7 @@ float dev(Point p, Point **points, int size);
 // returns the deviation between point p and the line
 float dev(Point p, Line l);
 
-std::vector<Point> PointArrayToVector(Point** points, size_t size);
+const std::vector<Point> PointArrayToVector(Point** points, size_t size);
 
 
 #endif
