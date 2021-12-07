@@ -6,16 +6,12 @@
 #include <math.h>
 #include <vector>
 #include "anomaly_detection_util.h"
+#include "minCircle.h"
 using namespace std;
 
 // Defining infinity
 const float INF = 1e18;
 
-// Structure to represent a 2D circle
-struct Circle {
-    Point C;
-    float R;
-};
 
 // Function to return the euclidean distance
 // between two points
@@ -65,10 +61,10 @@ Circle circle_from(const Point& A, const Point& B,
 Circle circle_from(const Point& A, const Point& B)
 {
     // Set the center to be the midpoint of A and B
-    Point C = { (A.x + B.x) / 2.0, (A.y + B.y) / 2.0 };
+    Point C = { static_cast<float>((A.x + B.x) / 2.0), static_cast<float>((A.y + B.y) / 2.0) };
 
     // Set the radius to be half the distance AB
-    return { C, dist(A, B) / 2.0 };
+    return { C, static_cast<float>(dist(A, B) / 2.0) };
 }
 
 // Function to check whether a circle
@@ -157,6 +153,10 @@ Circle welzl(const vector<Point>& P)
     vector<Point> P_copy = P;
     random_shuffle(P_copy.begin(), P_copy.end());
     return welzl_helper(P_copy, {}, P_copy.size());
+}
+
+Circle findMinCircle(Point** points,size_t size){
+    vector<Point> P =
 }
 
 // Driver code
