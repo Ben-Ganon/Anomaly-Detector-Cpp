@@ -8,6 +8,7 @@
 #include "anomaly_detection_util.h"
 #include "minCircle.h"
 
+typedef unsigned long size_t;
 
 using namespace std;
 
