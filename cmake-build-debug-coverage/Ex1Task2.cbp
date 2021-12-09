@@ -100,6 +100,9 @@
 		<Unit filename="/home/ben/CLionProjects/AdvancedCompEx1Task2/minCircle.cpp">
 			<Option target="Ex1Task2"/>
 		</Unit>
+		<Unit filename="/home/ben/CLionProjects/AdvancedCompEx1Task2/minCircle.h">
+			<Option target="Ex1Task2"/>
+		</Unit>
 		<Unit filename="/home/ben/CLionProjects/AdvancedCompEx1Task2/timeseries.cpp">
 			<Option target="Ex1Task2"/>
 		</Unit>
