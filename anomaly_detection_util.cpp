@@ -152,11 +152,4 @@ float dev(Point p, Line l) {
     return std::abs(p.y - lineYValue);
 }
 
-const std::vector<Point> PointArrayToVector(Point** points, size_t size) {
-    std::vector<Point> vectorPoints;
-    vectorPoints.reserve(size);
-    for (int i = 0; i < size; ++i) {
-        vectorPoints.push_back(*points[i]);
-    }
-    return vectorPoints;
-}
+

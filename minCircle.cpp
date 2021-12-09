@@ -164,9 +164,16 @@ Circle callMinCircle(const vector<Point> &P) {
  * @param size - size of array
  * @return the min circle of the points
  */
-Circle findMinCircle(Point **points, size_t size) {
+Circle findMinCircle(Point **points, std::size_t size) {
     const vector<Point> P = PointArrayToVector(points, size);
     return callMinCircle(P);
 }
 
-
+const std::vector<Point> PointArrayToVector(Point** points, size_t size) {
+    std::vector<Point> vectorPoints;
+    vectorPoints.reserve(size);
+    for (int i = 0; i < size; ++i) {
+        vectorPoints.push_back(*points[i]);
+    }
+    return vectorPoints;
+}

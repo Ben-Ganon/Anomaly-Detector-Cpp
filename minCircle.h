@@ -5,16 +5,15 @@
 #ifndef MINCIRCLE_H_
 #define MINCIRCLE_H_
 
+#include "cstddef"
 #include <iostream>
 #include <vector>
 #include <stdlib.h>     /* srand, rand */
 #include <time.h>       /* time */
 #include "anomaly_detection_util.h"
 
-using namespace std;
-
-
 // ------------ DO NOT CHANGE -----------
+using namespace std;
 
 class Circle{
 public:
@@ -27,17 +26,17 @@ public:
 };
 // --------------------------------------
 
-Circle findMinCircle(Point** points,size_t size);
 float dist(const Point &a, const Point &b);
 bool point_in_circle(const Circle &c, const Point &p);
 Point get_circle_center(float bx, float by, float cx, float cy);
 Circle circle_from(const Point &A, const Point &B, const Point &C);
 Circle circle_from(const Point &A, const Point &B);
-bool is_valid_circle(const Circle &c, const vector<Point> &P);
-Circle minCircleTrivial(vector<Point> &P);
-Circle minCircleHelper(vector<Point> &P, vector<Point> R, int n);
-Circle callMinCircle(const vector<Point> &P);
-Circle findMinCircle(Point **points, size_t size);
+bool is_valid_circle(const Circle &c, const std::vector<Point> &P);
+Circle minCircleTrivial(std::vector<Point> &P);
+Circle minCircleHelper(std::vector<Point> &P, std::vector<Point> R, int n);
+Circle callMinCircle(const std::vector<Point> &P);
+Circle findMinCircle(Point **points, std::size_t size);
+const std::vector<Point> PointArrayToVector(Point** points, size_t size);
 
 // you can add here additional methods
 

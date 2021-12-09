@@ -53,7 +53,7 @@ void HybridAnomalyDetector::learnNormal(const TimeSeries &ts) {
     }
 
 
-vector<Point> HybridAnomalyDetector::getPoints(std::vector<float> v1, std:: vector<float> v2) {
+std::vector<Point> HybridAnomalyDetector::getPoints(std::vector<float> v1, std:: vector<float> v2) {
     std::vector<Point> PointArray;
     for (int i = 0; i < v1.size(); ++i) {
         Point currPoint = Point(v1.at(i), v2.at(i));
@@ -69,7 +69,7 @@ std::vector<AnomalyReport> HybridAnomalyDetector::detect(const TimeSeries &ts) {
         //the two columns from the timeseries
         std::vector<float> col1 = ts.getColumn(currCf.col1);
         std::vector<float> col2 = ts.getColumn(currCf.col2);
-        vector<Point> points = getPoints(col1, col2);
+        std::vector<Point> points = getPoints(col1, col2);
         //iterating over each line in the columns
         int i = 0;
         for(Point currP : points) {

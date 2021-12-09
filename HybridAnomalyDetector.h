@@ -13,7 +13,7 @@ public:
     void HybridLearner(const TimeSeries &ts, float m, int i, int index);
     void learnNormal(const TimeSeries &ts) override;
     std::vector<AnomalyReport> detect(const TimeSeries &ts) override;
-    vector<Point> getPoints(std::vector<float> v1, std:: vector<float> v2);
+    std::vector<Point> getPoints(std::vector<float> v1, std:: vector<float> v2);
     void hybridDetection(float threshold, Point p, correlatedFeatures cf, int timeStep, std::vector<AnomalyReport>* anomalies);
 };
 
