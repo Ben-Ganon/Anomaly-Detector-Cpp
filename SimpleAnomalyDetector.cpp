@@ -5,6 +5,7 @@
 
 #include "SimpleAnomalyDetector.h"
 #include "anomaly_detection_util.h"
+
 /**
  * simple constructor allocating memory to the cf array
  */
@@ -12,11 +13,12 @@ SimpleAnomalyDetector::SimpleAnomalyDetector() {
     this->cf = new std::vector<correlatedFeatures>;
 
 }
+
 /**
  * simple destructor to erase the cf array
  */
 SimpleAnomalyDetector::~SimpleAnomalyDetector() {
-    for (correlatedFeatures curr : *this->cf) {
+    for (correlatedFeatures curr: *this->cf) {
         curr.feature1.clear();
         curr.feature2.clear();
 
@@ -50,23 +52,33 @@ void SimpleAnomalyDetector::learnNormal(const TimeSeries &ts) {
         //if we found any correlation above the given pearson threshhold (PEARSON) we enter the columns into cf
         if (-1 != index) {
             if (m >= PEARSON) {
-                //remember delete this
-                correlatedFeatures correlatedFeature;
-                correlatedFeature.corrlation = m;
-                //need to change the function operation in timeSeries - need to return std::vector with floats
-                correlatedFeature.feature1 = ts.getNameOfRaw(i);
-                correlatedFeature.feature2 = ts.getNameOfRaw(index);
-                correlatedFeature.col1 = i;
-                correlatedFeature.col2 = index;
-                //need to add to those two:
-                correlatedFeature.lin_reg = linear_reg(ts.getColumn(i), ts.getColumn(index), ts.getColumn(i).size());
-                correlatedFeature.threshold = maxDev(ts.getColumn(i), ts.getColumn(index), ts.getColumn(i).size(),
-                                                      correlatedFeature.lin_reg) * THRESHOLD;
-                cf->push_back(correlatedFeature);
+                simpleLearner(ts, m, i, index);
             }
         }
-
     }
+}
+/**
+ * simpleLearner - the sub function that do the calculations when the threshold is bigger than 0.9
+ * insert the correlatedFeature into the given correlatedFeatures
+ * @param ts - time series - the columns
+ * @param m - max pearson
+ * @param i - num of the main column
+ * @param index - num of the correlated column
+ */
+void SimpleAnomalyDetector::simpleLearner(const TimeSeries &ts, float m, int i, int index) {
+    //remember delete this
+    correlatedFeatures correlatedFeature;
+    correlatedFeature.corrlation = m;
+    //need to change the function operation in timeSeries - need to return std::vector with floats
+    correlatedFeature.feature1 = ts.getNameOfRaw(i);
+    correlatedFeature.feature2 = ts.getNameOfRaw(index);
+    correlatedFeature.col1 = i;
+    correlatedFeature.col2 = index;
+    //need to add to those two:
+    correlatedFeature.lin_reg = linear_reg(ts.getColumn(i), ts.getColumn(index), ts.getColumn(i).size());
+    correlatedFeature.threshold = maxDev(ts.getColumn(i), ts.getColumn(index), ts.getColumn(i).size(),
+                                         correlatedFeature.lin_reg) * THRESHOLD;
+    cf->push_back(correlatedFeature);
 }
 
 /**

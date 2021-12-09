@@ -39,6 +39,8 @@ public:
     std::vector<correlatedFeatures> getNormalModel();
 
     float maxDev(std::vector<float> vector1, std::vector<float> vector2, unsigned int size,Line l);
+
+    void simpleLearner(const TimeSeries &ts, float m, int i, int index);
 };
 
 
