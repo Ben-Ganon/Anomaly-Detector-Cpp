@@ -52,7 +52,7 @@ void SimpleAnomalyDetector::learnNormal(const TimeSeries &ts) {
         //if we found any correlation above the given pearson threshhold (PEARSON) we enter the columns into cf
         if (-1 != index) {
             if (m >= PEARSON) {
-                simpleLearner(ts, m, i, index);
+                simpleLearner(ts, m, i, index, this->cf);
             }
         }
     }
@@ -65,7 +65,7 @@ void SimpleAnomalyDetector::learnNormal(const TimeSeries &ts) {
  * @param i - num of the main column
  * @param index - num of the correlated column
  */
-void SimpleAnomalyDetector::simpleLearner(const TimeSeries &ts, float m, int i, int index) {
+void SimpleAnomalyDetector::simpleLearner(const TimeSeries &ts, float m, int i, int index, std::vector<correlatedFeatures>* featureArray) {
     //remember delete this
     correlatedFeatures correlatedFeature;
     correlatedFeature.corrlation = m;
@@ -78,8 +78,9 @@ void SimpleAnomalyDetector::simpleLearner(const TimeSeries &ts, float m, int i, 
     correlatedFeature.lin_reg = linear_reg(ts.getColumn(i), ts.getColumn(index), ts.getColumn(i).size());
     correlatedFeature.threshold = maxDev(ts.getColumn(i), ts.getColumn(index), ts.getColumn(i).size(),
                                          correlatedFeature.lin_reg) * THRESHOLD;
-    correlatedFeature
-    cf->push_back(correlatedFeature);
+    correlatedFeature.isHybrid = false;
+    //correlatedFeature
+   featureArray->push_back(correlatedFeature);
 }
 
 /**
@@ -100,17 +101,22 @@ std::vector<AnomalyReport> SimpleAnomalyDetector::detect(const TimeSeries &ts) {
         //iterating over each line in the columns
         for (int i = 0; i < col1.size(); i++) {
             Point *currP = new Point(col1.at(i), col2.at(i));
-            //checking if the point is too far away from lin_reg
-            if (dev(*currP, currCf.lin_reg) > currCf.threshold) {
-                //creating a new anomaly report
-                std::string desc = currCf.feature1 + "-" + currCf.feature2;
-                AnomalyReport anom = AnomalyReport(desc, i + 1);
-                anomalies.push_back(anom);
-            }
+            simpleDetection(currCf.threshold, *currP, currCf, i, &anomalies);
             delete currP;
         }
     }
     return anomalies;
+}
+
+void SimpleAnomalyDetector::simpleDetection(float threshold, Point p1, correlatedFeatures cf, int timeStep, std::vector<AnomalyReport>* anomalies) {
+    //checking if the point is too far away from lin_reg
+    if(dev(p1, cf.lin_reg) > threshold) {
+        //creating a new anomaly report
+        std::string desc = cf.feature1 + "-" + cf.feature2;
+        AnomalyReport anomaly = AnomalyReport(desc, timeStep+ 1);
+        //pushing into given anomaly vector
+        anomalies->push_back(anomaly);
+    }
 }
 
 /**

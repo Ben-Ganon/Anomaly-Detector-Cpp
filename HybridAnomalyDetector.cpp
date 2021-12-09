@@ -5,19 +5,18 @@
 
 HybridAnomalyDetector::HybridAnomalyDetector() {
     this->cf = new std::vector<correlatedFeatures>;
-
 }
 
 HybridAnomalyDetector::~HybridAnomalyDetector() {
     for (correlatedFeatures curr: *this->cf) {
         curr.feature1.clear();
         curr.feature2.clear();
-
     }
     this->cf->clear();
     delete cf;
 }
-void HybridAnomalyDetector::HybridLearner(const TimeSeries &ts, float m, int i, int index){
+
+void HybridAnomalyDetector::HybridLearner(const TimeSeries &ts, float m, int i, int index, std::vector<correlatedFeatures>* featureArray){
     correlatedFeatures correlatedFeature;
     correlatedFeature.corrlation = m;
     //need to change the function operation in timeSeries - need to return std::vector with floats
@@ -28,9 +27,9 @@ void HybridAnomalyDetector::HybridLearner(const TimeSeries &ts, float m, int i, 
     std::vector<float> column1 = ts.getColumn(i);
     std::vector<float> column2 = ts.getColumn(index);
     correlatedFeature.C  = callMinCircle(getPoints(column1, column2));
-    correlatedFeature.threshold = (float) correlatedFeature.C.radius * 1.15;
+    correlatedFeature.threshold = correlatedFeature.C.radius * THRESHOLD;
     correlatedFeature.isHybrid = true;
-    this->cf->push_back(correlatedFeature);
+    featureArray->push_back(correlatedFeature);
 }
 
 
@@ -51,17 +50,18 @@ void HybridAnomalyDetector::learnNormal(const TimeSeries &ts) {
                 m = p;
                 index = j;
             }
+        }
             if (-1 != index) {
                 if (m >= PEARSON) {
-                    HybridAnomalyDetector::simpleLearner(ts, m, i, index);
+                    HybridAnomalyDetector::simpleLearner(ts, m, i, index, this->cf);
                 }
-                else if (m >= HYBRID_PEARSON) {
-                    HybridAnomalyDetector::HybridLearner(ts, m, i, index);
+                else if (m > HYBRID_PEARSON) {
+                    HybridAnomalyDetector::HybridLearner(ts, m, i, index, this->cf);
                 }
             }
         }
     }
-}
+
 
 vector<Point> HybridAnomalyDetector::getPoints(std::vector<float> v1, std:: vector<float> v2) {
     std::vector<Point> PointArray;
@@ -70,6 +70,43 @@ vector<Point> HybridAnomalyDetector::getPoints(std::vector<float> v1, std:: vect
         PointArray.push_back(currPoint);
     }
     return PointArray;
+}
+
+std::vector<AnomalyReport> HybridAnomalyDetector::detect(const TimeSeries &ts) {
+    std::vector<AnomalyReport> anomalies;
+    //iteration over cf's
+    for (correlatedFeatures currCf: *this->cf) {
+        //the two columns from the timeseries
+        std::vector<float> col1 = ts.getColumn(currCf.col1);
+        std::vector<float> col2 = ts.getColumn(currCf.col2);
+        vector<Point> points = getPoints(col1, col2);
+        //iterating over each line in the columns
+        int i = 0;
+        for(Point currP : points) {
+            if(currCf.isHybrid) {
+                HybridAnomalyDetector::hybridDetection(currCf.threshold, currP, currCf, i, &anomalies);
+            }
+            else {
+                SimpleAnomalyDetector::simpleDetection(currCf.threshold, currP, currCf, i, &anomalies);
+            }
+            i++;
+        }
+    }
+    return anomalies;
+}
+
+void HybridAnomalyDetector::hybridDetection(float threshold, Point p, correlatedFeatures cf, int timeStep, std::vector<AnomalyReport>* anomalies) {
+    Point cfCircleCenter = cf.C.center;
+    if(dist(p, cfCircleCenter) > threshold) {
+        std::string desc = cf.feature1 + "-" + cf.feature2;
+        AnomalyReport anomaly = AnomalyReport(desc, timeStep+ 1);
+        //pushing into given anomaly vector
+        anomalies->push_back(anomaly);
+    }
+}
+
+std::vector<correlatedFeatures>  HybridAnomalyDetector::getNormalModel() {
+    return *this->cf;
 }
 
 

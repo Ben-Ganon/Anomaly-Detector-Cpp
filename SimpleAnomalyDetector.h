@@ -13,7 +13,7 @@
 #include <string.h>
 #include <math.h>
 #include "minCircle.h"
-#define THRESHOLD 1.2
+#define THRESHOLD 1.1
 #define PEARSON 0.9
 struct correlatedFeatures {
     std::string feature1, feature2;// names of the correlated features
@@ -27,6 +27,7 @@ struct correlatedFeatures {
 
 class SimpleAnomalyDetector : public TimeSeriesAnomalyDetector {
     //this vector is a dynamic array of correlated features.
+protected:
     std::vector<correlatedFeatures>* cf;
 public:
     SimpleAnomalyDetector();
@@ -39,11 +40,13 @@ public:
 
     virtual std::vector<AnomalyReport> detect(const TimeSeries &ts);
 
-    std::vector<correlatedFeatures> getNormalModel();
+    virtual std::vector<correlatedFeatures> getNormalModel();
 
     float maxDev(std::vector<float> vector1, std::vector<float> vector2, unsigned int size,Line l);
 
-    virtual void simpleLearner(const TimeSeries &ts, float m, int i, int index);
+    virtual void simpleLearner(const TimeSeries &ts, float m, int i, int index, std::vector<correlatedFeatures>* featureArray);
+
+    virtual void simpleDetection(float threshold, Point p1, correlatedFeatures cf, int timeStep, std::vector<AnomalyReport>* anomalies);
 };
 
 
