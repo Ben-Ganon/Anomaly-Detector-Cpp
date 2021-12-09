@@ -3,20 +3,10 @@
 #include "minCircle.h"
 #define HYBRID_PEARSON 0.5
 
-HybridAnomalyDetector::HybridAnomalyDetector() {
-    this->cf = new std::vector<correlatedFeatures>;
-}
+HybridAnomalyDetector::HybridAnomalyDetector() = default;
 
-HybridAnomalyDetector::~HybridAnomalyDetector() {
-    for (correlatedFeatures curr: *this->cf) {
-        curr.feature1.clear();
-        curr.feature2.clear();
-    }
-    this->cf->clear();
-    delete cf;
-}
 
-void HybridAnomalyDetector::HybridLearner(const TimeSeries &ts, float m, int i, int index, std::vector<correlatedFeatures>* featureArray){
+void HybridAnomalyDetector::HybridLearner(const TimeSeries &ts, float m, int i, int index){
     correlatedFeatures correlatedFeature;
     correlatedFeature.corrlation = m;
     //need to change the function operation in timeSeries - need to return std::vector with floats
@@ -29,7 +19,7 @@ void HybridAnomalyDetector::HybridLearner(const TimeSeries &ts, float m, int i, 
     correlatedFeature.C  = callMinCircle(getPoints(column1, column2));
     correlatedFeature.threshold = correlatedFeature.C.radius * THRESHOLD;
     correlatedFeature.isHybrid = true;
-    featureArray->push_back(correlatedFeature);
+    this->cf->push_back(correlatedFeature);
 }
 
 
@@ -56,7 +46,7 @@ void HybridAnomalyDetector::learnNormal(const TimeSeries &ts) {
                     HybridAnomalyDetector::simpleLearner(ts, m, i, index, this->cf);
                 }
                 else if (m > HYBRID_PEARSON) {
-                    HybridAnomalyDetector::HybridLearner(ts, m, i, index, this->cf);
+                    HybridAnomalyDetector::HybridLearner(ts, m, i, index);
                 }
             }
         }
@@ -104,9 +94,4 @@ void HybridAnomalyDetector::hybridDetection(float threshold, Point p, correlated
         anomalies->push_back(anomaly);
     }
 }
-
-std::vector<correlatedFeatures>  HybridAnomalyDetector::getNormalModel() {
-    return *this->cf;
-}
-
 
