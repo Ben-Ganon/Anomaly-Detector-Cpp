@@ -82,6 +82,12 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/home/ben/CLionProjects/AdvancedCompEx1Task2/HybridAnomalyDetector.cpp">
+			<Option target="Ex1Task2"/>
+		</Unit>
+		<Unit filename="/home/ben/CLionProjects/AdvancedCompEx1Task2/HybridAnomalyDetector.h">
+			<Option target="Ex1Task2"/>
+		</Unit>
 		<Unit filename="/home/ben/CLionProjects/AdvancedCompEx1Task2/MainTrain.cpp">
 			<Option target="Ex1Task2"/>
 		</Unit>
@@ -98,6 +104,9 @@
 			<Option target="Ex1Task2"/>
 		</Unit>
 		<Unit filename="/home/ben/CLionProjects/AdvancedCompEx1Task2/minCircle.cpp">
+			<Option target="Ex1Task2"/>
+		</Unit>
+		<Unit filename="/home/ben/CLionProjects/AdvancedCompEx1Task2/minCircle.h">
 			<Option target="Ex1Task2"/>
 		</Unit>
 		<Unit filename="/home/ben/CLionProjects/AdvancedCompEx1Task2/timeseries.cpp">

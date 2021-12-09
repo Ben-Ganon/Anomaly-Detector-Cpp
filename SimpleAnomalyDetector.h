@@ -12,6 +12,7 @@
 #include <algorithm>
 #include <string.h>
 #include <math.h>
+#include "minCircle.h"
 #define THRESHOLD 1.2
 #define PEARSON 0.9
 struct correlatedFeatures {
@@ -20,6 +21,10 @@ struct correlatedFeatures {
     float corrlation;
     Line lin_reg;
     float threshold;
+    Circle* C;
+    ~correlatedFeatures() {
+        delete this->C;
+    }
 };
 
 class SimpleAnomalyDetector : public TimeSeriesAnomalyDetector {
