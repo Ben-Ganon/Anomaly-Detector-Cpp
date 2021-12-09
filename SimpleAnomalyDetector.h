@@ -21,10 +21,8 @@ struct correlatedFeatures {
     float corrlation;
     Line lin_reg;
     float threshold;
-    Circle* C;
-    ~correlatedFeatures() {
-        delete this->C;
-    }
+    Circle C;
+    bool isHybrid;
 };
 
 class SimpleAnomalyDetector : public TimeSeriesAnomalyDetector {
@@ -45,7 +43,7 @@ public:
 
     float maxDev(std::vector<float> vector1, std::vector<float> vector2, unsigned int size,Line l);
 
-    void simpleLearner(const TimeSeries &ts, float m, int i, int index);
+    virtual void simpleLearner(const TimeSeries &ts, float m, int i, int index);
 };
 
 

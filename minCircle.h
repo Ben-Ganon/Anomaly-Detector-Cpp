@@ -21,6 +21,9 @@ public:
 	Point center;
 	float radius;
 	Circle(Point c,float r):center(c),radius(r){}
+    Circle():center(Point(0,0)) {
+        this->radius = 0;
+    };
 };
 // --------------------------------------
 

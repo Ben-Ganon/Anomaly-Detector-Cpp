@@ -78,6 +78,7 @@ void SimpleAnomalyDetector::simpleLearner(const TimeSeries &ts, float m, int i, 
     correlatedFeature.lin_reg = linear_reg(ts.getColumn(i), ts.getColumn(index), ts.getColumn(i).size());
     correlatedFeature.threshold = maxDev(ts.getColumn(i), ts.getColumn(index), ts.getColumn(i).size(),
                                          correlatedFeature.lin_reg) * THRESHOLD;
+    correlatedFeature
     cf->push_back(correlatedFeature);
 }
 

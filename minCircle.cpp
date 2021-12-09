@@ -15,6 +15,9 @@ using namespace std;
 // Defining infinity
 const float INF = 1e18;
 
+
+
+
 /**
  * dist - return the distance between two points
  * @param pointA
