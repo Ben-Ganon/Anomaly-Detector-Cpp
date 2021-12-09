@@ -8,6 +8,7 @@
 
 #include "anomaly_detection_util.h"
 #include "AnomalyDetector.h"
+#include "minCircle.h"
 #include <vector>
 #include <algorithm>
 #include <string.h>
@@ -20,6 +21,7 @@ struct correlatedFeatures {
     float corrlation;
     Line lin_reg;
     float threshold;
+    Circle C;
 };
 
 class SimpleAnomalyDetector : public TimeSeriesAnomalyDetector {

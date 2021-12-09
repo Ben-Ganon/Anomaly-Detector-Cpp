@@ -61,7 +61,7 @@ void SimpleAnomalyDetector::learnNormal(const TimeSeries &ts) {
                 //need to add to those two:
                 correlatedFeature.lin_reg = linear_reg(ts.getColumn(i), ts.getColumn(index), ts.getColumn(i).size());
                 correlatedFeature.threshold = maxDev(ts.getColumn(i), ts.getColumn(index), ts.getColumn(i).size(),
-                                                      correlatedFeature.lin_reg) * THRESHOLD;
+                                                     correlatedFeature.lin_reg) * THRESHOLD;
                 cf->push_back(correlatedFeature);
             }
         }
