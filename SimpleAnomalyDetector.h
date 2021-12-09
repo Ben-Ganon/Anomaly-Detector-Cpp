@@ -8,11 +8,11 @@
 
 #include "anomaly_detection_util.h"
 #include "AnomalyDetector.h"
-#include "minCircle.h"
 #include <vector>
 #include <algorithm>
 #include <string.h>
 #include <math.h>
+#include "minCircle.h"
 #define THRESHOLD 1.2
 #define PEARSON 0.9
 struct correlatedFeatures {
@@ -21,7 +21,10 @@ struct correlatedFeatures {
     float corrlation;
     Line lin_reg;
     float threshold;
-    Circle C;
+    Circle* C;
+    ~correlatedFeatures() {
+        delete this->C;
+    }
 };
 
 class SimpleAnomalyDetector : public TimeSeriesAnomalyDetector {
@@ -41,6 +44,8 @@ public:
     std::vector<correlatedFeatures> getNormalModel();
 
     float maxDev(std::vector<float> vector1, std::vector<float> vector2, unsigned int size,Line l);
+
+    void simpleLearner(const TimeSeries &ts, float m, int i, int index);
 };
 
 

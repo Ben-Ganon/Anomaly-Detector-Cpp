@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/Ex1Task2.dir/HybridAnomalyDetector.cpp.o"
+  "CMakeFiles/Ex1Task2.dir/HybridAnomalyDetector.cpp.o.d"
   "CMakeFiles/Ex1Task2.dir/MainTrain.cpp.o"
   "CMakeFiles/Ex1Task2.dir/MainTrain.cpp.o.d"
   "CMakeFiles/Ex1Task2.dir/SimpleAnomalyDetector.cpp.o"

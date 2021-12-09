@@ -129,6 +129,30 @@ Ex1Task2/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Ex1Task2.dir/build.make CMakeFiles/Ex1Task2.dir/build
 .PHONY : Ex1Task2/fast
 
+HybridAnomalyDetector.o: HybridAnomalyDetector.cpp.o
+.PHONY : HybridAnomalyDetector.o
+
+# target to build an object file
+HybridAnomalyDetector.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Ex1Task2.dir/build.make CMakeFiles/Ex1Task2.dir/HybridAnomalyDetector.cpp.o
+.PHONY : HybridAnomalyDetector.cpp.o
+
+HybridAnomalyDetector.i: HybridAnomalyDetector.cpp.i
+.PHONY : HybridAnomalyDetector.i
+
+# target to preprocess a source file
+HybridAnomalyDetector.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Ex1Task2.dir/build.make CMakeFiles/Ex1Task2.dir/HybridAnomalyDetector.cpp.i
+.PHONY : HybridAnomalyDetector.cpp.i
+
+HybridAnomalyDetector.s: HybridAnomalyDetector.cpp.s
+.PHONY : HybridAnomalyDetector.s
+
+# target to generate assembly for a file
+HybridAnomalyDetector.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Ex1Task2.dir/build.make CMakeFiles/Ex1Task2.dir/HybridAnomalyDetector.cpp.s
+.PHONY : HybridAnomalyDetector.cpp.s
+
 MainTrain.o: MainTrain.cpp.o
 .PHONY : MainTrain.o
 
@@ -258,6 +282,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... Ex1Task2"
+	@echo "... HybridAnomalyDetector.o"
+	@echo "... HybridAnomalyDetector.i"
+	@echo "... HybridAnomalyDetector.s"
 	@echo "... MainTrain.o"
 	@echo "... MainTrain.i"
 	@echo "... MainTrain.s"
