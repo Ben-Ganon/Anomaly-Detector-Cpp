@@ -8,7 +8,6 @@
 #include "anomaly_detection_util.h"
 #include "minCircle.h"
 
-
 using namespace std;
 
 // Defining infinity
