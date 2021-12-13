@@ -23,3 +23,13 @@ void read(float* f) {
     cin >> g;
     *f = g;
 }
+void read(string filePath) {
+    std::ofstream file(filePath);
+    string line;
+    cin >> line;
+    while (line != "done") {
+        file << line;
+        cin >> line;
+    }
+    file.close();
+}

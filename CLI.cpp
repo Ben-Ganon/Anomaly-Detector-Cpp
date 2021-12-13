@@ -66,7 +66,7 @@ void CLI::start() {
                 //TODO: replace the command to read the client csv
                 cout << "Please upload your local train CSV file." << endl;
                 // insert the paths given by the user
-                cin >> localAnomFiles
+                cin >> localAnomFiles;
                 cout << "Upload complete." << endl;
                 //TODO: do here all the calculations
                 cout << "True Positive Rate: " << truePositiveRate << endl;
