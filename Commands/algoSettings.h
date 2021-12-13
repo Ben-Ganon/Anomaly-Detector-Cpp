@@ -4,7 +4,7 @@
 
 #ifndef EX1TASK2_ALGOSETTINGS_H
 #define EX1TASK2_ALGOSETTINGS_H
-#include "commands.h"
+#include "../commands.h"
 
 class algoSettings: public {
 

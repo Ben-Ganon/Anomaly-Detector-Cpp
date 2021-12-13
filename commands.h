@@ -12,7 +12,7 @@
 
 #include <fstream>
 #include <vector>
-#include "HybridAnomalyDetector.h"
+#include "Detetcors/HybridAnomalyDetector.h"
 
 using namespace std;
 

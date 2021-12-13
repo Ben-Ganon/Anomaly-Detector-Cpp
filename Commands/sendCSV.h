@@ -4,7 +4,7 @@
 
 #ifndef EX1TASK2_SENDCSV_H
 #define EX1TASK2_SENDCSV_H
-#include "commands.h"
+#include "../commands.h"
 
 class sendCSV:public Command{
     string path;

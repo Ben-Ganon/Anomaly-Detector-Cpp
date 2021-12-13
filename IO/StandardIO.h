@@ -4,7 +4,7 @@
 
 #ifndef EX1TASK2_STANDARDIO_H
 #define EX1TASK2_STANDARDIO_H
-#include "commands.h"
+#include "../commands.h"
 
 class StandardIO: public DefaultIO{
     StandardIO()= default;

@@ -3,4 +3,4 @@ project(Ex1Task2)
 
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_BUILD_TYPE Debug)
-add_executable(Ex1Task2 MainTrain.cpp sendCSV.cpp receiveCSV.cpp HybridAnomalyDetector.cpp anomaly_detection_util.cpp SimpleAnomalyDetector.cpp timeseries.cpp minCircle.cpp)
+add_executable(Ex1Task2 MainTrain.cpp Commands/sendCSV.cpp Commands/receiveCSV.cpp Detetcors/HybridAnomalyDetector.cpp Detetcors/anomaly_detection_util.cpp Detetcors/SimpleAnomalyDetector.cpp Detetcors/timeseries.cpp minCircle.cpp)

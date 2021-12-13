@@ -4,7 +4,7 @@
 
 #ifndef EX1TASK2_RECEIVECSV_H
 #define EX1TASK2_RECEIVECSV_H
-#include "commands.h"
+#include "../commands.h"
 
 class receiveCSV : public Command{
     string path;

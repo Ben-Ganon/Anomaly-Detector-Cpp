@@ -7,8 +7,8 @@
 #include <iostream>
 #include <math.h>
 #include <vector>
-#include "anomaly_detection_util.h"
-#include "minCircle.h"
+#include "Detetcors/anomaly_detection_util.h"
+#include "Detetcors/minCircle.h"
 
 using namespace std;
 
