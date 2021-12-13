@@ -6,6 +6,7 @@
 #include "CLI.h"
 
 CLI::CLI(DefaultIO *dio) {
+    this->dio = dio;
 }
 
 void CLI::start() {
