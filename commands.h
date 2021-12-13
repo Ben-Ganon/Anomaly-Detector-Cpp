@@ -32,7 +32,8 @@ public:
 
 // you may edit this class
 class Command{
-	DefaultIO* dio;
+protected:
+    DefaultIO* dio;
 public:
 	Command(DefaultIO* dio):dio(dio){}
 	virtual void execute()=0;
