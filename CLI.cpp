@@ -20,17 +20,17 @@ void CLI::start() {
                 << "Welcome to the Anomaly Detection Server. Please choose an option: \n1. upload a time series csv"
                    " file \n2. algorithm settings \n3. detect anomalies \n4. display results \n5. upload anomalies "
                    "and analyze results \n6. exit"
-                << endl
+                << endl;
         cin >> choice;
         switch (choice) {
             case '1':
                 cout << "Please upload your local train CSV file." << endl;
                 // insert the paths given by the user
-                cin >> csvTrain
+                cin >> csvTrain;
                 cout << "Upload complete." << endl;
                 cout << "Please upload your local test CSV file." << endl;
                 // insert the paths given by the user
-                cin >> csvTest
+                cin >> csvTest;
                 cout << "Upload complete." << endl;
                 //TODO: need to implement here the command that sending the given csv from the client to the server
                 break;
