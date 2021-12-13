@@ -7,8 +7,15 @@
 #include "commands.h"
 
 class receiveCSV : public Command{
+    string path;
+    DefaultIO* io;
 
+public:
+    receiveCSV(DefaultIO *dio, string path);
+    ~receiveCSV() override;
+    void execute(string path);
 };
+
 
 
 #endif //EX1TASK2_RECEIVECSV_H
