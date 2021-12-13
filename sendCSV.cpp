@@ -10,7 +10,10 @@ sendCSV::sendCSV(string path, DefaultIO *io) : Command(nullptr) {
     this->io = io;
 
 }
-
+sendCSV:: ~sendCSV(){
+    this->path.clear();
+    delete this->io;
+}
 void sendCSV::execute() {
     std::ifstream file;
     file.open(this->path);

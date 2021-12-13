@@ -11,7 +11,9 @@ class sendCSV:public Command{
     DefaultIO* io;
 public:
 sendCSV(string path, DefaultIO* io);
-void execute();
+~sendCSV() override;
+void execute() override;
+
 
 };
 

@@ -109,6 +109,18 @@
 		<Unit filename="/home/ben/CLionProjects/AdvancedCompEx1Task2/minCircle.h">
 			<Option target="Ex1Task2"/>
 		</Unit>
+		<Unit filename="/home/ben/CLionProjects/AdvancedCompEx1Task2/receiveCSV.cpp">
+			<Option target="Ex1Task2"/>
+		</Unit>
+		<Unit filename="/home/ben/CLionProjects/AdvancedCompEx1Task2/receiveCSV.h">
+			<Option target="Ex1Task2"/>
+		</Unit>
+		<Unit filename="/home/ben/CLionProjects/AdvancedCompEx1Task2/sendCSV.cpp">
+			<Option target="Ex1Task2"/>
+		</Unit>
+		<Unit filename="/home/ben/CLionProjects/AdvancedCompEx1Task2/sendCSV.h">
+			<Option target="Ex1Task2"/>
+		</Unit>
 		<Unit filename="/home/ben/CLionProjects/AdvancedCompEx1Task2/timeseries.cpp">
 			<Option target="Ex1Task2"/>
 		</Unit>

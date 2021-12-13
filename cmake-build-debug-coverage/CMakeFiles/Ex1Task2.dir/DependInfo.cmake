@@ -13,6 +13,8 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/ben/CLionProjects/AdvancedCompEx1Task2/SimpleAnomalyDetector.cpp" "CMakeFiles/Ex1Task2.dir/SimpleAnomalyDetector.cpp.o" "gcc" "CMakeFiles/Ex1Task2.dir/SimpleAnomalyDetector.cpp.o.d"
   "/home/ben/CLionProjects/AdvancedCompEx1Task2/anomaly_detection_util.cpp" "CMakeFiles/Ex1Task2.dir/anomaly_detection_util.cpp.o" "gcc" "CMakeFiles/Ex1Task2.dir/anomaly_detection_util.cpp.o.d"
   "/home/ben/CLionProjects/AdvancedCompEx1Task2/minCircle.cpp" "CMakeFiles/Ex1Task2.dir/minCircle.cpp.o" "gcc" "CMakeFiles/Ex1Task2.dir/minCircle.cpp.o.d"
+  "/home/ben/CLionProjects/AdvancedCompEx1Task2/receiveCSV.cpp" "CMakeFiles/Ex1Task2.dir/receiveCSV.cpp.o" "gcc" "CMakeFiles/Ex1Task2.dir/receiveCSV.cpp.o.d"
+  "/home/ben/CLionProjects/AdvancedCompEx1Task2/sendCSV.cpp" "CMakeFiles/Ex1Task2.dir/sendCSV.cpp.o" "gcc" "CMakeFiles/Ex1Task2.dir/sendCSV.cpp.o.d"
   "/home/ben/CLionProjects/AdvancedCompEx1Task2/timeseries.cpp" "CMakeFiles/Ex1Task2.dir/timeseries.cpp.o" "gcc" "CMakeFiles/Ex1Task2.dir/timeseries.cpp.o.d"
   )
 

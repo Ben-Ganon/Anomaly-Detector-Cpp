@@ -83,10 +83,38 @@ CMakeFiles/Ex1Task2.dir/MainTrain.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Ex1Task2.dir/MainTrain.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ben/CLionProjects/AdvancedCompEx1Task2/MainTrain.cpp -o CMakeFiles/Ex1Task2.dir/MainTrain.cpp.s
 
+CMakeFiles/Ex1Task2.dir/sendCSV.cpp.o: CMakeFiles/Ex1Task2.dir/flags.make
+CMakeFiles/Ex1Task2.dir/sendCSV.cpp.o: ../sendCSV.cpp
+CMakeFiles/Ex1Task2.dir/sendCSV.cpp.o: CMakeFiles/Ex1Task2.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ben/CLionProjects/AdvancedCompEx1Task2/cmake-build-debug-coverage/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Ex1Task2.dir/sendCSV.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Ex1Task2.dir/sendCSV.cpp.o -MF CMakeFiles/Ex1Task2.dir/sendCSV.cpp.o.d -o CMakeFiles/Ex1Task2.dir/sendCSV.cpp.o -c /home/ben/CLionProjects/AdvancedCompEx1Task2/sendCSV.cpp
+
+CMakeFiles/Ex1Task2.dir/sendCSV.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Ex1Task2.dir/sendCSV.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ben/CLionProjects/AdvancedCompEx1Task2/sendCSV.cpp > CMakeFiles/Ex1Task2.dir/sendCSV.cpp.i
+
+CMakeFiles/Ex1Task2.dir/sendCSV.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Ex1Task2.dir/sendCSV.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ben/CLionProjects/AdvancedCompEx1Task2/sendCSV.cpp -o CMakeFiles/Ex1Task2.dir/sendCSV.cpp.s
+
+CMakeFiles/Ex1Task2.dir/receiveCSV.cpp.o: CMakeFiles/Ex1Task2.dir/flags.make
+CMakeFiles/Ex1Task2.dir/receiveCSV.cpp.o: ../receiveCSV.cpp
+CMakeFiles/Ex1Task2.dir/receiveCSV.cpp.o: CMakeFiles/Ex1Task2.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ben/CLionProjects/AdvancedCompEx1Task2/cmake-build-debug-coverage/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Ex1Task2.dir/receiveCSV.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Ex1Task2.dir/receiveCSV.cpp.o -MF CMakeFiles/Ex1Task2.dir/receiveCSV.cpp.o.d -o CMakeFiles/Ex1Task2.dir/receiveCSV.cpp.o -c /home/ben/CLionProjects/AdvancedCompEx1Task2/receiveCSV.cpp
+
+CMakeFiles/Ex1Task2.dir/receiveCSV.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Ex1Task2.dir/receiveCSV.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ben/CLionProjects/AdvancedCompEx1Task2/receiveCSV.cpp > CMakeFiles/Ex1Task2.dir/receiveCSV.cpp.i
+
+CMakeFiles/Ex1Task2.dir/receiveCSV.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Ex1Task2.dir/receiveCSV.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ben/CLionProjects/AdvancedCompEx1Task2/receiveCSV.cpp -o CMakeFiles/Ex1Task2.dir/receiveCSV.cpp.s
+
 CMakeFiles/Ex1Task2.dir/HybridAnomalyDetector.cpp.o: CMakeFiles/Ex1Task2.dir/flags.make
 CMakeFiles/Ex1Task2.dir/HybridAnomalyDetector.cpp.o: ../HybridAnomalyDetector.cpp
 CMakeFiles/Ex1Task2.dir/HybridAnomalyDetector.cpp.o: CMakeFiles/Ex1Task2.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ben/CLionProjects/AdvancedCompEx1Task2/cmake-build-debug-coverage/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Ex1Task2.dir/HybridAnomalyDetector.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ben/CLionProjects/AdvancedCompEx1Task2/cmake-build-debug-coverage/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Ex1Task2.dir/HybridAnomalyDetector.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Ex1Task2.dir/HybridAnomalyDetector.cpp.o -MF CMakeFiles/Ex1Task2.dir/HybridAnomalyDetector.cpp.o.d -o CMakeFiles/Ex1Task2.dir/HybridAnomalyDetector.cpp.o -c /home/ben/CLionProjects/AdvancedCompEx1Task2/HybridAnomalyDetector.cpp
 
 CMakeFiles/Ex1Task2.dir/HybridAnomalyDetector.cpp.i: cmake_force
@@ -100,7 +128,7 @@ CMakeFiles/Ex1Task2.dir/HybridAnomalyDetector.cpp.s: cmake_force
 CMakeFiles/Ex1Task2.dir/anomaly_detection_util.cpp.o: CMakeFiles/Ex1Task2.dir/flags.make
 CMakeFiles/Ex1Task2.dir/anomaly_detection_util.cpp.o: ../anomaly_detection_util.cpp
 CMakeFiles/Ex1Task2.dir/anomaly_detection_util.cpp.o: CMakeFiles/Ex1Task2.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ben/CLionProjects/AdvancedCompEx1Task2/cmake-build-debug-coverage/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Ex1Task2.dir/anomaly_detection_util.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ben/CLionProjects/AdvancedCompEx1Task2/cmake-build-debug-coverage/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/Ex1Task2.dir/anomaly_detection_util.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Ex1Task2.dir/anomaly_detection_util.cpp.o -MF CMakeFiles/Ex1Task2.dir/anomaly_detection_util.cpp.o.d -o CMakeFiles/Ex1Task2.dir/anomaly_detection_util.cpp.o -c /home/ben/CLionProjects/AdvancedCompEx1Task2/anomaly_detection_util.cpp
 
 CMakeFiles/Ex1Task2.dir/anomaly_detection_util.cpp.i: cmake_force
@@ -114,7 +142,7 @@ CMakeFiles/Ex1Task2.dir/anomaly_detection_util.cpp.s: cmake_force
 CMakeFiles/Ex1Task2.dir/SimpleAnomalyDetector.cpp.o: CMakeFiles/Ex1Task2.dir/flags.make
 CMakeFiles/Ex1Task2.dir/SimpleAnomalyDetector.cpp.o: ../SimpleAnomalyDetector.cpp
 CMakeFiles/Ex1Task2.dir/SimpleAnomalyDetector.cpp.o: CMakeFiles/Ex1Task2.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ben/CLionProjects/AdvancedCompEx1Task2/cmake-build-debug-coverage/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Ex1Task2.dir/SimpleAnomalyDetector.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ben/CLionProjects/AdvancedCompEx1Task2/cmake-build-debug-coverage/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/Ex1Task2.dir/SimpleAnomalyDetector.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Ex1Task2.dir/SimpleAnomalyDetector.cpp.o -MF CMakeFiles/Ex1Task2.dir/SimpleAnomalyDetector.cpp.o.d -o CMakeFiles/Ex1Task2.dir/SimpleAnomalyDetector.cpp.o -c /home/ben/CLionProjects/AdvancedCompEx1Task2/SimpleAnomalyDetector.cpp
 
 CMakeFiles/Ex1Task2.dir/SimpleAnomalyDetector.cpp.i: cmake_force
@@ -128,7 +156,7 @@ CMakeFiles/Ex1Task2.dir/SimpleAnomalyDetector.cpp.s: cmake_force
 CMakeFiles/Ex1Task2.dir/timeseries.cpp.o: CMakeFiles/Ex1Task2.dir/flags.make
 CMakeFiles/Ex1Task2.dir/timeseries.cpp.o: ../timeseries.cpp
 CMakeFiles/Ex1Task2.dir/timeseries.cpp.o: CMakeFiles/Ex1Task2.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ben/CLionProjects/AdvancedCompEx1Task2/cmake-build-debug-coverage/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/Ex1Task2.dir/timeseries.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ben/CLionProjects/AdvancedCompEx1Task2/cmake-build-debug-coverage/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/Ex1Task2.dir/timeseries.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Ex1Task2.dir/timeseries.cpp.o -MF CMakeFiles/Ex1Task2.dir/timeseries.cpp.o.d -o CMakeFiles/Ex1Task2.dir/timeseries.cpp.o -c /home/ben/CLionProjects/AdvancedCompEx1Task2/timeseries.cpp
 
 CMakeFiles/Ex1Task2.dir/timeseries.cpp.i: cmake_force
@@ -142,7 +170,7 @@ CMakeFiles/Ex1Task2.dir/timeseries.cpp.s: cmake_force
 CMakeFiles/Ex1Task2.dir/minCircle.cpp.o: CMakeFiles/Ex1Task2.dir/flags.make
 CMakeFiles/Ex1Task2.dir/minCircle.cpp.o: ../minCircle.cpp
 CMakeFiles/Ex1Task2.dir/minCircle.cpp.o: CMakeFiles/Ex1Task2.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ben/CLionProjects/AdvancedCompEx1Task2/cmake-build-debug-coverage/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/Ex1Task2.dir/minCircle.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ben/CLionProjects/AdvancedCompEx1Task2/cmake-build-debug-coverage/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/Ex1Task2.dir/minCircle.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Ex1Task2.dir/minCircle.cpp.o -MF CMakeFiles/Ex1Task2.dir/minCircle.cpp.o.d -o CMakeFiles/Ex1Task2.dir/minCircle.cpp.o -c /home/ben/CLionProjects/AdvancedCompEx1Task2/minCircle.cpp
 
 CMakeFiles/Ex1Task2.dir/minCircle.cpp.i: cmake_force
@@ -156,6 +184,8 @@ CMakeFiles/Ex1Task2.dir/minCircle.cpp.s: cmake_force
 # Object files for target Ex1Task2
 Ex1Task2_OBJECTS = \
 "CMakeFiles/Ex1Task2.dir/MainTrain.cpp.o" \
+"CMakeFiles/Ex1Task2.dir/sendCSV.cpp.o" \
+"CMakeFiles/Ex1Task2.dir/receiveCSV.cpp.o" \
 "CMakeFiles/Ex1Task2.dir/HybridAnomalyDetector.cpp.o" \
 "CMakeFiles/Ex1Task2.dir/anomaly_detection_util.cpp.o" \
 "CMakeFiles/Ex1Task2.dir/SimpleAnomalyDetector.cpp.o" \
@@ -166,6 +196,8 @@ Ex1Task2_OBJECTS = \
 Ex1Task2_EXTERNAL_OBJECTS =
 
 Ex1Task2: CMakeFiles/Ex1Task2.dir/MainTrain.cpp.o
+Ex1Task2: CMakeFiles/Ex1Task2.dir/sendCSV.cpp.o
+Ex1Task2: CMakeFiles/Ex1Task2.dir/receiveCSV.cpp.o
 Ex1Task2: CMakeFiles/Ex1Task2.dir/HybridAnomalyDetector.cpp.o
 Ex1Task2: CMakeFiles/Ex1Task2.dir/anomaly_detection_util.cpp.o
 Ex1Task2: CMakeFiles/Ex1Task2.dir/SimpleAnomalyDetector.cpp.o
@@ -173,7 +205,7 @@ Ex1Task2: CMakeFiles/Ex1Task2.dir/timeseries.cpp.o
 Ex1Task2: CMakeFiles/Ex1Task2.dir/minCircle.cpp.o
 Ex1Task2: CMakeFiles/Ex1Task2.dir/build.make
 Ex1Task2: CMakeFiles/Ex1Task2.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ben/CLionProjects/AdvancedCompEx1Task2/cmake-build-debug-coverage/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable Ex1Task2"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ben/CLionProjects/AdvancedCompEx1Task2/cmake-build-debug-coverage/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX executable Ex1Task2"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Ex1Task2.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

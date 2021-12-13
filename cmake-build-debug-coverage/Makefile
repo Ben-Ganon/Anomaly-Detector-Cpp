@@ -249,6 +249,54 @@ minCircle.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Ex1Task2.dir/build.make CMakeFiles/Ex1Task2.dir/minCircle.cpp.s
 .PHONY : minCircle.cpp.s
 
+receiveCSV.o: receiveCSV.cpp.o
+.PHONY : receiveCSV.o
+
+# target to build an object file
+receiveCSV.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Ex1Task2.dir/build.make CMakeFiles/Ex1Task2.dir/receiveCSV.cpp.o
+.PHONY : receiveCSV.cpp.o
+
+receiveCSV.i: receiveCSV.cpp.i
+.PHONY : receiveCSV.i
+
+# target to preprocess a source file
+receiveCSV.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Ex1Task2.dir/build.make CMakeFiles/Ex1Task2.dir/receiveCSV.cpp.i
+.PHONY : receiveCSV.cpp.i
+
+receiveCSV.s: receiveCSV.cpp.s
+.PHONY : receiveCSV.s
+
+# target to generate assembly for a file
+receiveCSV.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Ex1Task2.dir/build.make CMakeFiles/Ex1Task2.dir/receiveCSV.cpp.s
+.PHONY : receiveCSV.cpp.s
+
+sendCSV.o: sendCSV.cpp.o
+.PHONY : sendCSV.o
+
+# target to build an object file
+sendCSV.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Ex1Task2.dir/build.make CMakeFiles/Ex1Task2.dir/sendCSV.cpp.o
+.PHONY : sendCSV.cpp.o
+
+sendCSV.i: sendCSV.cpp.i
+.PHONY : sendCSV.i
+
+# target to preprocess a source file
+sendCSV.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Ex1Task2.dir/build.make CMakeFiles/Ex1Task2.dir/sendCSV.cpp.i
+.PHONY : sendCSV.cpp.i
+
+sendCSV.s: sendCSV.cpp.s
+.PHONY : sendCSV.s
+
+# target to generate assembly for a file
+sendCSV.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Ex1Task2.dir/build.make CMakeFiles/Ex1Task2.dir/sendCSV.cpp.s
+.PHONY : sendCSV.cpp.s
+
 timeseries.o: timeseries.cpp.o
 .PHONY : timeseries.o
 
@@ -297,6 +345,12 @@ help:
 	@echo "... minCircle.o"
 	@echo "... minCircle.i"
 	@echo "... minCircle.s"
+	@echo "... receiveCSV.o"
+	@echo "... receiveCSV.i"
+	@echo "... receiveCSV.s"
+	@echo "... sendCSV.o"
+	@echo "... sendCSV.i"
+	@echo "... sendCSV.s"
 	@echo "... timeseries.o"
 	@echo "... timeseries.i"
 	@echo "... timeseries.s"
