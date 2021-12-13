@@ -1,3 +1,7 @@
+/* Authors:
+ * Ben Ganon - 318731007
+ * Sagiv Antebi - 318159282
+ */
 
 
 #ifndef COMMANDS_H_
