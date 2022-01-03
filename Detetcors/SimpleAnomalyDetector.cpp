@@ -31,7 +31,7 @@ SimpleAnomalyDetector::~SimpleAnomalyDetector() {
  * learnNormal calculates correlated columns in the given timeseries vie pearson and fills up the cf array
  * @param ts - timeseries with normal data for the detector to learn
  */
-void SimpleAnomalyDetector::learnNormal(const TimeSeries &ts) {
+void SimpleAnomalyDetector::learnNormal(const TimeSeries &ts, float threshold) {
     float m, p;
     int index;
     //iterating over the columns
@@ -51,7 +51,7 @@ void SimpleAnomalyDetector::learnNormal(const TimeSeries &ts) {
         }
         //if we found any correlation above the given pearson threshhold (PEARSON) we enter the columns into cf
         if (-1 != index) {
-            if (m >= PEARSON) {
+            if (m >= threshold) {
                 simpleLearner(ts, m, i, index, this->cf);
             }
         }

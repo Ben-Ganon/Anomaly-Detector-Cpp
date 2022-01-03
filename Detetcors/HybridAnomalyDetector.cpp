@@ -1,7 +1,10 @@
 
 #include "HybridAnomalyDetector.h"
 #include "minCircle.h"
+
 #define HYBRID_PEARSON 0.5
+#define PEARSON 0.9
+
 
 HybridAnomalyDetector::HybridAnomalyDetector() {
     this->threshold = 0.9;
@@ -51,7 +54,7 @@ void HybridAnomalyDetector::learnNormal(const TimeSeries &ts) {
                 if (m >= this->threshold) {
                     HybridAnomalyDetector::simpleLearner(ts, m, i, index, this->cf);
                 }
-                else if (m > HYBRID_PEARSON) {
+                else if (m >= HYBRID_PEARSON) {
                     HybridAnomalyDetector::HybridLearner(ts, m, i, index);
                 }
             }
