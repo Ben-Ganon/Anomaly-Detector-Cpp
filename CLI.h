@@ -15,9 +15,9 @@ using namespace std;
 
 class CLI {
     vector<Command*> commands;
-    DefaultIO* dio;
+    DefaultIO* io;
 public:
-    CLI(DefaultIO* dio);
+    CLI(DefaultIO* io);
     void start();
     virtual ~CLI();
 };

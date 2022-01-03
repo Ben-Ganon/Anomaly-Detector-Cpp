@@ -63,53 +63,51 @@ struct currentState {
 };
 
 
-// you may edit this class
 class Command {
 protected:
-    DefaultIO *dio;
+    DefaultIO *io;
 
 public:
     const string description;
 
-    Command(DefaultIO *dio, const string description) : dio(dio), description(description) {}
+    Command(DefaultIO *io, const string description) : io(io), description(description) {}
 
     virtual void execute(currentState *currentState) = 0;
 
     virtual ~Command() {}
 };
 
-// implement here your command classes
 
 class UploadCSV : public Command {
 public:
-    UploadCSV(DefaultIO *dio) : Command(dio, "upload a time series csv file") {}
+    UploadCSV(DefaultIO *io) : Command(io, "upload a time series csv file") {}
 
     virtual void execute(currentState *currState) {
-        dio->write("Please upload your local train CSV file.\n");
-        dio->readAndFile("anomalyTrain.csv");
-        dio->write("Upload complete.\n");
-        dio->write("Please upload your local test CSV file.\n");
-        dio->readAndFile("anomalyTest.csv");
-        dio->write("Upload complete.\n");
+        io->write("Please upload your local train CSV file.\n");
+        io->readAndFile("anomalyTrain.csv");
+        io->write("Upload complete.\n");
+        io->write("Please upload your local test CSV file.\n");
+        io->readAndFile("anomalyTest.csv");
+        io->write("Upload complete.\n");
     }
 };
 
 class Settings : public Command {
 public:
-    Settings(DefaultIO *dio) : Command(dio, "algorithm settings") {}
+    Settings(DefaultIO *io) : Command(io, "algorithm settings") {}
 
     virtual void execute(currentState *currState) {
 
         float thresh;
         bool choiceFlag = true;
         while (choiceFlag) {
-            dio->write("The current correlation threshold is ");
-            dio->write(currState->threshold);
-            dio->write("\n");
-            dio->write("Type a new threshold\n");
-            dio->read(&thresh);
+            io->write("The current correlation threshold is ");
+            io->write(currState->threshold);
+            io->write("\n");
+            io->write("Type a new threshold\n");
+            io->read(&thresh);
             if (0 > thresh || thresh > 1) {
-                dio->write("please choose a value between 0 and 1.\n");
+                io->write("please choose a value between 0 and 1.\n");
             } else {
                 choiceFlag = false;
                 currState->threshold = thresh;
@@ -120,7 +118,7 @@ public:
 
 class Detect : public Command {
 public:
-    Detect(DefaultIO *dio) : Command(dio, "detect anomalies") {}
+    Detect(DefaultIO *io) : Command(io, "detect anomalies") {}
 
     virtual void execute(currentState *currState) {
         TimeSeries train("anomalyTrain.csv");
@@ -152,39 +150,39 @@ public:
         }
         fReport.end = timeStepTemp;
         currState->blkReports.push_back(fReport);
-        dio->write("anomaly detection complete.\n");
+        io->write("anomaly detection complete.\n");
 
     }
 };
 
 class Results : public Command {
 public:
-    Results(DefaultIO *dio) : Command(dio, "display results") {}
+    Results(DefaultIO *io) : Command(io, "display results") {}
 
-    virtual void execute(currentState *sharedState) {
-        for_each(sharedState->report.begin(), sharedState->report.end(), [this](AnomalyReport &anom) {
-            dio->write(anom.timeStep);
-            dio->write("\t " + anom.description + "\n");
+    virtual void execute(currentState *currState) {
+        for_each(currState->report.begin(), currState->report.end(), [this](AnomalyReport &anom) {
+            io->write(anom.timeStep);
+            io->write("\t " + anom.description + "\n");
         });
-        dio->write("Done.\n");
+        io->write("Done.\n");
     }
 };
 
 
-class UploadAnom : public Command {
+class AnalyzeAnomalies : public Command {
 public:
-    UploadAnom(DefaultIO *dio) : Command(dio, "upload anomalies and analyze results") {}
+    AnalyzeAnomalies(DefaultIO *io) : Command(io, "upload anomalies and analyze results") {}
 
-    bool isFalseNega(unsigned long start, unsigned long end, currentState *sharedState) {
+    bool isFalseNega(unsigned long start, unsigned long end, currentState *currState) {
         bool fpFlag = true;
         int i = 0;
-        for (blockReport report: sharedState->blkReports) {
+        for (blockReport report: currState->blkReports) {
             int startBlock = report.start;
             int endbBlock = report.end;
             if (((startBlock <= start && start <= endbBlock) || (startBlock <= end && end <= endbBlock))
                 || (start < startBlock && endbBlock < end)) {
                 //
-                sharedState->blkReports.at(i).tp = true;
+                currState->blkReports.at(i).tp = true;
                 fpFlag = false;
             }
             i++;
@@ -194,14 +192,14 @@ public:
 
     /**
      * the return vector is : vector[0] = Positive,  vector[1] = False Positive
-     * @param sharedState
+     * @param currState
      * @return
      */
-    vector<int> PosiCount(currentState *sharedState) {
+    vector<int> PosiCount(currentState *currState) {
         vector<int> sums;
         int sumPosi = 0;
         int sumFalsePosi = 0;
-        for (blockReport report: sharedState->blkReports) {
+        for (blockReport report: currState->blkReports) {
             if (!report.tp)
                 sumFalsePosi++;
             sumPosi++;
@@ -211,96 +209,42 @@ public:
         return sums;
     }
 
-    virtual void execute(currentState *sharedState) {
-        dio->write("Please upload your local anomalies file.\n");
+    virtual void execute(currentState *currState) {
+        io->write("Please upload your local anomalies file.\n");
         string s = "";
         float TruePosiRate = 0, FalseAlarmRate = 0;
         int posiNum = 0, N = 0, FalsePosiNum, rowSum = 0, TruePosiNum = 0, FalseNegaNum = 0;
-        while ((s = dio->read()) != "done") {
+        while ((s = io->read()) != "done") {
             unsigned long dividerIndex = s.find(',');
             string startString = s.substr(0, dividerIndex);
             string endString = s.substr(dividerIndex + 1);
             unsigned long start = stoi(startString);
             unsigned long end = stoi(endString);
-            if (isFalseNega(start, end, sharedState))
+            if (isFalseNega(start, end, currState))
                 FalseNegaNum++;
             else TruePosiNum++;
             rowSum += end - start + 1;
             posiNum++;
         }
-        dio->write("Upload complete.\n");
-        auto posiSums = PosiCount(sharedState);
+        io->write("Upload complete.\n");
+        auto posiSums = PosiCount(currState);
         FalsePosiNum = posiSums.at(1);
-        N = sharedState->rowNum - rowSum;
+        N = currState->rowNum - rowSum;
         TruePosiRate = ((int) (1000.0 * TruePosiNum / posiNum)) / 1000.0f;
         FalseAlarmRate = ((int) (1000.0 * FalsePosiNum / N)) / 1000.0f;
-        dio->write("True Positive Rate: ");
-        dio->write(TruePosiRate);
-        dio->write("\nFalse Positive Rate: ");
-        dio->write(FalseAlarmRate);
-        dio->write("\n");
+        io->write("True Positive Rate: ");
+        io->write(TruePosiRate);
+        io->write("\nFalse Positive Rate: ");
+        io->write(FalseAlarmRate);
+        io->write("\n");
     }
-/*
-        bool crossSection(int as, int ae, int bs, int be) {
-            return (ae >= bs && be >= as);
-        }
-
-
-        bool isTP(int start, int end, currentState *sharedState) {
-            for (size_t i = 0; i < sharedState->blkReports.size(); i++) {
-                blockReport fr = sharedState->blkReports[i];
-                if (crossSection(start, end, fr.start, fr.end)) {
-                    sharedState->blkReports[i].tp = true;
-                    return true;
-                }
-            }
-            return false;
-        }
-
-        virtual void execute(currentState *sharedState) {
-
-            for (size_t i = 0; i < sharedState->blkReports.size(); i++) {
-                sharedState->blkReports[i].tp = false;
-            }
-
-            dio->write("Please upload your local anomalies file.\n");
-            string s = "";
-            float TP = 0, sum = 0, P = 0;
-            while ((s = dio->read()) != "done") {
-                size_t t = 0;
-                for (; s[t] != ','; t++);
-                string st = s.substr(0, t);
-                string en = s.substr(t + 1, s.length());
-                int start = stoi(st);
-                int end = stoi(en);
-                if (isTP(start, end, sharedState))
-                    TP++;
-                sum += end + 1 - start;
-                P++;
-            }
-            dio->write("Upload complete.\n");
-            float FP = 0;
-            for (size_t i = 0; i < sharedState->blkReports.size(); i++)
-                if (!sharedState->blkReports[i].tp)
-                    FP++;
-            float N = sharedState->rowNum - sum;
-            float tpr = ((int) (1000.0 * TP / P)) / 1000.0f;
-            float fpr = ((int) (1000.0 * FP / N)) / 1000.0f;
-            dio->write("True Positive Rate: ");
-            dio->write(tpr);
-            dio->write("\nFalse Positive Rate: ");
-            dio->write(fpr);
-            dio->write("\n");
-        }
-        */
 };
 
-class Exit : public Command {
+class Finish : public Command {
 public:
-    Exit(DefaultIO *dio) : Command(dio, "exit") {}
+    Finish(DefaultIO *dio) : Command(dio, "exit") {}
 
-    virtual void execute(currentState *sharedState) {
-        //cout<<description<<endl;
+    virtual void execute(currentState *currState) {
     }
 };
 

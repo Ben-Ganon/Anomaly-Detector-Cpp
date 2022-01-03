@@ -5,28 +5,28 @@
 
 #include "CLI.h"
 
-CLI::CLI(DefaultIO *dio) {
-    this->dio = dio;
-    commands.push_back(new UploadCSV(dio));
-    commands.push_back(new Settings(dio));
-    commands.push_back(new Detect(dio));
-    commands.push_back(new Results(dio));
-    commands.push_back(new UploadAnom(dio));
-    commands.push_back(new Exit(dio));
+CLI::CLI(DefaultIO *io) {
+    this->io = io;
+    commands.push_back(new UploadCSV(io));
+    commands.push_back(new Settings(io));
+    commands.push_back(new Detect(io));
+    commands.push_back(new Results(io));
+    commands.push_back(new AnalyzeAnomalies(io));
+    commands.push_back(new Finish(io));
 }
 
 void CLI::start() {
     currentState sharedState;
     int validIndex = -1;
     while (validIndex != 5) {
-        dio->write("Welcome to the Anomaly Detection Server.\n");
-        dio->write("Please choose an option:\n");
+        io->write("Welcome to the Anomaly Detection Server.\n");
+        io->write("Please choose an option:\n");
         for (int i = 0; i < commands.size(); i++) {
-            dio->write(i + 1);
-            dio->write(".");
-            dio->write(commands[i]->description + "\n");
+            io->write(i + 1);
+            io->write(".");
+            io->write(commands[i]->description + "\n");
         }
-        string choice = dio->read();
+        string choice = io->read();
         // calculate using ascii table
         validIndex = choice[0] - '0' - 1;
         // checking if the input is a valid choice
