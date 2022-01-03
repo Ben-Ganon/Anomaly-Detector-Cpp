@@ -39,7 +39,6 @@ public:
 
 };
 
-// you may add here helper classes
 
 struct fixdReport {
     int start;
@@ -138,32 +137,61 @@ public:
     virtual void execute(SharedState *sharedState) {
         TimeSeries train("anomalyTrain.csv");
         TimeSeries test("anomalyTest.csv");
-        sharedState->testFileSize = test.getRowSize();
-        HybridAnomalyDetector ad;
-        ad.setCorrelationThreshold(sharedState->threshold);
-        ad.learnNormal(train);
-        sharedState->report = ad.detect(test);
-
-        fixdReport fr;
-        fr.start=0;
-        fr.end=0;
-        fr.description="";
-        fr.tp=false;
-        for_each(sharedState->report.begin(),sharedState->report.end(),[&fr,sharedState](AnomalyReport& ar){
-            if(ar.timeStep==fr.end+1 && ar.description==fr.description)
-                fr.end++;
-            else{
-                sharedState->fixdRports.push_back(fr);
-                fr.start=ar.timeStep;
-                fr.end=fr.start;
-                fr.description=ar.description;
+        HybridAnomalyDetector had;
+        had.setCorrelationThreshold(sharedState->threshold);
+        had.learnNormal(train);
+        sharedState->report = had.detect(test);
+        fixdReport fReport;
+        int timeStepTemp = sharedState->report.at(0).timeStep;
+        for (AnomalyReport anom: sharedState->report) {
+            //the first report
+            if (timeStepTemp == anom.timeStep) {
+                fReport.start = anom.timeStep;
+                fReport.end = anom.timeStep;
+                fReport.description = anom.description;
+                fReport.tp = false;
             }
-        });
-        sharedState->fixdRports.push_back(fr);
-        sharedState->fixdRports.erase(sharedState->fixdRports.begin());
-
+                //additional report - another block
+            else if (timeStepTemp != anom.timeStep - 1 || anom.timeStep == sharedState->report.end()->timeStep) {
+                fReport.end = timeStepTemp;
+                sharedState->fixdRports.push_back(fReport);
+                fReport.start = anom.timeStep;
+                fReport.description = anom.description;
+                fReport.tp = false;
+            }
+            timeStepTemp = anom.timeStep;
+        }
         dio->write("anomaly detection complete.\n");
+
     }
+//        TimeSeries train("anomalyTrain.csv");
+//        TimeSeries test("anomalyTest.csv");
+//        sharedState->testFileSize = test.getRowSize();
+//        HybridAnomalyDetector ad;
+//        ad.setCorrelationThreshold(sharedState->threshold);
+//        ad.learnNormal(train);
+//        sharedState->report = ad.detect(test);
+//
+//        fixdReport fr;
+//        fr.start=0;
+//        fr.end=0;
+//        fr.description="";
+//        fr.tp=false;
+//        for_each(sharedState->report.begin(),sharedState->report.end(),[&fr,sharedState](AnomalyReport& ar){
+//            if(ar.timeStep==fr.end+1 && ar.description==fr.description)
+//                fr.end++;
+//            else{
+//                sharedState->fixdRports.push_back(fr);
+//                fr.start=ar.timeStep;
+//                fr.end=fr.start;
+//                fr.description=ar.description;
+//            }
+//        });
+//        sharedState->fixdRports.push_back(fr);
+//        sharedState->fixdRports.erase(sharedState->fixdRports.begin());
+//
+//        dio->write("anomaly detection complete.\n");
+//    }
 };
 
 class Results : public Command {
@@ -236,9 +264,9 @@ public:
         dio->write(tpr);
         dio->write("\nFalse Positive Rate: ");
         dio->write(fpr);
-        dio->write("\n");
-
+        dio->write("\n")
     }
+*/
 };
 
 class Exit : public Command {

@@ -1,7 +1,10 @@
 
 #include "HybridAnomalyDetector.h"
 #include "minCircle.h"
+
 #define HYBRID_PEARSON 0.5
+#define PEARSON 0.9
+
 
 HybridAnomalyDetector::HybridAnomalyDetector() {
     this->threshold = 0.9;

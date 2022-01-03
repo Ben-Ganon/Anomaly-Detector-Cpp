@@ -36,7 +36,7 @@ public:
 
     virtual ~SimpleAnomalyDetector();
 
-    virtual void learnNormal(const TimeSeries &ts);
+    virtual void learnNormal(const TimeSeries &ts, float threshold);
 
     virtual std::vector<AnomalyReport> detect(const TimeSeries &ts);
 
