@@ -124,6 +124,9 @@ std::vector<float> TimeSeries::getRow(int row) {
     return f;
 }
 
+int TimeSeries::getRowSize() {
+    return this->numColumns();
+}
 /**
  * returns the desired cell's value
  * @param row

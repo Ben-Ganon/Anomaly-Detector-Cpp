@@ -155,3 +155,4 @@ float SimpleAnomalyDetector::maxDev(std::vector<float> vector1, std::vector<floa
     }
     return maxNum;
 }
+

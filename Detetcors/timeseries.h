@@ -41,6 +41,8 @@ public:
     std::string getNameOfRaw(int i) const;
 
     std::vector<std::string> * getNames() const;
+
+    int getRowSize();
 };
 
 

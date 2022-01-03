@@ -3,8 +3,14 @@
 #include "minCircle.h"
 #define HYBRID_PEARSON 0.5
 
-HybridAnomalyDetector::HybridAnomalyDetector() = default;
+HybridAnomalyDetector::HybridAnomalyDetector() {
+    this->threshold = 0.9;
+}
 
+//TODO:: need to change this function name
+void HybridAnomalyDetector::setCorrelationThreshold(float newThresh){
+    this->threshold = newThresh;
+}
 
 void HybridAnomalyDetector::HybridLearner(const TimeSeries &ts, float m, int i, int index){
     correlatedFeatures correlatedFeature;
@@ -42,7 +48,7 @@ void HybridAnomalyDetector::learnNormal(const TimeSeries &ts) {
             }
         }
             if (-1 != index) {
-                if (m >= PEARSON) {
+                if (m >= this->threshold) {
                     HybridAnomalyDetector::simpleLearner(ts, m, i, index, this->cf);
                 }
                 else if (m > HYBRID_PEARSON) {
@@ -94,4 +100,5 @@ void HybridAnomalyDetector::hybridDetection(float threshold, Point p, correlated
         anomalies->push_back(anomaly);
     }
 }
+
 
