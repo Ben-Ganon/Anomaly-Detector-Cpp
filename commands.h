@@ -179,9 +179,7 @@ public:
         for (blockReport report: currState->blkReports) {
             int startBlock = report.start;
             int endbBlock = report.end;
-            if (((startBlock <= start && start <= endbBlock) || (startBlock <= end && end <= endbBlock))
-                || (start < startBlock && endbBlock < end)) {
-                //
+            if  (end >= startBlock && endbBlock >= start){
                 currState->blkReports.at(i).tp = true;
                 fpFlag = false;
             }
