@@ -51,7 +51,7 @@ void HybridAnomalyDetector::learnNormal(const TimeSeries &ts) {
                 if (m >= this->threshold) {
                     HybridAnomalyDetector::simpleLearner(ts, m, i, index, this->cf);
                 }
-                else if (m > HYBRID_PEARSON) {
+                else if (m >= HYBRID_PEARSON) {
                     HybridAnomalyDetector::HybridLearner(ts, m, i, index);
                 }
             }

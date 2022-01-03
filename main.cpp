@@ -6,4 +6,5 @@ bool wrong(float val, float expected) {
 using namespace std;
 int main() {
 
+
 }
