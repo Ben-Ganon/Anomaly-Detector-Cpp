@@ -10,5 +10,4 @@ class algoSettings: public {
 
 };
 
-
 #endif //EX1TASK2_ALGOSETTINGS_H

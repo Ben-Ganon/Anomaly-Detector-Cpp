@@ -82,49 +82,46 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/ben/CLionProjects/AdvancedCompEx1Task2/HybridAnomalyDetector.cpp">
+		<Unit filename="/home/ben/CLionProjects/AdvancedCompEx1Task2/Commands/receiveCSV.cpp">
 			<Option target="Ex1Task2"/>
 		</Unit>
-		<Unit filename="/home/ben/CLionProjects/AdvancedCompEx1Task2/HybridAnomalyDetector.h">
+		<Unit filename="/home/ben/CLionProjects/AdvancedCompEx1Task2/Commands/receiveCSV.h">
+			<Option target="Ex1Task2"/>
+		</Unit>
+		<Unit filename="/home/ben/CLionProjects/AdvancedCompEx1Task2/Commands/sendCSV.cpp">
+			<Option target="Ex1Task2"/>
+		</Unit>
+		<Unit filename="/home/ben/CLionProjects/AdvancedCompEx1Task2/Commands/sendCSV.h">
+			<Option target="Ex1Task2"/>
+		</Unit>
+		<Unit filename="/home/ben/CLionProjects/AdvancedCompEx1Task2/Detetcors/HybridAnomalyDetector.cpp">
+			<Option target="Ex1Task2"/>
+		</Unit>
+		<Unit filename="/home/ben/CLionProjects/AdvancedCompEx1Task2/Detetcors/HybridAnomalyDetector.h">
+			<Option target="Ex1Task2"/>
+		</Unit>
+		<Unit filename="/home/ben/CLionProjects/AdvancedCompEx1Task2/Detetcors/SimpleAnomalyDetector.cpp">
+			<Option target="Ex1Task2"/>
+		</Unit>
+		<Unit filename="/home/ben/CLionProjects/AdvancedCompEx1Task2/Detetcors/SimpleAnomalyDetector.h">
+			<Option target="Ex1Task2"/>
+		</Unit>
+		<Unit filename="/home/ben/CLionProjects/AdvancedCompEx1Task2/Detetcors/anomaly_detection_util.cpp">
+			<Option target="Ex1Task2"/>
+		</Unit>
+		<Unit filename="/home/ben/CLionProjects/AdvancedCompEx1Task2/Detetcors/anomaly_detection_util.h">
+			<Option target="Ex1Task2"/>
+		</Unit>
+		<Unit filename="/home/ben/CLionProjects/AdvancedCompEx1Task2/Detetcors/timeseries.cpp">
+			<Option target="Ex1Task2"/>
+		</Unit>
+		<Unit filename="/home/ben/CLionProjects/AdvancedCompEx1Task2/Detetcors/timeseries.h">
 			<Option target="Ex1Task2"/>
 		</Unit>
 		<Unit filename="/home/ben/CLionProjects/AdvancedCompEx1Task2/MainTrain.cpp">
 			<Option target="Ex1Task2"/>
 		</Unit>
-		<Unit filename="/home/ben/CLionProjects/AdvancedCompEx1Task2/SimpleAnomalyDetector.cpp">
-			<Option target="Ex1Task2"/>
-		</Unit>
-		<Unit filename="/home/ben/CLionProjects/AdvancedCompEx1Task2/SimpleAnomalyDetector.h">
-			<Option target="Ex1Task2"/>
-		</Unit>
-		<Unit filename="/home/ben/CLionProjects/AdvancedCompEx1Task2/anomaly_detection_util.cpp">
-			<Option target="Ex1Task2"/>
-		</Unit>
-		<Unit filename="/home/ben/CLionProjects/AdvancedCompEx1Task2/anomaly_detection_util.h">
-			<Option target="Ex1Task2"/>
-		</Unit>
 		<Unit filename="/home/ben/CLionProjects/AdvancedCompEx1Task2/minCircle.cpp">
-			<Option target="Ex1Task2"/>
-		</Unit>
-		<Unit filename="/home/ben/CLionProjects/AdvancedCompEx1Task2/minCircle.h">
-			<Option target="Ex1Task2"/>
-		</Unit>
-		<Unit filename="/home/ben/CLionProjects/AdvancedCompEx1Task2/receiveCSV.cpp">
-			<Option target="Ex1Task2"/>
-		</Unit>
-		<Unit filename="/home/ben/CLionProjects/AdvancedCompEx1Task2/receiveCSV.h">
-			<Option target="Ex1Task2"/>
-		</Unit>
-		<Unit filename="/home/ben/CLionProjects/AdvancedCompEx1Task2/sendCSV.cpp">
-			<Option target="Ex1Task2"/>
-		</Unit>
-		<Unit filename="/home/ben/CLionProjects/AdvancedCompEx1Task2/sendCSV.h">
-			<Option target="Ex1Task2"/>
-		</Unit>
-		<Unit filename="/home/ben/CLionProjects/AdvancedCompEx1Task2/timeseries.cpp">
-			<Option target="Ex1Task2"/>
-		</Unit>
-		<Unit filename="/home/ben/CLionProjects/AdvancedCompEx1Task2/timeseries.h">
 			<Option target="Ex1Task2"/>
 		</Unit>
 		<Unit filename="/home/ben/CLionProjects/AdvancedCompEx1Task2/CMakeLists.txt">
