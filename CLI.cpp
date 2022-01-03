@@ -16,7 +16,7 @@ CLI::CLI(DefaultIO *dio) {
 }
 
 void CLI::start() {
-    SharedState sharedState;
+    currentState sharedState;
     int validIndex = -1;
     while (validIndex != 5) {
         dio->write("Welcome to the Anomaly Detection Server.\n");
