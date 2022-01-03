@@ -21,21 +21,23 @@ void CLI::start() {
     while (validIndex != 5) {
         dio->write("Welcome to the Anomaly Detection Server.\n");
         dio->write("Please choose an option:\n");
-        for (size_t i = 0; i < commands.size(); i++) {
+        for (int i = 0; i < commands.size(); i++) {
             dio->write(i + 1);
             dio->write(".");
             dio->write(commands[i]->description + "\n");
         }
-        string input = dio->read();
-        validIndex = input[0] - '0' - 1;
-        if (validIndex >= 0 && validIndex <= 6)
+        string choice = dio->read();
+        // calculate using ascii table
+        validIndex = choice[0] - '0' - 1;
+        // checking if the input is a valid choice
+        if (validIndex > -1 && validIndex < 7)
             commands[validIndex]->execute(&sharedState);
     }
 }
 
 
 CLI::~CLI() {
-    for (size_t i = 0; i < commands.size(); i++) {
+    for (int i = 0; i < commands.size(); i++) {
         delete commands[i];
     }
 }
