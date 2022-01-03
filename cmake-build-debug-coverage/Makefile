@@ -129,149 +129,53 @@ Ex1Task2/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Ex1Task2.dir/build.make CMakeFiles/Ex1Task2.dir/build
 .PHONY : Ex1Task2/fast
 
-Commands/receiveCSV.o: Commands/receiveCSV.cpp.o
-.PHONY : Commands/receiveCSV.o
+CLI.o: CLI.cpp.o
+.PHONY : CLI.o
 
 # target to build an object file
-Commands/receiveCSV.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Ex1Task2.dir/build.make CMakeFiles/Ex1Task2.dir/Commands/receiveCSV.cpp.o
-.PHONY : Commands/receiveCSV.cpp.o
+CLI.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Ex1Task2.dir/build.make CMakeFiles/Ex1Task2.dir/CLI.cpp.o
+.PHONY : CLI.cpp.o
 
-Commands/receiveCSV.i: Commands/receiveCSV.cpp.i
-.PHONY : Commands/receiveCSV.i
+CLI.i: CLI.cpp.i
+.PHONY : CLI.i
 
 # target to preprocess a source file
-Commands/receiveCSV.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Ex1Task2.dir/build.make CMakeFiles/Ex1Task2.dir/Commands/receiveCSV.cpp.i
-.PHONY : Commands/receiveCSV.cpp.i
+CLI.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Ex1Task2.dir/build.make CMakeFiles/Ex1Task2.dir/CLI.cpp.i
+.PHONY : CLI.cpp.i
 
-Commands/receiveCSV.s: Commands/receiveCSV.cpp.s
-.PHONY : Commands/receiveCSV.s
+CLI.s: CLI.cpp.s
+.PHONY : CLI.s
 
 # target to generate assembly for a file
-Commands/receiveCSV.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Ex1Task2.dir/build.make CMakeFiles/Ex1Task2.dir/Commands/receiveCSV.cpp.s
-.PHONY : Commands/receiveCSV.cpp.s
+CLI.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Ex1Task2.dir/build.make CMakeFiles/Ex1Task2.dir/CLI.cpp.s
+.PHONY : CLI.cpp.s
 
-Commands/sendCSV.o: Commands/sendCSV.cpp.o
-.PHONY : Commands/sendCSV.o
+HybridAnomalyDetector.o: HybridAnomalyDetector.cpp.o
+.PHONY : HybridAnomalyDetector.o
 
 # target to build an object file
-Commands/sendCSV.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Ex1Task2.dir/build.make CMakeFiles/Ex1Task2.dir/Commands/sendCSV.cpp.o
-.PHONY : Commands/sendCSV.cpp.o
+HybridAnomalyDetector.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Ex1Task2.dir/build.make CMakeFiles/Ex1Task2.dir/HybridAnomalyDetector.cpp.o
+.PHONY : HybridAnomalyDetector.cpp.o
 
-Commands/sendCSV.i: Commands/sendCSV.cpp.i
-.PHONY : Commands/sendCSV.i
-
-# target to preprocess a source file
-Commands/sendCSV.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Ex1Task2.dir/build.make CMakeFiles/Ex1Task2.dir/Commands/sendCSV.cpp.i
-.PHONY : Commands/sendCSV.cpp.i
-
-Commands/sendCSV.s: Commands/sendCSV.cpp.s
-.PHONY : Commands/sendCSV.s
-
-# target to generate assembly for a file
-Commands/sendCSV.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Ex1Task2.dir/build.make CMakeFiles/Ex1Task2.dir/Commands/sendCSV.cpp.s
-.PHONY : Commands/sendCSV.cpp.s
-
-Detetcors/HybridAnomalyDetector.o: Detetcors/HybridAnomalyDetector.cpp.o
-.PHONY : Detetcors/HybridAnomalyDetector.o
-
-# target to build an object file
-Detetcors/HybridAnomalyDetector.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Ex1Task2.dir/build.make CMakeFiles/Ex1Task2.dir/Detetcors/HybridAnomalyDetector.cpp.o
-.PHONY : Detetcors/HybridAnomalyDetector.cpp.o
-
-Detetcors/HybridAnomalyDetector.i: Detetcors/HybridAnomalyDetector.cpp.i
-.PHONY : Detetcors/HybridAnomalyDetector.i
+HybridAnomalyDetector.i: HybridAnomalyDetector.cpp.i
+.PHONY : HybridAnomalyDetector.i
 
 # target to preprocess a source file
-Detetcors/HybridAnomalyDetector.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Ex1Task2.dir/build.make CMakeFiles/Ex1Task2.dir/Detetcors/HybridAnomalyDetector.cpp.i
-.PHONY : Detetcors/HybridAnomalyDetector.cpp.i
+HybridAnomalyDetector.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Ex1Task2.dir/build.make CMakeFiles/Ex1Task2.dir/HybridAnomalyDetector.cpp.i
+.PHONY : HybridAnomalyDetector.cpp.i
 
-Detetcors/HybridAnomalyDetector.s: Detetcors/HybridAnomalyDetector.cpp.s
-.PHONY : Detetcors/HybridAnomalyDetector.s
-
-# target to generate assembly for a file
-Detetcors/HybridAnomalyDetector.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Ex1Task2.dir/build.make CMakeFiles/Ex1Task2.dir/Detetcors/HybridAnomalyDetector.cpp.s
-.PHONY : Detetcors/HybridAnomalyDetector.cpp.s
-
-Detetcors/SimpleAnomalyDetector.o: Detetcors/SimpleAnomalyDetector.cpp.o
-.PHONY : Detetcors/SimpleAnomalyDetector.o
-
-# target to build an object file
-Detetcors/SimpleAnomalyDetector.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Ex1Task2.dir/build.make CMakeFiles/Ex1Task2.dir/Detetcors/SimpleAnomalyDetector.cpp.o
-.PHONY : Detetcors/SimpleAnomalyDetector.cpp.o
-
-Detetcors/SimpleAnomalyDetector.i: Detetcors/SimpleAnomalyDetector.cpp.i
-.PHONY : Detetcors/SimpleAnomalyDetector.i
-
-# target to preprocess a source file
-Detetcors/SimpleAnomalyDetector.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Ex1Task2.dir/build.make CMakeFiles/Ex1Task2.dir/Detetcors/SimpleAnomalyDetector.cpp.i
-.PHONY : Detetcors/SimpleAnomalyDetector.cpp.i
-
-Detetcors/SimpleAnomalyDetector.s: Detetcors/SimpleAnomalyDetector.cpp.s
-.PHONY : Detetcors/SimpleAnomalyDetector.s
+HybridAnomalyDetector.s: HybridAnomalyDetector.cpp.s
+.PHONY : HybridAnomalyDetector.s
 
 # target to generate assembly for a file
-Detetcors/SimpleAnomalyDetector.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Ex1Task2.dir/build.make CMakeFiles/Ex1Task2.dir/Detetcors/SimpleAnomalyDetector.cpp.s
-.PHONY : Detetcors/SimpleAnomalyDetector.cpp.s
-
-Detetcors/anomaly_detection_util.o: Detetcors/anomaly_detection_util.cpp.o
-.PHONY : Detetcors/anomaly_detection_util.o
-
-# target to build an object file
-Detetcors/anomaly_detection_util.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Ex1Task2.dir/build.make CMakeFiles/Ex1Task2.dir/Detetcors/anomaly_detection_util.cpp.o
-.PHONY : Detetcors/anomaly_detection_util.cpp.o
-
-Detetcors/anomaly_detection_util.i: Detetcors/anomaly_detection_util.cpp.i
-.PHONY : Detetcors/anomaly_detection_util.i
-
-# target to preprocess a source file
-Detetcors/anomaly_detection_util.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Ex1Task2.dir/build.make CMakeFiles/Ex1Task2.dir/Detetcors/anomaly_detection_util.cpp.i
-.PHONY : Detetcors/anomaly_detection_util.cpp.i
-
-Detetcors/anomaly_detection_util.s: Detetcors/anomaly_detection_util.cpp.s
-.PHONY : Detetcors/anomaly_detection_util.s
-
-# target to generate assembly for a file
-Detetcors/anomaly_detection_util.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Ex1Task2.dir/build.make CMakeFiles/Ex1Task2.dir/Detetcors/anomaly_detection_util.cpp.s
-.PHONY : Detetcors/anomaly_detection_util.cpp.s
-
-Detetcors/timeseries.o: Detetcors/timeseries.cpp.o
-.PHONY : Detetcors/timeseries.o
-
-# target to build an object file
-Detetcors/timeseries.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Ex1Task2.dir/build.make CMakeFiles/Ex1Task2.dir/Detetcors/timeseries.cpp.o
-.PHONY : Detetcors/timeseries.cpp.o
-
-Detetcors/timeseries.i: Detetcors/timeseries.cpp.i
-.PHONY : Detetcors/timeseries.i
-
-# target to preprocess a source file
-Detetcors/timeseries.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Ex1Task2.dir/build.make CMakeFiles/Ex1Task2.dir/Detetcors/timeseries.cpp.i
-.PHONY : Detetcors/timeseries.cpp.i
-
-Detetcors/timeseries.s: Detetcors/timeseries.cpp.s
-.PHONY : Detetcors/timeseries.s
-
-# target to generate assembly for a file
-Detetcors/timeseries.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Ex1Task2.dir/build.make CMakeFiles/Ex1Task2.dir/Detetcors/timeseries.cpp.s
-.PHONY : Detetcors/timeseries.cpp.s
+HybridAnomalyDetector.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Ex1Task2.dir/build.make CMakeFiles/Ex1Task2.dir/HybridAnomalyDetector.cpp.s
+.PHONY : HybridAnomalyDetector.cpp.s
 
 MainTrain.o: MainTrain.cpp.o
 .PHONY : MainTrain.o
@@ -297,6 +201,54 @@ MainTrain.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Ex1Task2.dir/build.make CMakeFiles/Ex1Task2.dir/MainTrain.cpp.s
 .PHONY : MainTrain.cpp.s
 
+SimpleAnomalyDetector.o: SimpleAnomalyDetector.cpp.o
+.PHONY : SimpleAnomalyDetector.o
+
+# target to build an object file
+SimpleAnomalyDetector.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Ex1Task2.dir/build.make CMakeFiles/Ex1Task2.dir/SimpleAnomalyDetector.cpp.o
+.PHONY : SimpleAnomalyDetector.cpp.o
+
+SimpleAnomalyDetector.i: SimpleAnomalyDetector.cpp.i
+.PHONY : SimpleAnomalyDetector.i
+
+# target to preprocess a source file
+SimpleAnomalyDetector.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Ex1Task2.dir/build.make CMakeFiles/Ex1Task2.dir/SimpleAnomalyDetector.cpp.i
+.PHONY : SimpleAnomalyDetector.cpp.i
+
+SimpleAnomalyDetector.s: SimpleAnomalyDetector.cpp.s
+.PHONY : SimpleAnomalyDetector.s
+
+# target to generate assembly for a file
+SimpleAnomalyDetector.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Ex1Task2.dir/build.make CMakeFiles/Ex1Task2.dir/SimpleAnomalyDetector.cpp.s
+.PHONY : SimpleAnomalyDetector.cpp.s
+
+anomaly_detection_util.o: anomaly_detection_util.cpp.o
+.PHONY : anomaly_detection_util.o
+
+# target to build an object file
+anomaly_detection_util.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Ex1Task2.dir/build.make CMakeFiles/Ex1Task2.dir/anomaly_detection_util.cpp.o
+.PHONY : anomaly_detection_util.cpp.o
+
+anomaly_detection_util.i: anomaly_detection_util.cpp.i
+.PHONY : anomaly_detection_util.i
+
+# target to preprocess a source file
+anomaly_detection_util.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Ex1Task2.dir/build.make CMakeFiles/Ex1Task2.dir/anomaly_detection_util.cpp.i
+.PHONY : anomaly_detection_util.cpp.i
+
+anomaly_detection_util.s: anomaly_detection_util.cpp.s
+.PHONY : anomaly_detection_util.s
+
+# target to generate assembly for a file
+anomaly_detection_util.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Ex1Task2.dir/build.make CMakeFiles/Ex1Task2.dir/anomaly_detection_util.cpp.s
+.PHONY : anomaly_detection_util.cpp.s
+
 minCircle.o: minCircle.cpp.o
 .PHONY : minCircle.o
 
@@ -321,6 +273,30 @@ minCircle.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Ex1Task2.dir/build.make CMakeFiles/Ex1Task2.dir/minCircle.cpp.s
 .PHONY : minCircle.cpp.s
 
+timeseries.o: timeseries.cpp.o
+.PHONY : timeseries.o
+
+# target to build an object file
+timeseries.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Ex1Task2.dir/build.make CMakeFiles/Ex1Task2.dir/timeseries.cpp.o
+.PHONY : timeseries.cpp.o
+
+timeseries.i: timeseries.cpp.i
+.PHONY : timeseries.i
+
+# target to preprocess a source file
+timeseries.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Ex1Task2.dir/build.make CMakeFiles/Ex1Task2.dir/timeseries.cpp.i
+.PHONY : timeseries.cpp.i
+
+timeseries.s: timeseries.cpp.s
+.PHONY : timeseries.s
+
+# target to generate assembly for a file
+timeseries.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Ex1Task2.dir/build.make CMakeFiles/Ex1Task2.dir/timeseries.cpp.s
+.PHONY : timeseries.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -330,30 +306,27 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... Ex1Task2"
-	@echo "... Commands/receiveCSV.o"
-	@echo "... Commands/receiveCSV.i"
-	@echo "... Commands/receiveCSV.s"
-	@echo "... Commands/sendCSV.o"
-	@echo "... Commands/sendCSV.i"
-	@echo "... Commands/sendCSV.s"
-	@echo "... Detetcors/HybridAnomalyDetector.o"
-	@echo "... Detetcors/HybridAnomalyDetector.i"
-	@echo "... Detetcors/HybridAnomalyDetector.s"
-	@echo "... Detetcors/SimpleAnomalyDetector.o"
-	@echo "... Detetcors/SimpleAnomalyDetector.i"
-	@echo "... Detetcors/SimpleAnomalyDetector.s"
-	@echo "... Detetcors/anomaly_detection_util.o"
-	@echo "... Detetcors/anomaly_detection_util.i"
-	@echo "... Detetcors/anomaly_detection_util.s"
-	@echo "... Detetcors/timeseries.o"
-	@echo "... Detetcors/timeseries.i"
-	@echo "... Detetcors/timeseries.s"
+	@echo "... CLI.o"
+	@echo "... CLI.i"
+	@echo "... CLI.s"
+	@echo "... HybridAnomalyDetector.o"
+	@echo "... HybridAnomalyDetector.i"
+	@echo "... HybridAnomalyDetector.s"
 	@echo "... MainTrain.o"
 	@echo "... MainTrain.i"
 	@echo "... MainTrain.s"
+	@echo "... SimpleAnomalyDetector.o"
+	@echo "... SimpleAnomalyDetector.i"
+	@echo "... SimpleAnomalyDetector.s"
+	@echo "... anomaly_detection_util.o"
+	@echo "... anomaly_detection_util.i"
+	@echo "... anomaly_detection_util.s"
 	@echo "... minCircle.o"
 	@echo "... minCircle.i"
 	@echo "... minCircle.s"
+	@echo "... timeseries.o"
+	@echo "... timeseries.i"
+	@echo "... timeseries.s"
 .PHONY : help
 
 

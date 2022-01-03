@@ -211,8 +211,27 @@ public:
 class UploadAnom : public Command {
 public:
     UploadAnom(DefaultIO *dio) : Command(dio, "upload anomalies and analyze results"){}
+    bool isTruePosi(unsigned long start, unsigned long end, SharedState *sharedState){
+        for(fixdReport report : sharedState->fixdRports){
+            int startBlock = report.start;
+            int endbBlock = report.end;
+            if ((startBlock <= start <= endbBlock) || (startBlock <= end <= endbBlock)) {
+                report.tp = true;
+            }
+        }
+    }
     virtual void execute(SharedState *sharedState) {
+        dio->write("Please upload your local anomalies file.\n");
+        string s = "";
+        float TP = 0, sum = 0, P = 0;
+        while ((s = dio->read()) != "done") {
+            unsigned long dividerIndex = s.find(',');
+            string startString = s.substr(0, dividerIndex);
+            string endString = s.substr(dividerIndex + 1);
+            unsigned long start = stoi(startString);
+            unsigned long end = stoi(endString);
 
+        }
     }
 /*
         bool crossSection(int as, int ae, int bs, int be) {
