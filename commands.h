@@ -240,6 +240,7 @@ public:
                     break;
                 }
             }
+            //
         }
         fpNum = currState->blkReports.size() - tpNum;
         io->write("Upload complete.\n");
