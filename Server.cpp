@@ -1,4 +1,7 @@
-
+/* Authors:
+ * Ben Ganon - 318731007
+ * Sagiv Antebi - 318159282
+ */
 #include "Server.h"
 
 Server::Server(int port)throw (const char*) {
