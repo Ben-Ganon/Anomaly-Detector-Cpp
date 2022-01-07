@@ -33,7 +33,7 @@ public:
     void readAndFile(string fileName) {
         ofstream out(fileName);
         string s = "";
-        while ((s = read()) != "done") {
+        while ((s = read()) != "done\n") {
             out << s << endl;
         }
         out.close();
@@ -220,10 +220,10 @@ public:
         int rowSum = 0;
         float TruePosiRate, FalseAlarmRate;
         vector<blockReport> anomalies;
-        while ((s = io->read()) != "done") {
+        while ((s = io->read()) != "done\n") {
             unsigned long dividerIndex = s.find(',');
             string startString = s.substr(0, dividerIndex);
-            string endString = s.substr(dividerIndex + 1);
+            string endString = s.substr(dividerIndex + 1,s.length() -1);
             unsigned long start = stoi(startString);
             unsigned long end = stoi(endString);
             blockReport newAnom;

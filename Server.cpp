@@ -27,19 +27,48 @@ void socketIO::write(float f){
 }
 
 void socketIO::read(float* f){
-    //recv(clientID,f,sizeof(float),0);
+    recv(clientID,f,sizeof(float),0);
     // it will be already in the string line
 }
 
-Server::Server(int port)throw (const char*) {
-
+void sigHandler(int sigNum) {
+    //cout << "sidH" << endl;
 }
 
-void Server::start(ClientHandler& ch)throw(const char*){	
+Server::Server(int port)throw (const char*) {
+    this->stopped = false;
+    this->fd= socket(AF_INET, SOCK_STREAM, 0);
+    if (this->fd < 0 )
+        throw;
+    this->server.sin_family = AF_INET;
+    this->server.sin_addr.s_addr = INADDR_ANY;
+    this->server.sin_port = htons(port);
+    if (bind(this->fd, (struct sockaddr*) &this->server, sizeof(this->server)) < 0)
+        throw;
+    if (listen(fd, 3) < 0)
+        throw;
+}
+
+void Server::start(ClientHandler& ch)throw(const char*){
+    this->t = new thread([&ch, this](){
+        signal(SIGALRM, sigHandler);
+        while (!this->stopped) {
+            alarm(1);
+            socklen_t clientSize = sizeof(this->client);
+            int clientOne = accept(fd, (struct sockaddr *) &this->client, &clientSize);
+            if (clientOne < 0)
+                throw;
+            ch.handle(clientOne);
+            close(clientOne);
+            alarm(0);
+        }
+        close(this->fd);
+    });
 }
 
 void Server::stop(){
-	t->join(); // do not delete this!
+    this->stopped = true;
+    this->t->join();
 }
 
 Server::~Server() {

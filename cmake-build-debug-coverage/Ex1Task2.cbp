@@ -97,6 +97,12 @@
 		<Unit filename="/home/ben/CLionProjects/AdvancedCompEx1Task2/MainTrain.cpp">
 			<Option target="Ex1Task2"/>
 		</Unit>
+		<Unit filename="/home/ben/CLionProjects/AdvancedCompEx1Task2/Server.cpp">
+			<Option target="Ex1Task2"/>
+		</Unit>
+		<Unit filename="/home/ben/CLionProjects/AdvancedCompEx1Task2/Server.h">
+			<Option target="Ex1Task2"/>
+		</Unit>
 		<Unit filename="/home/ben/CLionProjects/AdvancedCompEx1Task2/SimpleAnomalyDetector.cpp">
 			<Option target="Ex1Task2"/>
 		</Unit>
