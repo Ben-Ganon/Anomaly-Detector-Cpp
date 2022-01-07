@@ -214,11 +214,11 @@ public:
     virtual void execute(currentState *currState) {
         io->write("Please upload your local anomalies file.\n");
         string s = "";
-         int tpNum = 0;
-         int fpNum = 0;
-         int N;
-         int rowSum = 0;
-         float TruePosiRate, FalseAlarmRate;
+        int tpNum = 0;
+        int fpNum = 0;
+        int N;
+        int rowSum = 0;
+        float TruePosiRate, FalseAlarmRate;
         vector<blockReport> anomalies;
         while ((s = io->read()) != "done") {
             unsigned long dividerIndex = s.find(',');
