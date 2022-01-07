@@ -2,6 +2,7 @@
  * Ben Ganon - 318731007
  * Sagiv Antebi - 318159282
  */
+
 #include "Server.h"
 string socketIO::read(){
     char c=0;
