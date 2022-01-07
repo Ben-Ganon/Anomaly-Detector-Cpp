@@ -179,7 +179,9 @@ public:
         for (blockReport report: currState->blkReports) {
             int startBlock = report.start;
             int endbBlock = report.end;
-            if  (end >= startBlock && endbBlock >= start){
+            if (((startBlock <= start && start <= endbBlock) || (startBlock <= end && end <= endbBlock))
+                || (start < startBlock && endbBlock < end)) {
+                //
                 currState->blkReports.at(i).tp = true;
                 fpFlag = false;
             }
@@ -187,7 +189,9 @@ public:
         }
         return fpFlag;
     }
-
+    bool isTruePos(int repStart, int repEnd, int start, int end) {
+        return !(repStart > end || repEnd < start);
+    }
     /**
      * the return vector is : vector[0] = Positive,  vector[1] = False Positive
      * @param currState
@@ -210,26 +214,38 @@ public:
     virtual void execute(currentState *currState) {
         io->write("Please upload your local anomalies file.\n");
         string s = "";
-        float TruePosiRate = 0, FalseAlarmRate = 0;
-        int posiNum = 0, N = 0, FalsePosiNum, rowSum = 0, TruePosiNum = 0, FalseNegaNum = 0;
+         int tpNum = 0;
+         int fpNum = 0;
+         int N;
+         int rowSum = 0;
+         float TruePosiRate, FalseAlarmRate;
+        vector<blockReport> anomalies;
         while ((s = io->read()) != "done") {
             unsigned long dividerIndex = s.find(',');
             string startString = s.substr(0, dividerIndex);
             string endString = s.substr(dividerIndex + 1);
             unsigned long start = stoi(startString);
             unsigned long end = stoi(endString);
-            if (isFalseNega(start, end, currState))
-                FalseNegaNum++;
-            else TruePosiNum++;
+            blockReport newAnom;
+            newAnom.start = start;
+            newAnom.end = end;
+            anomalies.push_back(newAnom);
             rowSum += end - start + 1;
-            posiNum++;
         }
+
+        for(blockReport report : currState->blkReports) {
+            for(blockReport exception : anomalies) {
+                if(isTruePos(report.start, report.end, exception.start, exception.end)) {
+                    tpNum++;
+                    break;
+                }
+            }
+        }
+        fpNum = currState->blkReports.size() - tpNum;
         io->write("Upload complete.\n");
-        auto posiSums = PosiCount(currState);
-        FalsePosiNum = posiSums.at(1);
         N = currState->rowNum - rowSum;
-        TruePosiRate = ((int) (1000.0 * TruePosiNum / posiNum)) / 1000.0f;
-        FalseAlarmRate = ((int) (1000.0 * FalsePosiNum / N)) / 1000.0f;
+        TruePosiRate = ((int) (1000.0 * tpNum / anomalies.size())) / 1000.0f;
+        FalseAlarmRate = ((int) (1000.0 * fpNum / N)) / 1000.0f;
         io->write("True Positive Rate: ");
         io->write(TruePosiRate);
         io->write("\nFalse Positive Rate: ");
