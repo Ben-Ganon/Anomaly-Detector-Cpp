@@ -28,8 +28,6 @@ public:
 
     virtual ~DefaultIO() {}
 
-    // you may add additional methods here
-
     void readAndFile(string fileName) {
         ofstream out(fileName);
         string s = "";
@@ -264,4 +262,4 @@ public:
 };
 
 
-#endif /* COMMANDS_H_ */
+#endif
