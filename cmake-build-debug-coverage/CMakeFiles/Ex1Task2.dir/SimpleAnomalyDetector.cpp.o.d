@@ -43,10 +43,10 @@ CMakeFiles/Ex1Task2.dir/SimpleAnomalyDetector.cpp.o: \
  /usr/include/c++/9/bits/stl_bvector.h \
  /usr/include/c++/9/bits/functional_hash.h \
  /usr/include/c++/9/bits/range_access.h \
- /usr/include/c++/9/bits/vector.tcc \
- /home/ben/CLionProjects/AdvancedCompEx1Task2/AnomalyDetector.h \
- /usr/include/c++/9/string /usr/include/c++/9/bits/stringfwd.h \
- /usr/include/c++/9/bits/char_traits.h /usr/include/c++/9/bits/postypes.h \
+ /usr/include/c++/9/bits/vector.tcc /usr/include/c++/9/cstddef \
+ /usr/include/c++/9/iostream /usr/include/c++/9/ostream \
+ /usr/include/c++/9/ios /usr/include/c++/9/iosfwd \
+ /usr/include/c++/9/bits/stringfwd.h /usr/include/c++/9/bits/postypes.h \
  /usr/include/c++/9/cwchar /usr/include/wchar.h \
  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
  /usr/include/x86_64-linux-gnu/bits/floatn.h \
@@ -60,7 +60,7 @@ CMakeFiles/Ex1Task2.dir/SimpleAnomalyDetector.cpp.o: \
  /usr/include/x86_64-linux-gnu/bits/types/FILE.h \
  /usr/include/x86_64-linux-gnu/bits/types/locale_t.h \
  /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h \
- /usr/include/c++/9/cstdint \
+ /usr/include/c++/9/bits/char_traits.h /usr/include/c++/9/cstdint \
  /usr/lib/gcc/x86_64-linux-gnu/9/include/stdint.h /usr/include/stdint.h \
  /usr/include/x86_64-linux-gnu/bits/types.h \
  /usr/include/x86_64-linux-gnu/bits/timesize.h \
@@ -71,16 +71,10 @@ CMakeFiles/Ex1Task2.dir/SimpleAnomalyDetector.cpp.o: \
  /usr/include/c++/9/bits/localefwd.h \
  /usr/include/x86_64-linux-gnu/c++/9/bits/c++locale.h \
  /usr/include/c++/9/clocale /usr/include/locale.h \
- /usr/include/x86_64-linux-gnu/bits/locale.h /usr/include/c++/9/iosfwd \
- /usr/include/c++/9/cctype /usr/include/ctype.h \
- /usr/include/x86_64-linux-gnu/bits/endian.h \
+ /usr/include/x86_64-linux-gnu/bits/locale.h /usr/include/c++/9/cctype \
+ /usr/include/ctype.h /usr/include/x86_64-linux-gnu/bits/endian.h \
  /usr/include/x86_64-linux-gnu/bits/endianness.h \
- /usr/include/c++/9/bits/ostream_insert.h \
- /usr/include/c++/9/bits/cxxabi_forced.h \
- /usr/include/c++/9/bits/stl_function.h \
- /usr/include/c++/9/backward/binders.h \
- /usr/include/c++/9/bits/basic_string.h \
- /usr/include/c++/9/ext/atomicity.h \
+ /usr/include/c++/9/bits/ios_base.h /usr/include/c++/9/ext/atomicity.h \
  /usr/include/x86_64-linux-gnu/c++/9/bits/gthr.h \
  /usr/include/x86_64-linux-gnu/c++/9/bits/gthr-default.h \
  /usr/include/pthread.h /usr/include/sched.h \
@@ -104,6 +98,12 @@ CMakeFiles/Ex1Task2.dir/SimpleAnomalyDetector.cpp.o: \
  /usr/include/x86_64-linux-gnu/bits/struct_rwlock.h \
  /usr/include/x86_64-linux-gnu/bits/setjmp.h \
  /usr/include/x86_64-linux-gnu/c++/9/bits/atomic_word.h \
+ /usr/include/c++/9/bits/locale_classes.h /usr/include/c++/9/string \
+ /usr/include/c++/9/bits/ostream_insert.h \
+ /usr/include/c++/9/bits/cxxabi_forced.h \
+ /usr/include/c++/9/bits/stl_function.h \
+ /usr/include/c++/9/backward/binders.h \
+ /usr/include/c++/9/bits/basic_string.h \
  /usr/include/c++/9/ext/string_conversions.h /usr/include/c++/9/cstdlib \
  /usr/include/stdlib.h /usr/include/x86_64-linux-gnu/bits/waitflags.h \
  /usr/include/x86_64-linux-gnu/bits/waitstatus.h \
@@ -128,10 +128,6 @@ CMakeFiles/Ex1Task2.dir/SimpleAnomalyDetector.cpp.o: \
  /usr/include/asm-generic/errno.h /usr/include/asm-generic/errno-base.h \
  /usr/include/x86_64-linux-gnu/bits/types/error_t.h \
  /usr/include/c++/9/bits/basic_string.tcc \
- /home/ben/CLionProjects/AdvancedCompEx1Task2/timeseries.h \
- /usr/include/c++/9/iostream /usr/include/c++/9/ostream \
- /usr/include/c++/9/ios /usr/include/c++/9/bits/ios_base.h \
- /usr/include/c++/9/bits/locale_classes.h \
  /usr/include/c++/9/bits/locale_classes.tcc \
  /usr/include/c++/9/system_error \
  /usr/include/x86_64-linux-gnu/c++/9/bits/error_constants.h \
@@ -146,8 +142,10 @@ CMakeFiles/Ex1Task2.dir/SimpleAnomalyDetector.cpp.o: \
  /usr/include/c++/9/bits/locale_facets.tcc \
  /usr/include/c++/9/bits/basic_ios.tcc \
  /usr/include/c++/9/bits/ostream.tcc /usr/include/c++/9/istream \
- /usr/include/c++/9/bits/istream.tcc /usr/include/c++/9/math.h \
- /usr/include/c++/9/cmath /usr/include/math.h \
+ /usr/include/c++/9/bits/istream.tcc /usr/include/c++/9/stdlib.h \
+ /home/ben/CLionProjects/AdvancedCompEx1Task2/AnomalyDetector.h \
+ /home/ben/CLionProjects/AdvancedCompEx1Task2/timeseries.h \
+ /usr/include/c++/9/math.h /usr/include/c++/9/cmath /usr/include/math.h \
  /usr/include/x86_64-linux-gnu/bits/math-vector.h \
  /usr/include/x86_64-linux-gnu/bits/libm-simd-decl-stubs.h \
  /usr/include/x86_64-linux-gnu/bits/flt-eval-method.h \
@@ -162,4 +160,5 @@ CMakeFiles/Ex1Task2.dir/SimpleAnomalyDetector.cpp.o: \
  /usr/include/c++/9/bits/algorithmfwd.h \
  /usr/include/c++/9/bits/stl_heap.h /usr/include/c++/9/bits/stl_tempbuf.h \
  /usr/include/c++/9/bits/uniform_int_dist.h /usr/include/c++/9/limits \
- /usr/include/string.h /usr/include/strings.h
+ /usr/include/string.h /usr/include/strings.h \
+ /home/ben/CLionProjects/AdvancedCompEx1Task2/minCircle.h

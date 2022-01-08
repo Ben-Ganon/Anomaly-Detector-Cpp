@@ -1,6 +1,8 @@
-CMakeFiles/Ex1Task2.dir/MainTrain.cpp.o: \
- /home/ben/CLionProjects/AdvancedCompEx1Task2/MainTrain.cpp \
- /usr/include/stdc-predef.h /usr/include/c++/9/iostream \
+CMakeFiles/Ex1Task2.dir/Server.cpp.o: \
+ /home/ben/CLionProjects/AdvancedCompEx1Task2/Server.cpp \
+ /usr/include/stdc-predef.h \
+ /home/ben/CLionProjects/AdvancedCompEx1Task2/Server.h \
+ /usr/include/c++/9/iostream \
  /usr/include/x86_64-linux-gnu/c++/9/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/9/bits/os_defines.h \
  /usr/include/features.h /usr/include/x86_64-linux-gnu/sys/cdefs.h \
@@ -135,11 +137,7 @@ CMakeFiles/Ex1Task2.dir/MainTrain.cpp.o: \
  /usr/include/c++/9/bits/locale_facets.tcc \
  /usr/include/c++/9/bits/basic_ios.tcc \
  /usr/include/c++/9/bits/ostream.tcc /usr/include/c++/9/istream \
- /usr/include/c++/9/bits/istream.tcc /usr/include/c++/9/fstream \
- /usr/include/c++/9/bits/codecvt.h \
- /usr/include/x86_64-linux-gnu/c++/9/bits/basic_file.h \
- /usr/include/x86_64-linux-gnu/c++/9/bits/c++io.h \
- /usr/include/c++/9/bits/fstream.tcc \
+ /usr/include/c++/9/bits/istream.tcc \
  /usr/include/x86_64-linux-gnu/sys/socket.h \
  /usr/include/x86_64-linux-gnu/bits/types/struct_iovec.h \
  /usr/include/x86_64-linux-gnu/bits/socket.h \
@@ -157,14 +155,10 @@ CMakeFiles/Ex1Task2.dir/MainTrain.cpp.o: \
  /usr/include/asm-generic/sockios.h \
  /usr/include/x86_64-linux-gnu/bits/types/struct_osockaddr.h \
  /usr/include/netinet/in.h /usr/include/x86_64-linux-gnu/bits/in.h \
- /usr/include/netdb.h /usr/include/rpc/netdb.h \
- /usr/include/x86_64-linux-gnu/bits/types/sigevent_t.h \
- /usr/include/x86_64-linux-gnu/bits/types/__sigval_t.h \
- /usr/include/x86_64-linux-gnu/bits/netdb.h /usr/include/c++/9/thread \
- /usr/include/c++/9/chrono /usr/include/c++/9/ratio \
- /usr/include/c++/9/limits /usr/include/c++/9/ctime \
- /usr/include/c++/9/bits/parse_numbers.h /usr/include/c++/9/memory \
- /usr/include/c++/9/bits/stl_construct.h \
+ /usr/include/c++/9/thread /usr/include/c++/9/chrono \
+ /usr/include/c++/9/ratio /usr/include/c++/9/limits \
+ /usr/include/c++/9/ctime /usr/include/c++/9/bits/parse_numbers.h \
+ /usr/include/c++/9/memory /usr/include/c++/9/bits/stl_construct.h \
  /usr/include/c++/9/bits/stl_uninitialized.h \
  /usr/include/c++/9/bits/stl_tempbuf.h \
  /usr/include/c++/9/bits/stl_raw_storage_iter.h \
@@ -188,16 +182,17 @@ CMakeFiles/Ex1Task2.dir/MainTrain.cpp.o: \
  /usr/include/x86_64-linux-gnu/bits/confname.h \
  /usr/include/x86_64-linux-gnu/bits/getopt_posix.h \
  /usr/include/x86_64-linux-gnu/bits/getopt_core.h \
- /usr/include/x86_64-linux-gnu/bits/unistd_ext.h \
- /home/ben/CLionProjects/AdvancedCompEx1Task2/Server.h \
- /usr/include/signal.h /usr/include/x86_64-linux-gnu/bits/signum.h \
+ /usr/include/x86_64-linux-gnu/bits/unistd_ext.h /usr/include/signal.h \
+ /usr/include/x86_64-linux-gnu/bits/signum.h \
  /usr/include/x86_64-linux-gnu/bits/signum-generic.h \
  /usr/include/x86_64-linux-gnu/bits/types/sig_atomic_t.h \
  /usr/include/x86_64-linux-gnu/bits/types/siginfo_t.h \
+ /usr/include/x86_64-linux-gnu/bits/types/__sigval_t.h \
  /usr/include/x86_64-linux-gnu/bits/siginfo-arch.h \
  /usr/include/x86_64-linux-gnu/bits/siginfo-consts.h \
  /usr/include/x86_64-linux-gnu/bits/siginfo-consts-arch.h \
  /usr/include/x86_64-linux-gnu/bits/types/sigval_t.h \
+ /usr/include/x86_64-linux-gnu/bits/types/sigevent_t.h \
  /usr/include/x86_64-linux-gnu/bits/sigevent-consts.h \
  /usr/include/x86_64-linux-gnu/bits/sigaction.h \
  /usr/include/x86_64-linux-gnu/bits/sigcontext.h \
@@ -217,6 +212,10 @@ CMakeFiles/Ex1Task2.dir/MainTrain.cpp.o: \
  /usr/include/c++/9/bits/stl_heap.h \
  /usr/include/c++/9/bits/uniform_int_dist.h \
  /home/ben/CLionProjects/AdvancedCompEx1Task2/commands.h \
+ /usr/include/c++/9/fstream /usr/include/c++/9/bits/codecvt.h \
+ /usr/include/x86_64-linux-gnu/c++/9/bits/basic_file.h \
+ /usr/include/x86_64-linux-gnu/c++/9/bits/c++io.h \
+ /usr/include/c++/9/bits/fstream.tcc \
  /home/ben/CLionProjects/AdvancedCompEx1Task2/timeseries.h \
  /home/ben/CLionProjects/AdvancedCompEx1Task2/HybridAnomalyDetector.h \
  /home/ben/CLionProjects/AdvancedCompEx1Task2/SimpleAnomalyDetector.h \
